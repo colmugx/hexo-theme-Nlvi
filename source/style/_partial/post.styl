@@ -1,0 +1,135 @@
+.posts
+    padding: 0 yard
+.post
+    position: relative
+    background-color #FEFEFE
+    padding (yard*2)
+    margin-bottom (yard*2)
+    &:before
+        z-index -1
+        content ''
+        width 50px
+        height @width
+        background-color $color-angle
+        box-shadow -1px -1px 1px #bbb
+        position absolute
+        top -(yard - 7)
+        left @top
+        -webkit-animation fadeIn 0.5s ease-in-out backwards .5s
+        animation fadeIn 0.5s ease-in-out backwards .5s
+    &:after
+        z-index -1
+        content ''
+        width 50px
+        height @width
+        background-color: $color-angle
+        box-shadow 1px 1px 1px #bbb
+        position absolute
+        bottom -(yard - 7)
+        right @bottom
+        -webkit-animation fadeIn 0.5s ease-in-out backwards .5s
+        animation fadeIn 0.5s ease-in-out backwards .5s
+    .post-header
+        z-index 10
+        .post-time
+            padding-left (yard*2)
+            font-family "Source Sans Pro", "Helvetica Neue"
+            font-weight 400
+            font-size 14px
+            color: $color-main
+        .post-title
+            margin 0
+            padding: 5px 0
+            font-weight 200
+            font-size (yard*3.5)
+            a
+                text-decoration: none
+                color: #000
+        +mobile()
+            .post-time
+                font-size 12px
+            .post-title
+                font-size 20px
+    +tablet()
+        margin yard
+    +mobile()
+        margin yard
+        padding yard
+.post-content
+    for $i in 1 2 3 4 5 6
+        h{$i}
+            font-weight 300
+            margin (yard*2) 0
+            &:before
+                content '∮ '
+    a
+        color $color-main
+        text-decoration underline
+        &:hover
+            color $color-highlight
+    p
+        margin: yard 0
+        line-height line-height
+        font-weight 300
+    code
+        border 1px solid $color-border
+        background-color $color-back
+        padding 0 (yard/2)
+        margin 0 (yard/2)
+        font-size 14px
+    strong
+        font-weight bold
+        font-family $font-article-global
+    i
+        font-weight 100
+    img
+        width: 500px
+    +mobile()
+        font-size 14px
+.content-link
+    margin  (yard) 0
+    display inline-block
+    &:hover
+        transform translateX(10%)
+    a
+        color $color-main
+        text-decoration none
+        &:hover
+            color $color-highlight
+
+.post-tags
+    display inline-block
+    padding: (yard/2) (yard*2)
+    font-size 12px
+    border-bottom 1px solid $color-line
+    a
+        text-decoration none
+        color $color-main
+        margin: 0 (yard/2)
+        &:before
+            content: '#'
+        &:hover
+            color $color-highlight
+
+
+blockquote
+    position relative
+    margin (yard) (yard*1)
+    padding (yard) (yard*2)
+    background-color: $color-back
+    border-left: 5px solid $color-border
+    &:before
+        content ''
+        display block
+        position absolute
+        top 0
+        right 0
+        border-width 0 (yard*2) (yard*2) 0
+        border-color #fff #fff transparent transparent
+        background transparent
+        border-style solid
+        width 0
+        box-shadow -1px 1px 1px $color-line
+    p
+        margin 0
+        font-family $font-article-global

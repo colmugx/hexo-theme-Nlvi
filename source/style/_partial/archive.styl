@@ -1,0 +1,42 @@
+.archive
+    $ff = Athelas, "PingFang SC", serif
+    margin 0 (yard*6)
+    .archive-title
+        display inline-block
+        margin 0
+        font-family $ff
+        font-weight 300
+        color $color-main
+    .archive-num
+        margin (yard)
+        font-weight 100
+    .archive-name
+        font-family $ff
+        font-weight 300
+    .archive-list
+        .archive-year
+            font-family $ff
+            font-weight 100
+        ul
+            list-style none
+            padding 0
+        .archive-post
+            border-left 1px solid $color-line
+            padding: 0 (yard)
+            &:hover
+                padding 0 (yard*2)
+                background-color $main-back
+                border-left 3px solid $color-main
+                border-right 3px solid $color-main
+        .archive-post-time
+            font-family "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+            color $color-border
+        .archive-post-link
+            display inline-block
+            line-height line-height
+            a
+                margin 0 (yard)
+                text-decoration none
+                color $color-main
+                &:hover
+                    color $color-highlight

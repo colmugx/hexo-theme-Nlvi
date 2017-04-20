@@ -1,0 +1,29 @@
+nav:
+  article: Article
+  archives: Archives
+  tags: Tags
+  categories: Categories
+  about: About
+  menu: Menu
+
+page:
+  prev: < Prev
+  next: Next >
+  comment: Comment
+  share: Share
+  hide: Hide
+  readmore: Read More...
+  para: '%d Posts In Total'
+  now: now in
+  reward: reward
+
+copyright:
+  author: Author
+  url: Url
+  origin: Origin
+
+friendlink: Friend
+
+#footer
+come: Powered by
+theme: Theme

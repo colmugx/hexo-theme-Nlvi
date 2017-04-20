@@ -1,0 +1,33 @@
+//code highlight
+$color-code-background = #f7f7f7
+$color-code-plain = #2c2c2c
+$color-code-line = #bbb
+$color-code-keyword = #c678dd
+$color-code-builtIn = #e6c07b
+$color-code-string = #98c379
+$color-code-params = #5799de
+$color-code-number = #d19a66
+$color-code-title = #e06c75
+$color-code-comment = #a1a4aa
+$color-code-attribute = #61aeee
+$color-code-symbol = #cb4b16
+
+
+$theme-style = hexo-config("theme-style")
+
+if $theme-style
+    if $theme-style == "gray"
+        $color-main = #666
+        $color-highlight = #000
+        $color-border = #999
+        $color-back = #f0f0f0
+        $color-angle = #777
+        $color-line = #ddd
+else //default
+    $color-main = #666
+    $color-highlight = #000
+    $color-border = #999
+    $color-back = #f0f0f0
+    $color-angle = #777
+    $color-line = #ddd
+

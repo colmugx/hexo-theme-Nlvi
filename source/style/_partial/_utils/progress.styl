@@ -1,0 +1,27 @@
+.progress
+    .progress-inner
+        display block
+        position fixed
+        top 0
+        left 0
+        background-color transparent
+        height 3px
+        width 100%
+        &:before
+            content ''
+            height inherit
+            position absolute
+            width auto
+            will-change left right
+            background $color-main
+            -webkit-animation indeterminate 2.2s ease-out infinite
+            animation indeterminate 2.2s ease-out infinite
+        &:after
+            content ''
+            height inherit
+            position absolute
+            width auto
+            will-change left right
+            background $color-main
+            -webkit-animation indeterminate-short 2.2s ease-out infinite
+            animation indeterminate-short 2.2s ease-out infinite

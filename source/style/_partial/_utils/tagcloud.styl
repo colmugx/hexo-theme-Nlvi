@@ -1,0 +1,33 @@
+.show-tag
+    transform translateY(0px)
+
+.tagcloud
+    z-index: -1
+    display block
+    width 100%
+    height 100px
+    background-color $color-main
+    box-shadow inset 0px -8px 10px 0px #585858
+
+.tagcloud-inner
+    display flex
+    justify-content flex-end
+    align-items center
+    flex-flow row wrap
+    width 100%
+    height 100%
+    a
+        flex: 0 0 17%;
+        text-decoration none
+        color #fff
+        &:before
+            content: '#'
+        &:hover
+            text-shadow: 1px 1px 1px #fff
+
++mobile()
+    .tagcloud
+        .tagcloud-inner
+            justify-content center
+            a
+                font-size: 9px !important

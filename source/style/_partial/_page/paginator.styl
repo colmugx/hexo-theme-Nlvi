@@ -1,0 +1,60 @@
+.pagination
+    width 80%
+    margin (yard*3) auto
+    font-weight 500
+    .page-number
+        display none
+
+    &:before
+        content ''
+        display table
+    &:after
+        @extends .pagination:before
+        clear both
+
+    .extend
+        text-decoration none
+        color $color-main
+        font-size 18px
+
+        &.next
+            float right
+            &:hover
+                color $color-highlight
+                transform translateX(10%)
+        &.prev
+            float left
+            &:hover
+                color $color-highlight
+                transform translateX(-10%)
+        +mobile()
+            font-size 14px
+
+.article-page
+    width 80%
+    margin (yard*3) auto
+    font-weight 500
+    a
+        text-decoration none
+        color $color-main
+        font-size 16px
+        +mobile()
+            font-size 12px
+        &:hover
+            color $color-highlight
+
+    &:before
+        content ''
+        display table
+    &:after
+        @extends .pagination:before
+        clear both
+
+    .art-right
+        float right
+        &:hover
+            transform translateX(10%)
+    .art-left
+        float left
+        &:hover
+            transform translateX(-10%)

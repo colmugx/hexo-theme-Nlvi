@@ -1,0 +1,75 @@
+.header
+    width 100%
+    height 110px
+    display flex
+    align-items center
+    flex-direction row
+    flex-wrap nowrap
+    .table
+        display table
+        height 100%
+        width 100%
+        .connect
+            display table-cell
+            vertical-align middle
+            .connect-inner
+                display flex
+                flex-direction: column
+                span
+                    a
+                        font-family 'LedFont', 'PingFang SC', 'Microsoft YaHei', sans-serif
+                        font-weight 300
+                        font-size 48px
+                        color $color-main
+                        text-decoration  none
+    .title
+        flex 2
+        height 100%
+        text-align center
+        padding-right (yard * 3)
+    #subtitle
+        font-size 12px
+        margin-top 5px
+    .main-nav
+        flex 3
+        text-align center
+        padding-left (yard * 3)
+        .menu
+            display flex
+            justify-content center
+            list-style none
+            margin: 40px 0
+            .menu-item
+                display inline-table
+                margin: 0 (yard * 2)
+                a
+                    display flex
+                    flex-direction column
+                    text-decoration: none
+                    color $color-main
+                    font-size 16px
+                    &:hover
+                        color $color-highlight
+                .menu-item-label
+                    font-size 12px
+    +tablet()
+        .title
+            padding-right 0
+        .main-nav
+            padding-left 0
+        .menu
+            padding: 0
+    +mobile()
+        .main-nav
+            .menu
+                margin (yard*2) 0
+                padding 0
+                .menu-item
+                    margin 0 (yard)
+                    a
+                        font-size 12px
+
++mobile()
+    .header
+        height inherit
+        display block

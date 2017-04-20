@@ -1,0 +1,80 @@
+# ===========================================
+# Information Settings
+# ===========================================
+
+#navigation
+menu:
+  article: /
+  archives: /archives
+  tags: /tags
+  about: /about
+  # RSS: /atom.xml
+
+  # favicon
+favicon: https://avatars2.githubusercontent.com/u/21327913?v=3&s=466
+
+# ===========================================
+# Article Setting
+# ===========================================
+
+# Navigator in post
+# toc: false
+
+# Use copyright infomation
+copyright: true
+# license:
+
+#Reword button or message
+reward: true
+
+# ===========================================
+# Social Contact
+# ===========================================
+
+# Comments // Please only switch one on.
+comments: true
+# duoshuo:
+uyan: 2116358
+# netease:
+# disqus:
+
+# sub //Please just fill out ID.
+sub:
+  github: ColMugX
+  # weibo: col
+  # twitter: col
+  zhihu: colmugx
+
+#Friend link
+friendLink:
+
+# ===========================================
+# Analytics
+# ===========================================
+
+#google_analytics:
+#baidu_analytics:
+
+# ===========================================
+# Theme Settings
+# ===========================================
+
+# lightbox
+lightbox: true
+
+# animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
+animate: true
+
+# style
+theme-style: gray
+
+# Created Time
+since: 2016
+
+#about
+self: 假如你要做<br>你就要做到最好<br>不要半途而废<br>不要三分钟热度<br><br>我叫ColMugX。<br>一个不成熟的前端。
+
+# ===========================================
+# Version
+# ===========================================
+version: 1.1

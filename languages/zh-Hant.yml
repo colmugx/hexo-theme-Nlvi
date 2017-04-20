@@ -1,0 +1,29 @@
+nav:
+  article: 記事
+  archives: 歸檔
+  tags: 標籤
+  categories: 分類
+  about: 關於
+  menu: 菜單
+
+page:
+  prev: < 上一頁
+  next: 下一頁 >
+  comment: 留言
+  share: 分享
+  hide: 藏起
+  excerpt_link: 接著讀…
+  para: 共計 %d 篇文章
+  now: 在看標籤
+  reward: 打賞
+
+copyright:
+  author: 作家
+  url: 網路地址
+  origin: 目標
+
+friendlink: 我的夥伴
+
+#footer
+come: 動力來自
+theme: 樣式

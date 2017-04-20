@@ -1,0 +1,40 @@
+transition-duration()
+    transition-duration: arguments
+    -moz-transition-duration: arguments
+    -webkit-transition-duration: arguments
+transition()
+    transition: arguments
+    -moz-transition: arguments
+    -webkit-transition: arguments
+transform()
+    transform: arguments
+    -ms-transform: arguments
+    -moz-transform: arguments
+    -webkit-transform: arguments
+transition-delay()
+    transition-delay: arguments
+    -moz-transition-delay: arguments
+    -webkit-transition-delay: arguments
+//global setting
+line-height = 1.5em
+fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
+$font-article-global = 'Hiragino Sans GB', 'Noto SansCJK', "微软雅黑", sans-serif
+yard = 8px
+
+$lang = {html:"HTML", js:"JavaScript", bash:"BASH", sh:"Shell", css:"CSS", scss:"SCSS", diff:"Diff", java:"JAVA", xml:"XML", python:"Python", yml:"YAML", swift:"Swift", ruby:"Ruby", perl:"Perl", php:"PHP", c:"CLang", cpp:"C++"}
+
+//global style
+*
+    font-family fonts
+    transition-duration .35s
+    outline none
+body
+    height 0
+    -webkit-font-smoothing antialiased
+
+a
+    -webkit-tap-highlight-color transparent
+
+for $s, $t in $lang
+    .highlight.{$s}:after
+        content: $t
