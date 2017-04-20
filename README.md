@@ -6,7 +6,7 @@
 
 [在线预览](https://colmugx.github.io/PersonalBlog)
 
-![Slvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.jpg)
+![Slvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.png)
 
 ## 特点 Special
 
@@ -49,11 +49,13 @@ theme: Slvi
 有需要就单独wiki吧。
 
 ## 其他平台图片 Picture
-![Slvi-tablet](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-tablet.jpg)
+![Slvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
+
+![Slvi-tablet](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-tablet.png)
 
 平板版本
 
-![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.jpg)
+![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
 
 手机版本
 
