@@ -56,15 +56,10 @@ theme: Slvi
 有需要就单独wiki吧。
 
 ## 其他平台图片 Picture
-![Slvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
-
-![Slvi-tablet](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-tablet.png)
-
-平板版本
 
 ![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
 
-手机版本
+![Slvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
 
 ### 支持 Support
 
