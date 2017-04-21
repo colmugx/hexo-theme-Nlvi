@@ -2,11 +2,13 @@
 
 > A simple theme named Slvi for hexo.
 
-目前我自己最满意的主题，就这个主题一直维护下去了。什么各种奇技淫巧都要用了。（但愿HEXO能一直活下去…
-
 [在线预览](https://colmugx.github.io/PersonalBlog)
 
 ![Slvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.png)
+
+![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
+
+目前我自己最满意的主题，就这个主题持续维护一直到过气。什么各种奇技淫巧都要用了。（但愿HEXO能一直活下去…
 
 ## 特点 Special
 
@@ -55,9 +57,7 @@ theme: Slvi
 
 有需要就单独wiki吧。
 
-## 其他平台图片 Picture
-
-![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
+## 博客动图展示 Gif
 
 ![Slvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
 
