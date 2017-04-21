@@ -21,6 +21,13 @@
 即将支持
 - 多种文章字体
 
+## 语言 Language
+
+- 简体中文
+- 正體中文（你可以告知我哪裡出問題，多謝。）
+- English ( You can tell me where wrong, Thx. )
+- 日本語 「君は私の問題を指示することができ、ありがとうございました。」
+
 ## 下载 Download
 
 1. `git clone theme-rousy https://github.com/ColMugX/hexo-theme-Rousy.git`
