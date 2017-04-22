@@ -55,7 +55,7 @@ theme: Slvi
 
 在主题的`_config.yml`应该没什么好配置的。比较浅显易懂。
 
-有需要就单独wiki吧。
+[单独Wiki](https://github.com/ColMugX/hexo-theme-Slvi/wiki)
 
 ## 博客动图展示 Gif
 
