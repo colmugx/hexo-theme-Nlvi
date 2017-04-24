@@ -12,7 +12,7 @@
         </span>
         <span>
             {{ __('theme') }}
-            <a href="https://github.com/ColMugX/hexo-theme-Slvi"> Slvi </a>
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
         </span>
     </div>
 </div>

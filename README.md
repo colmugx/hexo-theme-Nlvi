@@ -1,6 +1,6 @@
-# hexo-theme-Slvi
+# hexo-theme-Nlvi
 
-> A simple theme named Slvi for hexo.
+> A simple theme named Nlvi for hexo.
 
 [在线预览](https://colmugx.github.io/PersonalBlog)
 
@@ -28,7 +28,7 @@
 - 简体中文
 - 正體中文（你可以告知我哪裡出問題，多謝。）
 - English ( You can tell me where wrong, Thx. )
-- 日本語 「君は私の問題を指示することができ、ありがとうございました。」
+- 日本語 「君は私の問題を指示することができです、ありがとうございました。」
 
 ## 下载 Download
 
@@ -55,7 +55,7 @@ theme: Slvi
 
 在主题的`_config.yml`应该没什么好配置的。比较浅显易懂。
 
-[单独Wiki](https://github.com/ColMugX/hexo-theme-Slvi/wiki)
+[单独Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
 ## 博客动图展示 Gif
 
