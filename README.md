@@ -32,7 +32,7 @@
 
 ## 下载 Download
 
-1. `git clone theme-rousy https://github.com/ColMugX/hexo-theme-Rousy.git`
+1. `git clone theme/Nlvi https://github.com/ColMugX/hexo-theme-Nlvi.git`
 
 2.  `Download ZIP`
 
@@ -46,7 +46,7 @@
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Slvi
+theme: Nlvi
 ```
 
 ## 配置 Setting
