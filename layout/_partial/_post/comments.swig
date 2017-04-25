@@ -4,4 +4,5 @@
         {% include "../../_script/_comment/uyan.swig" %}
         {% include "../../_script/_comment/duoshuo.swig" %}
     </div>
+    {% include "../../_script/_comment/disqus.swig" %}
 {% endif %}
