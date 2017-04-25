@@ -18,16 +18,35 @@ transition-delay()
 //global setting
 line-height = 1.5em
 fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
-$font-article-global = 'Hiragino Sans GB', 'Noto SansCJK', "微软雅黑", sans-serif
+$font-article-global = 'Hiragino Sans GB', 'Roboto', 'Noto SansCJK', "微软雅黑", sans-serif
 yard = 8px
 
-$lang = {html:"HTML", js:"JavaScript", bash:"BASH", sh:"Shell", css:"CSS", scss:"SCSS", diff:"Diff", java:"JAVA", xml:"XML", python:"Python", yml:"YAML", swift:"Swift", ruby:"Ruby", perl:"Perl", php:"PHP", c:"CLang", cpp:"C++"}
+$lang = {html:"HTML", js:"JavaScript", ts:"TypeScript", bash:"BASH", sh:"Shell", css:"CSS", scss:"SCSS", diff:"Diff", java:"JAVA", xml:"XML", python:"Python", yml:"YAML", swift:"Swift", ruby:"Ruby", perl:"Perl", php:"PHP", c:"CLang", cpp:"C++", cs:"C#"}
 
 //global style
 *
     font-family fonts
     transition-duration .35s
     outline none
+
+::-webkit-scrollbar
+    width 6px
+    height 1px
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb
+    border-radius 3px
+    background-color $color-back
+
+::-webkit-scrollbar-thumb
+    background-color $color-main
+
+::selection
+    background-color $color-line
+
+::-webkit-selection
+    background-color $color-line
+
 body
     height 0
     -webkit-font-smoothing antialiased
