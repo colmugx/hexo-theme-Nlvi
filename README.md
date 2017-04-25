@@ -4,11 +4,15 @@
 
 [在线预览](https://colmugx.github.io/PersonalBlog)
 
-![Slvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.png)
+[主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
-![Slvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
+![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.png)
 
-目前我自己最满意的主题，就这个主题持续维护一直到过气。什么各种奇技淫巧都要用了。（但愿HEXO能一直活下去…
+![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
+
+目前我自己最满意的主题，就这个主题持续维护一直到过气。（但愿HEXO能一直活下去…
+
+喜欢我的主题的小伙伴请不要吝啬你的Star，使用了我的主题请务必告诉我喔~
 
 ## 特点 Special
 
@@ -55,11 +59,10 @@ theme: Nlvi
 
 在主题的`_config.yml`应该没什么好配置的。比较浅显易懂。
 
-[单独Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
 ## 博客动图展示 Gif
 
-![Slvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
+![Nlvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif)
 
 ### 支持 Support
 
