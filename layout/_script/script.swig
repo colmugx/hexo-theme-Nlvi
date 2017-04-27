@@ -1,4 +1,4 @@
-{{ js('script/slvi') }}
+{{ js('script/nlvi') }}
 {% if theme.lightbox %}
     {{ js('lightbox/js/lightbox.min') }}
 {% endif %}
@@ -7,11 +7,12 @@ $(document).ready(function(){
     document.body.addEventListener('touchstart', function () {});
     $('.progress').hide();
     $('.body').show();
-    Slvi.tagcloud();
-    Slvi.back2top();
-    Slvi.showComments();
+    Nlvi.tagcloud();
+    Nlvi.back2top();
+    Nlvi.showComments();
+    Nlvi.showReward()
 
-    !CONFIG.animate && Slvi.offAnimate();
-    CONFIG.lightbox && Slvi.onPicBox();
+    !CONFIG.animate && Nlvi.offAnimate();
+    CONFIG.lightbox && Nlvi.onPicBox();
 })
 </script>

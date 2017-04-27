@@ -10,7 +10,7 @@ menu:
   about: /about
   # RSS: /atom.xml
 
-  # favicon
+# favicon
 favicon:
 
 # ===========================================
@@ -21,22 +21,28 @@ favicon:
 # toc: false
 
 # Use copyright infomation
-copyright: false
-# license:
+copyright:
+  enable: false
+  license:
 
-#Reword button or message
-reward: false
+#Reword button or message(fill your QRCode of any Pay.)
+reward:
+  enable: false
+  alipay:
+  wechat:
+  paypal:
 
 # ===========================================
 # Social Contact
 # ===========================================
 
 # Comments // Please only switch one on.
-comments: false
-# duoshuo:
-# uyan:
-# netease:
-# disqus:
+comments:
+  enable: false
+  disqus:
+  uyan:
+  duoshuo:
+  netease:
 
 # sub //Please just fill out ID.
 sub:
@@ -46,14 +52,18 @@ sub:
 #  zhihu:
 
 #Friend link
-friendLink:
+#friendLink:
 
 # ===========================================
 # Analytics
 # ===========================================
 
 # google_analytics:
+
 # baidu_analytics:
+
+#visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
+visit_count: false
 
 # ===========================================
 # Theme Settings
@@ -77,6 +87,6 @@ self: Die!!!Die!!!!Die!!!!!!!!
 # ===========================================
 # Version
 # ===========================================
-version: 1.1
+version: 1.2
 
 #theme_author: Co1MugX

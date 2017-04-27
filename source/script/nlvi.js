@@ -1,6 +1,6 @@
 (function() {
     "use strict"
-    var Slvi = {
+    var Nlvi = {
         tagcloud() {
             $('#tags').click(function() {
                 $('.body').each(function() {
@@ -53,8 +53,20 @@
                     })
                 }
             })
+        },
+
+        showReward() {
+            $('#reward-btn').click(function () {
+                if($('#reward-wrapper').css('display') == 'none') {
+                    $('#reward-wrapper').css('display', 'flex').addClass('syuanpi fallIn-light')
+                } else {
+                    $('#reward-wrapper').removeClass('fallIn-light').addClass('riseOut-light').one('webkitAnimationEnd AnimationEnd', function() {
+                        $(this).removeClass('syuanpi riseOut-light').css('display', 'none')
+                    })
+                }
+            })
         }
     }
 
-    this.Slvi = Slvi
+    this.Nlvi = Nlvi
 }.call(this))

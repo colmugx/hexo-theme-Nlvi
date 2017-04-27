@@ -1,4 +1,4 @@
-{% if theme.netease %}
+{% if theme.comments.netease %}
     <div class="cloud-tie-wrapper" id="cloud-tie-wrapper"></div>
     <script>
       var cloudTieConfig = {

@@ -1,4 +1,4 @@
-{% if theme.copyright %}
+{% if theme.copyright.enable %}
     <hr class="copy-line">
     <div class="post-copyright">
         <div class="copy-author">
@@ -14,7 +14,7 @@
             <a href="{{ config.url }}">{{ config.url }}</a>
         </div>
         <div class="copy-license">
-            {% set license = theme.license || "著作权归作者所有，转载请联系作者获得授权。" %}
+            {% set license = theme.copyright.license || "著作权归作者所有，转载请联系作者获得授权。" %}
             {{ license }}
         </div>
     </div>

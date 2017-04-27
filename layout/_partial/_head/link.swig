@@ -20,3 +20,4 @@
 {# any analytics #}
 {% include "../../_script/_analytics/google.swig" %}
 {% include "../../_script/_analytics/baidu.swig" %}
+{% include "../../_script/_analytics/busuanzi.swig" %}

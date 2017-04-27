@@ -1,5 +1,5 @@
 <!-- Disqus Comments -->
-{% if theme.disqus %}
+{% if theme.comments.disqus %}
 <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
