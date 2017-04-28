@@ -3,6 +3,9 @@
     {% set weibo = 'https://weibo.com/' %}
     {% set twitter = 'https://twitter.com/' %}
     {% set zhihu = 'https://www.zhihu.com/people/' %}
+    {% set facebook = 'https://www.facebook.com/' %}
+    {% set linkedin = 'https://www.linkedin.com/in/' %}
+    {% set ins = 'https://www.instagram.com/' %}
     {% for name, path in theme.sub %}
         {% if name == 'github' %}
             <a href="{{github + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
@@ -15,6 +18,15 @@
         {% endif %}
         {% if name == 'zhihu' %}
             <a href="{{ zhihu + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+        {% endif %}
+        {% if name == 'facebook' %}
+            <a href="{{ facebook + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+        {% endif %}
+        {% if name == 'linkedin' %}
+            <a href="{{ linkedin + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+        {% endif %}
+        {% if name == 'instagram' %}
+            <a href="{{ins + path }}" class="iconfont icon-ins" title="{{ name }}"></a>
         {% endif %}
     {% endfor %}
 </div>
