@@ -58,6 +58,7 @@
 .post-content
     for $i in 1 2 3 4 5 6
         h{$i}
+            font-family $font-family-use
             font-weight 300
             margin (yard*2) 0
             &:before
@@ -68,6 +69,7 @@
         &:hover
             color $color-highlight
     p
+        font-family $font-family-use
         margin: yard 0
         line-height line-height
         font-weight 300
@@ -79,10 +81,10 @@
         font-size 14px
     strong
         font-weight bold
-        font-family $font-article-global
+        font-family $font-family-use
     i
         font-weight 100
-        font-family $font-article-global
+        font-family $font-family-use
     img
         width: 500px
     +mobile()
@@ -133,4 +135,4 @@ blockquote
         box-shadow -1px 1px 1px $color-line
     p
         margin 0
-        font-family $font-article-global
+        font-family $font-family-use

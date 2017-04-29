@@ -78,14 +78,22 @@ lightbox: true
 # animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
 animate: true
 
-# style
-theme-style: gray
-
 # Created Time
 since: 1970
 
 #about
 self: Die!!!Die!!!!Die!!!!!!!!
+
+# ===========================================
+# Documents Styles
+# ===========================================
+
+# theme-style
+theme-style: gray
+
+# article-fonts
+# default | Simsun | YaHei | Hel
+fonts-style: default
 
 # ===========================================
 # Version

@@ -15,15 +15,30 @@ transition-delay()
     transition-delay: arguments
     -moz-transition-delay: arguments
     -webkit-transition-delay: arguments
+
 //global setting
 line-height = 1.5em
 fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
-$font-article-global = 'Hiragino Sans GB', 'Roboto', 'Noto SansCJK', "微软雅黑", sans-serif
 yard = 8px
 
 $lang = {html:"HTML", js:"JavaScript", ts:"TypeScript", bash:"BASH", sh:"Shell", css:"CSS", scss:"SCSS", diff:"Diff", java:"JAVA", xml:"XML", python:"Python", yml:"YAML", swift:"Swift", ruby:"Ruby", perl:"Perl", php:"PHP", c:"CLang", cpp:"C++", cs:"C#"}
 
-//global style
+// Font
+$fonts-style = hexo-config("fonts-style")
+$font-article-YaHei = 'Microsoft YaHei', "微软雅黑", sans-serif
+$font-article-Hel = 'Helvetica', 'Hiragino Sans GB', 'Roboto', 'Noto SansCJK', 'Heiti TC', 'Heiti SC', sans-serif
+$font-article-Simsun = 'Times New Roman', 'Simsun', 'STSong', '华文宋体', sans-serif
+
+if $fonts-style == "default"
+    $font-family-use = fonts
+if $fonts-style == "YaHei"
+    $font-family-use = $font-article-YaHei
+if $fonts-style == "Simsun"
+    $font-family-use = $font-article-Simsun
+if $fonts-style == "Hel"
+    $font-family-use = $font-article-Hel
+
+// global style
 *
     font-family fonts
     transition-duration .35s
