@@ -17,7 +17,10 @@ favicon:
 # Article Setting
 # ===========================================
 
-# Navigator in post
+# Header Sign
+header_sign: ∮
+
+# Navigator in post (unfinished)
 # toc: false
 
 # Use copyright infomation
