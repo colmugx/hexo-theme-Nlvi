@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('.body').show();
     Nlvi.tagcloud();
     Nlvi.back2top();
+    Nlvi.showToc();
     Nlvi.showComments();
     Nlvi.showReward()
 

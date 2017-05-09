@@ -3,7 +3,7 @@
 </div>
 <script type="text/javascript">
   var duoshuoQuery = {
-    short_name: "{{theme.duoshuo}}"
+    short_name: "{{theme.comments.duoshuo}}"
   };
   (function () {
     var ds = document.createElement('script');

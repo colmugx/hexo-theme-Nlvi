@@ -1,0 +1,44 @@
+.post-toc
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    height 40%
+    width 200px
+    margin auto (yard*3) auto 0
+    border none
+    line-height 1.3rem
+
+    li
+        padding-left (yard*3)
+
+    .title
+        display block
+        margin 0 auto
+        text-align center
+        width 50%
+        border-bottom 1px solid $color-highlight
+    .title-link
+        list-style none
+        margin-top (yard*2)
+        a
+            text-decoration none
+            color $color-main
+            padding: 0 (yard)
+            &.active
+                border-left 2px solid $color-main
+                // border-right 2px solid $color-main
+
+    .toc
+        margin 0
+        padding 0
+        list-style none
+        .toc-item
+            color $color-main
+            .toc-link
+                color $color-main
+                text-decoration none
+                padding: 0 (yard)
+                &.active
+                    border-left 2px solid $color-main
+                    // border-right 2px solid $color-main

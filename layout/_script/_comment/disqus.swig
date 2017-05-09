@@ -4,7 +4,7 @@
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 <script type="text/javascript">
-    var disqus_shortname = '{{theme.disqus}}';
+    var disqus_shortname = '{{theme.comments.disqus}}';
 
     (function(){
         var dsq = document.createElement('script');

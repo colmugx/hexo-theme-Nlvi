@@ -4,7 +4,7 @@
       var cloudTieConfig = {
           url: document.location.href,
           sourceId: "",
-          productKey: "{{ theme.netease }}",
+          productKey: "{{ theme.comments.netease }}",
           target: "cloud-tie-wrapper"
       };
     </script>

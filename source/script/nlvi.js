@@ -33,10 +33,16 @@
                     } else {
                         $('#backtop').addClass('dead').removeClass('bloom')
                     }
+
+                    var scrollTop = $(window).scrollTop()
+                    var docHeight = $(document).height()
+                    var winHeight = $(window).height()
+                    var scrollPercent = (scrollTop) / (docHeight - winHeight)
+                    var scrollPercentRounded = Math.round(scrollPercent*100)
+                    $('#scrollpercent').html(scrollPercentRounded)
                 });
             });
-
-            $('#backtop').click(function() {
+            $('.toTop').click(function() {
                 $('body').animate({ scrollTop: 0 })
             })
         },
@@ -63,6 +69,38 @@
                     $('#reward-wrapper').removeClass('fallIn-light').addClass('riseOut-light').one('webkitAnimationEnd AnimationEnd', function() {
                         $(this).removeClass('syuanpi riseOut-light').css('display', 'none')
                     })
+                }
+            })
+        },
+
+        showToc() {
+            var $toclink = $('.toc-link')
+            var $headerlink = $('.headerlink')
+            var h = 30
+
+            $(window).scroll(function () {
+                var $scrollTop = $(window).scrollTop()
+                var headerlinkTop = $.map($headerlink, function (link) {
+                    return $(link).offset().top;
+                })
+                $('.title-link a').each(function () {
+                    if($scrollTop >= 0 && $scrollTop < 230) {
+                        $(this).addClass('active')
+                    } else {
+                        $(this).removeClass('active')
+                    }
+                })
+
+                for (var i = 0; i < $toclink.length; i++) {
+                    var isLastOne = i + 1 === $toclink.length,
+                        currentTop = headerlinkTop[i],
+                        nextTop = isLastOne ? Infinity : headerlinkTop[i + 1]
+
+                    if (currentTop < $scrollTop && $scrollTop <= nextTop) {
+                        $($toclink[i]).addClass('active')
+                    } else {
+                        $($toclink[i]).removeClass('active')
+                    }
                 }
             })
         }
