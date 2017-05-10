@@ -5,19 +5,40 @@
     bottom 0
     height 40%
     width 200px
-    margin auto (yard*3) auto 0
+    margin auto (yard*5) auto 0
     border none
-    line-height 1.3rem
-
-    li
-        padding-left (yard*3)
+    line-height 1.5rem
+    word-wrap break-word
+    box-sizing border-box
+    .toc-inner
+        &::-webkit-scrollbar
+            width 1px
+            height 1px
+        height: 80%
+        overflow: auto
+        white-space nowrap
+        padding (yard)
+    ol
+        list-style none
+        padding-left (yard*2)
 
     .title
         display block
         margin 0 auto
         text-align center
         width 50%
-        border-bottom 1px solid $color-highlight
+        // border-bottom 1px solid $color-highlight
+        position relative
+        &:before
+            content ''
+            position absolute
+            height 1px
+            bottom 0
+            left 0
+            right 100%
+            background: $color-border
+            transition-property right
+            animation: lane-right 0.35s linear both
     .title-link
         list-style none
         margin-top (yard*2)
@@ -25,10 +46,9 @@
             text-decoration none
             color $color-main
             padding: 0 (yard)
+            font-size 14px
             &.active
                 border-left 2px solid $color-main
-                // border-right 2px solid $color-main
-
     .toc
         margin 0
         padding 0
@@ -39,6 +59,17 @@
                 color $color-main
                 text-decoration none
                 padding: 0 (yard)
+                font-size 14px
                 &.active
                     border-left 2px solid $color-main
-                    // border-right 2px solid $color-main
+
+    +mobile()
+        display none
+    +tablet()
+        display none
+
+@keyframes lane-right
+    from
+        right: 100%
+    to
+        right 0
