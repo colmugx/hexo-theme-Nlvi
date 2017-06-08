@@ -19,9 +19,10 @@
 - 使用了动画库 [Syuanpi.css](https://colmugx.github.io/Syuanpi.css)（极轻，未来将支持更多内容
 - 动画可以关闭
 - 使用了lightbox（并没有随波逐流fancybox
+- 传递心意的本地搜索功能
 - 文章打赏，打赏自定义
 - 版权说明，协议自定义
-- 五颜六色（逃
+- 五颜六色（熊猫的心愿
 - 可定制范围大
 
 ## 语言 Language
