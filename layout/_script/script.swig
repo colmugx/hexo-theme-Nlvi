@@ -1,4 +1,5 @@
 {{ js('script/nlvi') }}
+{{ js('script/search') }}
 {% if theme.lightbox %}
     {{ js('lightbox/js/lightbox.min') }}
 {% endif %}
@@ -11,7 +12,7 @@ $(document).ready(function(){
     Nlvi.back2top();
     Nlvi.showToc();
     Nlvi.showComments();
-    Nlvi.showReward()
+    Nlvi.showReward();
 
     !CONFIG.animate && Nlvi.offAnimate();
     CONFIG.lightbox && Nlvi.onPicBox();
