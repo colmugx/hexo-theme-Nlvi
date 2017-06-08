@@ -27,6 +27,11 @@
             color #FFF
             font-weight 100
             font-size 3.6rem
+            +tablet()
+                font-size: 3rem
+            +mobile()
+                font-size 1.2rem
+
         input
             width 800px
             height 60px
@@ -38,15 +43,28 @@
             font-size 32px
             padding yard
             font-weight 100
+            +tablet()
+                width 570px
+                font-size 24px
+            +mobile()
+                width 230px
+                font-size 18px
+                height 24px
 
     #local-search-result
         background-color rgba(0, 0, 0, 0.2)
+        +tablet()
+            width 590px
+        +mobile()
+            width 100%
         .search-result-list
             font-weight 300
             list-style none
             width 800px
             color #FFF
             padding yard
+            +tablet()
+                width auto
             .search-result-title
                 color #FFF
                 text-decoration none
