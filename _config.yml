@@ -116,12 +116,12 @@ greetings:
 theme-style: gray
 
 # article-fonts
-# default | Simsun | YaHei | Hel
+# default | Simsun | YaHei | Hel | Custom
 fonts-style: default
 
 # ===========================================
 # Version
 # ===========================================
-version: 1.4
+version: 1.5
 
 #theme_author: Co1MugX
