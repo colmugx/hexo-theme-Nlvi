@@ -44,8 +44,14 @@ comments:
   enable: false
   disqus:
   uyan:
-  duoshuo:
-  netease:
+  changyan:
+    appid:
+    appkey:
+  gitment:
+    owner:
+    repo:
+    client_id:
+    client_secret:
 
 # sub //Please just fill out ID.
 sub:
@@ -85,7 +91,7 @@ animate: true
 since: 1970
 
 #about
-self: Die!!!Die!!!!Die!!!!!!!!
+self:
 
 # ===========================================
 # Search Settings
@@ -122,6 +128,6 @@ fonts-style: default
 # ===========================================
 # Version
 # ===========================================
-version: 1.5
+version: 1.6
 
 #theme_author: Co1MugX
