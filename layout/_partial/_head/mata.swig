@@ -5,7 +5,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#999999">
 <meta name="msapplication-navbutton-color" content="#666666">
 <meta name="keywords" content="nlvi, Nlvi" />
-<meta name="viewport" content="user-scalable=no">
 {% if config.subtitle %}
     <meta name="subtitle" content="{{ config.subtitle }}">
 {% endif %}
