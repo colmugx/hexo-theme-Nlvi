@@ -10,6 +10,8 @@ $(document).ready(function(){
     $('.body').show();
     Nlvi.tagcloud();
     Nlvi.back2top();
+    Nlvi.smoothScroll();
+    Nlvi.onView();
     Nlvi.showToc();
     Nlvi.showComments();
     Nlvi.showReward();

@@ -25,6 +25,24 @@
             })
         },
 
+        smoothScroll() {
+            $('.toc-link').click(function() {
+                $('body').animate({ scrollTop: $($.attr(this, 'href')).offset().top - 200 })
+            })
+        },
+
+        onView() {
+            var title = document.title
+            document.addEventListener('visibilitychange', function() {
+                var sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
+                if (document.hidden) {
+                    document.title = 'Read '+sct+'% · '+document.title
+                } else {
+                    document.title = title
+                }
+            })
+        },
+
         back2top() {
             $(window).each(function() {
                 $(this).scroll(function() {
@@ -38,7 +56,7 @@
                     var docHeight = $(document).height()
                     var winHeight = $(window).height()
                     var scrollPercent = (scrollTop) / (docHeight - winHeight)
-                    var scrollPercentRounded = Math.round(scrollPercent*100)
+                    var scrollPercentRounded = Math.floor(scrollPercent*100)
                     $('#scrollpercent').html(scrollPercentRounded)
                 });
             });
@@ -96,7 +114,7 @@
                         currentTop = headerlinkTop[i],
                         nextTop = isLastOne ? Infinity : headerlinkTop[i + 1]
 
-                    if (currentTop < $scrollTop && $scrollTop <= nextTop) {
+                    if (currentTop < $scrollTop + 200 && $scrollTop + 200 <= nextTop) {
                         $($toclink[i]).addClass('active')
                     } else {
                         $($toclink[i]).removeClass('active')
