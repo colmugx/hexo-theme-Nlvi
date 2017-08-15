@@ -12,5 +12,6 @@
                 <h2 class="title"> {{ __('nav.about') }} </h2>
                 <div class="content"> {{ theme.self }} </div>
             </div>
+            {% include "_partial/_post/comments.swig" %}
         {% endif %}
     {% endblock %}

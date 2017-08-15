@@ -3,13 +3,12 @@
     var Nlvi = {
         tagcloud() {
             $('#tags').click(function() {
-                $('.body').each(function() {
-                    if ($(this).hasClass('show-tag')) {
-                        $(this).removeClass('show-tag')
-                    } else {
-                        $(this).addClass('show-tag')
-                    }
-                })
+                $('#tagcloud').css({'transform': 'translateY(0px)', '-webkit-transform': 'translateY(0px)'})
+                $('.tagcloud-mask').css({'background': 'rgba(0, 0, 0, 0.3)', 'z-index': '500'})
+            })
+            $('.tagcloud-mask').click(function() {
+                $('#tagcloud').css('transform', '').css('-webkit-transform', '')
+                $('.tagcloud-mask').css('background', '').css('z-index', '')
             })
         },
 
@@ -33,12 +32,18 @@
 
         onView() {
             var title = document.title
+            var tme
             document.addEventListener('visibilitychange', function() {
                 var sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
+                if ($(document).height() - $(window).height() === 0) sct = 100
                 if (document.hidden) {
+                    clearTimeout(tme)
                     document.title = 'Read '+sct+'% · '+document.title
                 } else {
-                    document.title = title
+                    document.title = 'Welcome Back · ' + title
+                    tme = setTimeout(function() {
+                        document.title = title
+                    }, 3000)
                 }
             })
         },

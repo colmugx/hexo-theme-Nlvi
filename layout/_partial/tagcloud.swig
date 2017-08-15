@@ -1,3 +1,4 @@
+<div class="tagcloud-mask"></div>
 <div class="tagcloud" id="tagcloud">
     <div class="tagcloud-inner">
         {{ tagcloud(site.tags, {
