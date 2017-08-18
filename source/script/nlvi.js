@@ -10,6 +10,38 @@
                 $('#tagcloud').css('transform', '').css('-webkit-transform', '')
                 $('.tagcloud-mask').css('background', '').css('z-index', '')
             })
+            $('#mobile-tags').click(function() {
+                $('.inner-cloud').css('transform', 'translateX(-96%)')
+            })
+        },
+
+        mobileHeader() {
+            var that = this
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > $('#header').height()) {
+                    $('.mobile-header').css('top', $('.mobile-header-nav').height() - $('.mobile-header').height())
+                    $('#mobile-left').removeClass('item-clicked')
+                    $('#tagcloud').hide()
+                } else {
+                    $('.mobile-header').css('top', '')
+                    $('#tagcloud').show()
+                }
+            })
+            $('#mobile-left').click(function() {
+                if ($(this).hasClass('item-clicked')) {
+                    return that.closeHeaderMenu()
+                }
+                return that.openHeaderMenu()
+            })
+        },
+
+        closeHeaderMenu() {
+            $('#mobile-left').removeClass('item-clicked')
+            $('.mobile-header').css('top', $('.mobile-header-nav').height() - $('.mobile-header').height())
+        },
+        openHeaderMenu() {
+            $('#mobile-left').addClass('item-clicked')
+            $('.mobile-header').css('top', '0')
         },
 
         offAnimate() {
@@ -63,8 +95,8 @@
                     var scrollPercent = (scrollTop) / (docHeight - winHeight)
                     var scrollPercentRounded = Math.floor(scrollPercent*100)
                     $('#scrollpercent').html(scrollPercentRounded)
-                });
-            });
+                })
+            })
             $('.toTop').click(function() {
                 $('body').animate({ scrollTop: 0 })
             })
@@ -104,7 +136,7 @@
             $(window).scroll(function () {
                 var $scrollTop = $(window).scrollTop()
                 var headerlinkTop = $.map($headerlink, function (link) {
-                    return $(link).offset().top;
+                    return $(link).offset().top
                 })
                 $('.title-link a').each(function () {
                     if($scrollTop >= 0 && $scrollTop < 230) {

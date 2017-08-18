@@ -40,4 +40,3 @@
 {% endif %}
 </div>
 </nav>
-<div class="mobile-nav"></div>

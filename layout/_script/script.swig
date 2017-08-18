@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('.progress').hide();
     $('.body').show();
     Nlvi.tagcloud();
+    Nlvi.mobileHeader();
     Nlvi.back2top();
     Nlvi.smoothScroll();
     Nlvi.onView();

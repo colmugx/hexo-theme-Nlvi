@@ -121,9 +121,18 @@ greetings:
 # theme-style
 theme-style: gray
 
+# mobile-header
+# Light | Dark
+mobile-header: dark
+
 # article-fonts
 # default | Simsun | YaHei | Hel | Custom
 fonts-style: default
+
+# ===========================================
+# WebApp Settings (iOS)
+# ===========================================
+
 
 # ===========================================
 # Version

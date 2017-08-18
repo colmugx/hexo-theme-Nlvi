@@ -34,6 +34,8 @@
     width 80%
     margin (yard*3) auto
     font-weight 500
+    +mobile()
+        text-align center
     a
         text-decoration none
         color $color-main
@@ -42,6 +44,12 @@
             font-size 12px
         &:hover
             color $color-highlight
+
+    .next-title
+    .prev-title
+        i
+            vertical-align middle
+
 
     &:before
         content ''
@@ -52,9 +60,17 @@
 
     .art-right
         float right
+        +mobile()
+            float none
+            display block
+            margin-bottom (yard*2)
         &:hover
             transform translateX(10%)
     .art-left
         float left
+        +mobile()
+            float none
+            display block
+            margin-top (yard*2)
         &:hover
             transform translateX(-10%)
