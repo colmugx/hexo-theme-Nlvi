@@ -4,7 +4,7 @@
         <div class="search-wrapper syuanpi">
             <h1 id="search-header" class="syuanpi">搜索一下？</h1>
             <div class="input">
-                <input type="text" id="local-search-input" autofocus results="0" name="">
+                <input type="text" id="local-search-input" results="0" name="">
             </div>
             <div id="local-search-result"></div>
         </div>
