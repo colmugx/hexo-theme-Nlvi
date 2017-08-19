@@ -40,6 +40,13 @@ $header-sign = hexo-config("header_sign")
             font-weight 400
             font-size 14px
             color: $color-main
+            .post-category
+                font-size inherit
+                a
+                    text-decoration none
+                    color $color-main
+                &:before
+                    content ' · '
         .post-title
             margin 0
             padding: 5px 0

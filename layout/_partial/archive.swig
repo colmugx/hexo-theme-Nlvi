@@ -6,6 +6,9 @@
         {% elif page.tag %}
             <h2 class="archive-title"> {{ __('page.now') }} </h2>
             <span class="archive-name"> — {{ page.tag }}</span>
+        {% elif page.category %}
+            <h2 class="archive-title"> {{ __('page.now') }} </h2>
+            <span class="archive-name"> — {{ page.category }}</span>
         {% endif %}
         <div class="archive-list">
             <ul>

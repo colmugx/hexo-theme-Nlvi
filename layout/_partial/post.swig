@@ -2,7 +2,12 @@
     <article class="post">
         <header class="post-header">
             <div class="post-time syuanpi riseIn-light back-1">
-                <span>{{ full_date(post.date, 'll') }}</span>
+                <span>{{ full_date(post.date, 'LL') }}</span>
+                {% if post.categories and post.categories.length %}
+                {% for category in post.categories %}
+                    <span class="post-category"><a href="{{ url_for(category.path) }}">{{ category.name }}</a></span>
+                {% endfor %}
+                {% endif %}
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             {% if is_post() %}
