@@ -70,7 +70,7 @@
                 if ($(document).height() - $(window).height() === 0) sct = 100
                 if (document.hidden) {
                     clearTimeout(tme)
-                    document.title = 'Read '+sct+'% · '+document.title
+                    document.title = 'Read '+sct+'% · '+title
                 } else {
                     document.title = 'Welcome Back · ' + title
                     tme = setTimeout(function() {

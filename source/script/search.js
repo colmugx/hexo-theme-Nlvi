@@ -8,19 +8,25 @@
 
     $search.click(function () {
       $('.search').show();
-      $('.search-wrapper').addClass('bloom')
+      if ($('.search-wrapper').hasClass('syuanpi')) {
+        $('.search-wrapper').addClass('bloom')
+      }
     })
     $mask.click(function () {
-      $('.search-wrapper').removeClass('bloom').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
-        $(this).removeClass('dead');
-        $('.search').hide();
-      })
+      if ($('.search-wrapper').hasClass('syuanpi')) {
+        $('.search-wrapper').removeClass('bloom').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
+          $(this).removeClass('dead');
+          $('.search').hide();
+        })
+      } else $('.search').hide();
     })
     $header.click(function () {
-      $('.search-wrapper').removeClass('bloom').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
-        $(this).removeClass('dead');
-        $('.search').hide();
-      })
+      if ($('.search-wrapper').hasClass('syuanpi')) {
+        $('.search-wrapper').removeClass('bloom').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
+          $(this).removeClass('dead');
+          $('.search').hide();
+        })
+      } else $('.search').hide();
     })
 
     var nowDate = new Date()
