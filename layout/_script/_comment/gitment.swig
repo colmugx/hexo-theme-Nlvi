@@ -1,4 +1,3 @@
-{% if theme.comments.gitment %}
 <!-- Gitment Comments -->
 <div id="gitment"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -14,4 +13,3 @@ var gitment = new Gitment({
 })
 gitment.render('gitment')
 </script>
-{% endif %}

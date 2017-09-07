@@ -40,8 +40,9 @@ reward:
 # ===========================================
 
 # Comments // Please only switch one on.
+# disqus | uyan | changyan | gitment
 comments:
-  enable: false
+  type: uyan
   disqus:
   uyan:
   changyan:
