@@ -96,7 +96,10 @@ $header-sign = hexo-config("header_sign")
         font-weight 100
         font-family $font-family-use
     img
-        width: 500px
+        width 100%
+        max-width 500px
+        +mobile()
+            max-width 300px
     +mobile()
         font-size 14px
 .content-link
