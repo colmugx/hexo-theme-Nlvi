@@ -16,6 +16,7 @@ $(document).ready(function(){
     Nlvi.showToc();
     Nlvi.showComments();
     Nlvi.showReward();
+    Nlvi.picPos();
 
     !CONFIG.animate && Nlvi.offAnimate();
     CONFIG.lightbox && Nlvi.onPicBox();
