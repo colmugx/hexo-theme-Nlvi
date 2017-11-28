@@ -46,7 +46,7 @@
     }
 
     $.ajax({
-      url: '/search.xml',
+      url: 'search.xml',
       dataType: 'xml',
       success: function (xmlResponse) {
         var searchData = $('entry', xmlResponse).map(function () {

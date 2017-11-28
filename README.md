@@ -10,9 +10,9 @@
 
 ![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
 
-目前我自己最满意的主题，就这个主题持续维护一直到过气。（但愿HEXO能一直活下去…
+目前我自己最满意的主题，就这个主题持续维护一直到过气。
 
-喜欢我的主题的小伙伴请不要吝啬你的Star，使用了我的主题请务必告诉我喔~（千万要记得star噢~）
+喜欢我的主题的小伙伴请不要吝啬你的Star，使用了我的主题请务必告诉我喔~
 
 ## 特点 Special
 

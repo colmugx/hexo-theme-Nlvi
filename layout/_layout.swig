@@ -9,7 +9,7 @@
     <div class="body">
     {% include "_partial/tagcloud.swig" %}
     {% include "_partial/header.swig" %}
-    <div class="container">
+    <div class="container {%if is_post() %} ispost {%endif%} ">
         <main class="main" id="main">
             {% block main %} {% endblock %}
         </main>

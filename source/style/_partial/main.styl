@@ -1,10 +1,14 @@
 .container
     width 800px
     margin 0 auto
-
-+tablet()
-    .container
+    +tablet()
         width 100%
+    &.ispost
+        width 70%
+        margin 0 208px 0 auto
+        +tablet()
+            width 100%
+            margin 0
 
 .main
     margin (yard*3) auto
