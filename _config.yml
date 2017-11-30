@@ -129,6 +129,10 @@ mobile-header: dark
 # default | Simsun | YaHei | Hel | Custom
 fonts-style: default
 
+# code-fonts
+# default | Custom
+code-style: default
+
 # ===========================================
 # WebApp Settings (iOS)
 # ===========================================

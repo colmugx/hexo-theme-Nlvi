@@ -40,6 +40,12 @@ if $fonts-style == "Hel"
 if $fonts-style == "Custom"
     $font-family-use = $custom-fonts-style
 
+// Code Font
+if hexo-config("code-style") == 'Custom'
+    code-fonts = $custom-code-fonts-style
+else
+    code-fonts = 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
 // global style
 *
     font-family fonts
