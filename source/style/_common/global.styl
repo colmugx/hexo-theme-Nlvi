@@ -1,0 +1,30 @@
+*
+  font-family $article-fonts
+  transition-duration .35s
+  outline none
+
+:-webkit-scrollbar
+    width 6px
+    height 1px
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb
+    border-radius 3px
+    background-color $theme-select.main
+
+::-webkit-scrollbar-thumb
+    background-color $theme-select.main
+
+::selection
+    background-color $theme-select.highlight
+
+::-webkit-selection
+    background-color $theme-select.highlight
+
+body
+  height 0
+  -webkit-font-smoothing antialiased
+  -webkit-overflow-scrolling touch
+
+a
+  -webkit-tap-highlight-color transparent

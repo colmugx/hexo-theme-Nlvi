@@ -1,0 +1,63 @@
+// ==============================
+// Variable
+// ==============================
+
+// ======== Space ========
+line-height = 1.5em
+yard = 8px
+
+// ======== Font ========
+
+// Article Font
+$article-fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
+
+// Code Font
+$code-fonts = 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+// ======== Color ========
+
+// Code highlight
+$color-code-background = #f7f7f7
+$color-code-plain = #2c2c2c
+$color-code-line = #bbb
+$color-code-keyword = #c678dd
+$color-code-builtIn = #e6c07b
+$color-code-string = #98c379
+$color-code-params = #5799de
+$color-code-number = #d19a66
+$color-code-title = #e06c75
+$color-code-comment = #a1a4aa
+$color-code-attribute = #61aeee
+$color-code-symbol = #cb4b16
+
+// ======== Global ========
+$global = {
+  font-size: 16px,
+  body-width: 800px,
+  color: #353535,
+  container-padding: (yard*2)
+}
+
+// ======== Theme ========
+$theme-style = hexo-config("theme-style")
+
+$theme-list = {
+  default: {
+    main: '#666',
+    highlight: '#000',
+    color: '#353535'
+  },
+  pink: {
+    main: '#fe89c3',
+    highlight: '#ff99cc'
+  },
+  miku: {
+    main: '#39C5BB',
+    highlight: '#54DDD3'
+  }
+}
+
+unless $theme-style in $theme-list
+  $theme-select = $theme-list['default']
+else
+  $theme-select = $theme-list[$theme-style]

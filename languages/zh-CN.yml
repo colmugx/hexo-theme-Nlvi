@@ -1,0 +1,31 @@
+nav:
+  article: 文章
+  archives: 归档
+  tags: 标签
+  categories: 分类
+  about: 关于
+  menu: 菜单
+  search: 搜索
+  RSS: 订阅
+
+page:
+  prev: < 上一页
+  next: 下一页 >
+  comment: 留言
+  share: 分享
+  hide: 隐藏
+  readmore: 继续阅读
+  para: 一共有 %d 篇文章
+  now: 正在查看
+  reward: 赞赏
+
+copyright:
+  author: 作者
+  url: 地址
+  origin: 来源
+
+friendlink: 朋友列表
+
+#footer
+come: 动力来源于
+theme: 主题

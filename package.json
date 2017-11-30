@@ -1,0 +1,23 @@
+{
+  "name": "hexo-theme-nlvi",
+  "version": "2.0.0",
+  "description": "A simple theme named Nlvi for hexo.",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColMugX/hexo-theme-Nlvi.git"
+  },
+  "keywords": [
+    "Hexo",
+    "Nlvi"
+  ],
+  "author": "ColMugX <colmugx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ColMugX/hexo-theme-Nlvi/issues"
+  },
+  "homepage": "https://github.com/ColMugX/hexo-theme-Nlvi#readme"
+}

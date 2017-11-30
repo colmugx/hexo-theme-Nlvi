@@ -1,0 +1,138 @@
+# ===========================================
+# Information Settings
+# ===========================================
+
+#navigation
+menu: 
+  article: /
+  archives: /archives
+  tags: /tags
+  about: /about
+  # RSS: /atom.xml
+
+  # favicon
+favicon: 
+
+# ===========================================
+# Article Setting 
+# ===========================================
+
+# Header Sign
+header_sign: ∮
+
+# Navigator in post
+toc: true
+
+# Use copyright infomation
+copyright:
+  enable: true
+  # license: 
+
+#Reword button or message(fill your QRCode of any Pay.)
+reward: 
+  enable: false
+  # alipay: 
+  # wechat: 
+  # paypal: 
+
+# ===========================================
+# Social Contact
+# ===========================================
+
+# Comments // Please only switch one on.
+comments: 
+  enable: true
+  # disqus: 
+  # changyan:
+  #   appid: 
+  #   appkey: 
+  # gitment:
+  #   owner: ColMugX
+  #   repo: gitment-container
+  #   client_id: 5a9c60cc190b92f2f2ba
+  #   client_secret: e31770e8a80c91c63187863e7bc45d349bc5ac99
+
+# sub //Please just fill out ID.
+sub:
+  # facebook: 
+  # twitter: 
+  # instagram: 
+  # weibo: 
+  # zhihu: 
+  # github: 
+  # linkedin: 
+
+#Friend link
+# friendLink: 
+
+# ===========================================
+# Analytics
+# ===========================================
+
+google_analytics: 
+
+#baidu_analytics:
+
+#visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
+visit_count: false
+
+# ===========================================
+# Theme Settings
+# ===========================================
+
+# lightbox
+lightbox: true
+
+# animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
+animate: true
+
+# Created Time
+since: 2016
+
+# about
+# self:  
+
+# ===========================================
+# Search Settings
+# ===========================================
+
+# Search 
+search: true
+
+greetings:
+  morning: '我的博客里可没有早饭！'
+  noon: '记得午休吃饭，不着急看我的博客~'
+  after: '下午好，感谢查阅我的博客'
+  night: '您来我的博客看笑话当做休息嘛'
+  midnight: '我觉得大半夜就不要看啦'
+
+# ===========================================
+# Documents Styles
+# ===========================================
+
+# theme-style
+theme-style: gray
+
+# mobile-header
+# Light | Dark
+mobile-header: dark
+
+# article-fonts
+# default | Simsun | YaHei | Hel | Custom
+fonts-style: default
+
+# code-fonts
+# default | Custom
+code-style: Custom
+
+# ===========================================
+# WebApp Settings (iOS)
+# ===========================================
+
+
+# ===========================================
+# Version
+# ===========================================
+version: 2.0
+
+#theme_author: Co1MugX
