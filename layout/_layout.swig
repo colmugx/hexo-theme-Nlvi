@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ config.language }}">
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    {% include "_partial/head.swig" %}
+  {% include "_partial/head.swig" %}
+  <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    {% include "_partial/progress.swig" %}
-    <div class="body">
-    {% include "_partial/tagcloud.swig" %}
-    {% include "_partial/header.swig" %}
-    <div class="container {%if is_post() %} ispost {%endif%} ">
-        <main class="main" id="main">
-            {% block main %} {% endblock %}
-        </main>
+  {% include "_partial/progress.swig" %}
+  {% include "_partial/tagcloud.swig" %}
+  <div class="container">
 
-        {% block footer %}{% endblock %}
-    </div>
-    {% include "_script/script.swig" %}
-    </div>
-    {% include "_partial/feature.swig" %}
+    {% include "_partial/header.swig" %}
+
+    <main class="main" id="main">
+      <div class="main-wrapper">
+        {% block main %} {% endblock %}
+      </div>
+    </main>
+
+    {% include "./_partial/footer.swig" %}
+  </div>
+  {% include "_script/script.swig" %}
+  {% include "_partial/feature.swig" %}
 </body>
 </html>
