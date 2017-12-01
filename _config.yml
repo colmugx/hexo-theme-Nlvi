@@ -69,9 +69,9 @@ sub:
 # Analytics
 # ===========================================
 
-google_analytics: 
-
-#baidu_analytics:
+analytics:
+  google:
+  baidu:
 
 #visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
 visit_count: false

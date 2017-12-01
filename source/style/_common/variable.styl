@@ -42,6 +42,7 @@ $global = {
 $theme-style = hexo-config("theme-style")
 
 $theme-list = {
+  background: '#f0f0f0'
   default: {
     main: '#666',
     highlight: '#000',
@@ -61,3 +62,8 @@ unless $theme-style in $theme-list
   $theme-select = $theme-list['default']
 else
   $theme-select = $theme-list[$theme-style]
+
+$theme-color-main = $theme-select.main
+$theme-color-selection = $theme-list.background
+$theme-color-selection-highlight = $theme-select.main
+$theme-color-link = $theme-select.highlight
