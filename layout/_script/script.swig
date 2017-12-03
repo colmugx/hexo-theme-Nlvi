@@ -1,5 +1,5 @@
-{{ js('script/nlvi') }}
-{{ js('script/search') }}
+<!-- {{ js('script/nlvi') }}
+{{ js('script/search') }} -->
 {% if theme.lightbox %}
     {{ js('lightbox/js/lightbox.min') }}
 {% endif %}

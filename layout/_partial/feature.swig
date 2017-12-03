@@ -1,8 +1,8 @@
-{% include "_script/script.swig" %}
+{% include "../_script/script.swig" %}
 
 {% if is_post() %}
-    {% include "_partial/_post/toc.swig" %}
+    {% include "_post/toc.swig" %}
 {% endif %}
 
-{% include "_script/backtop.swig" %}
-{% include "_partial/_plugin/search.swig" %}
+{% include "../_script/backtop.swig" %}
+{% include "../_script/_plugin/search.swig" %}
