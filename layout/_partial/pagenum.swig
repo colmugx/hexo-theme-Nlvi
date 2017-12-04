@@ -8,16 +8,16 @@
 {% else %}
   <nav class="article-page">
     {% if page.prev.path %}
-      <a href="{{ url_for(page.prev.path) }}" id="art-left" class="art-right">
+      <a href="{{ url_for(page.prev.path) }}" id="art-left" class="art-left">
         <span class="next-title">
-          {{page.prev.title}}<i class="iconfont icon-right"></i> 
+          <i class="iconfont icon-left"></i>{{page.prev.title}}
         </span>
       </a>
     {% endif %}
     {% if page.next.path %}
-      <a href="{{ url_for(page.next.path) }}" id="art-right" class="art-left">
+      <a href="{{ url_for(page.next.path) }}" id="art-right" class="art-right">
         <span class="prev-title"> 
-          <i class="iconfont icon-left"></i>{{ page.next.title }}
+          {{ page.next.title }}<i class="iconfont icon-right"></i>  
         </span>
       </a>
     {% endif %}

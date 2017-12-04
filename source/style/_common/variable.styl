@@ -3,16 +3,28 @@
 // ==============================
 
 // ======== Space ========
-line-height = 1.5em
+line-height = 1.5
 yard = 8px
 
 // ======== Font ========
+
+// Normal Font
+$normal-fonts = "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
 
 // Article Font
 $article-fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
 
 // Code Font
-$code-fonts = 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+$code-fonts = 'Segoe UI', monospace, Consolas, Monaco, Menlo, sans-serif
+
+$heading-list = {
+  h1: 26px
+  h2: 24px
+  h3: 20px
+  h4: 18px
+  h5: 16px
+  h6: 12px
+}
 
 // ======== Color ========
 
@@ -31,10 +43,11 @@ $color-code-attribute = #61aeee
 $color-code-symbol = #cb4b16
 
 // ======== Global ========
-$global = {
+$global-setting = {
   font-size: 16px,
   body-width: 800px,
-  color: #353535,
+  background: #f0f0f0,
+  color: #49545f,
   container-padding: (yard*2)
 }
 
@@ -42,28 +55,29 @@ $global = {
 $theme-style = hexo-config("theme-style")
 
 $theme-list = {
-  background: '#f0f0f0'
-  default: {
-    main: '#666',
-    highlight: '#000',
-    color: '#353535'
+  dark: {
+    main: #666
+    highlight: #000,
+    color: #353535
   },
-  pink: {
-    main: '#fe89c3',
-    highlight: '#ff99cc'
+  sakura: {
+    main: #fe89c3,
+    highlight: #ff99cc
   },
   miku: {
-    main: '#39C5BB',
-    highlight: '#54DDD3'
+    main: #39C5BB,
+    highlight: #54DDD3
   }
 }
 
 unless $theme-style in $theme-list
   $theme-select = $theme-list['default']
-else
+if $theme-style in $theme-list
   $theme-select = $theme-list[$theme-style]
 
 $theme-color-main = $theme-select.main
-$theme-color-selection = $theme-list.background
+$theme-color-selection = $global-setting.background
 $theme-color-selection-highlight = $theme-select.main
 $theme-color-link = $theme-select.highlight
+$theme-color-text = $global-setting.color
+$theme-color-comment = rgba($global-setting.color, .7)

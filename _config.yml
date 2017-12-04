@@ -14,11 +14,37 @@ menu:
 favicon: 
 
 # ===========================================
-# Article Setting 
+# Color&Schemes Setting
 # ===========================================
 
-# Header Sign
+## Common
+
+# Mobile-Header
+# Light | Dark
+mobile-header: dark
+
+# Scheme
+# banderole | balance
+scheme: banderole
+
+# Article Header Sign
 header_sign: ∮
+
+
+## Banderole
+# Header Style
+# Line | block
+header-style: block
+
+# theme-style
+theme-style: miku
+
+## Balance
+
+
+# ===========================================
+# Article Setting
+# ===========================================
 
 # Navigator in post
 toc: true
@@ -54,13 +80,13 @@ comments:
 
 # sub //Please just fill out ID.
 sub:
-  # facebook: 
-  # twitter: 
-  # instagram: 
-  # weibo: 
-  # zhihu: 
-  # github: 
-  # linkedin: 
+  facebook: 1
+  twitter: 2
+  instagram: 3
+  weibo: 4
+  zhihu: 5
+  github: 6
+  linkedin: 7
 
 #Friend link
 # friendLink: 
@@ -109,13 +135,6 @@ greetings:
 # ===========================================
 # Documents Styles
 # ===========================================
-
-# theme-style
-theme-style: gray
-
-# mobile-header
-# Light | Dark
-mobile-header: dark
 
 # article-fonts
 # default | Simsun | YaHei | Hel | Custom

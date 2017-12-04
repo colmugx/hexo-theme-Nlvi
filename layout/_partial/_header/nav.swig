@@ -1,10 +1,12 @@
-<nav class="main-nav syuanpi tvIn">
+<nav class="main-nav">
   {% if theme.menu %}      
-  <div class="main-nav-wrapper">
+  <ul class="main-nav-list syuanpi tvIn">
   {% for name, url in theme.menu %}
-    {% set link = name == 'search' or name == 'tags' 
-      ? 'javascript:;'
-      : url %}
+    {% if name == 'search' or name == 'tags' %}
+      {% set link = 'javascript:;' %}
+    {% else %}
+      {% set link = url %}
+    {% endif %}
     <li class="menu-item">
       <a href="{{ link }}" id="{{ name }}">
         <span class="base-name">{{ __('nav.' + name) }}</span>
@@ -14,6 +16,6 @@
       </a>
     </li>  
   {% endfor %}
-  </div>
+  </ul>
   {% endif %}
 </nav>

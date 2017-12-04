@@ -1,0 +1,76 @@
+$social-list = {
+  github: #24292e,
+  weibo: #e6162d,
+  twitter: #1ab2e8,
+  zhihu: #0767c8,
+  linkedin: #5290bc,
+  facebook: #4e69a2,
+  ins: #d10869
+}
+
+.footer
+  margin (yard) 0
+  width 100%
+  height 100%
+  color $theme-color-text
+  hr
+    border none
+    height 1px
+    background-color $theme-color-main
+    background-image -webkit-linear-gradient(0deg, #FFF, mix($theme-color-main, #fff), #FFF)
+  .footer-wrapper
+    display flex
+    flex-direction row
+    align-items center
+    +mobile()
+      flex-direction column
+  .left
+    flex 1
+    padding (yard*2)
+    border-right 1px solid mix($theme-color-main, #fff)
+    border-image -webkit-linear-gradient(#fff, mix($theme-color-main, #fff), #fff) 0 10 0 0
+    +mobile()
+      border none
+      padding yard
+    .contact-icon
+      display flex
+      justify-content center
+      a
+        margin (yard/2) (yard)
+        text-decoration none
+        color inherit
+        font-size 26px
+
+    for $k, $c in $social-list
+      .icon-{$k}:hover
+        color $c
+
+  .right
+    flex 2
+    display block
+    padding (yard*2)
+    +mobile()
+      padding yard
+    .copyright
+      display flex
+      justify-content flex-start
+      flex-direction column
+      span
+        color inherit
+        font-size 11px
+        font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+      a
+        font-family Arial
+        text-decoration none
+        color inherit
+        &:hover
+          color $theme-color-highlight
+          text-decoration underline
+  .visit_count
+      color inherit
+      display flex
+      align-items center
+      .iconfont
+        font-size 14px
+      span
+        margin: (yard/2) (yard/2)

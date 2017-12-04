@@ -10,16 +10,16 @@
   <div class="container">
 
     {% include "_partial/header.swig" %}
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          {% block main %} {% endblock %}
+        </div>
+      </main>
 
-    <main class="main" id="main">
-      <div class="main-wrapper">
-        {% block main %} {% endblock %}
-      </div>
-    </main>
-
-    {% include "./_partial/footer.swig" %}
+      {% include "./_partial/footer.swig" %}
+    </div>
   </div>
-  {% include "_script/script.swig" %}
   {% include "_partial/feature.swig" %}
 </body>
 </html>

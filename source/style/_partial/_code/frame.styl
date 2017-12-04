@@ -1,9 +1,9 @@
-$lang = {
+$code-lang = {
   html:"HTML", js:"JavaScript", javascript: "JavaScript", ts:"TypeScript", typescript: 'TypeScript'
   css:"CSS", scss:"SCSS", diff:"Diff", java:"JAVA", xml:"XML",
   python:"Python", yml:"YAML", swift:"Swift", ruby:"Ruby", perl:"Perl",
   php:"PHP", c:"CLang", cpp:"C++", cs:"C#", sh:"Shell", bash:"BASH"
 }
-for $s, $t in $lang
+for $s, $t in $code-lang
     .highlight.{$s}:after
         content: $t

@@ -1,0 +1,21 @@
+// ==============================
+// Banderole
+// ==============================
+
+// Header Style
+$header-style = hexo-config("header-style")
+// Header Sign
+$header-sign = hexo-config("header_sign")
+
+// Article Fonts
+if hexo-config('fonts-style') == 'Custom'
+  $article-fonts = $custom-article-font
+
+@import './container.styl'
+@import './header.styl'
+@import './post.styl'
+@import './footer.styl'
+
+@import './_utils/backtop.styl'
+@import './_page/paginator.styl'
+// @import './_utils/tagcloud.styl'

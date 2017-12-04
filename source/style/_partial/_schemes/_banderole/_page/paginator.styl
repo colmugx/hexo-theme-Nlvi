@@ -1,0 +1,76 @@
+.pagination
+    width 80%
+    margin (yard*3) auto
+    font-weight 500
+    .page-number
+        display none
+
+    &:before
+        content ''
+        display table
+    &:after
+        @extends .pagination:before
+        clear both
+
+    .extend
+        text-decoration none
+        color $theme-color-text
+        font-size 18px
+
+        &.next
+            float right
+            &:hover
+                color $theme-color-main
+                transform translateX(10%)
+        &.prev
+            float left
+            &:hover
+                color $theme-color-main
+                transform translateX(-10%)
+        +mobile()
+            font-size 14px
+
+.article-page
+    width 80%
+    margin (yard*3) auto
+    font-weight 500
+    +mobile()
+        text-align center
+    a
+        text-decoration none
+        color $theme-color-text
+        font-size 16px
+        +mobile()
+            font-size 12px
+        &:hover
+            color $theme-color-main
+
+    .next-title
+    .prev-title
+        i
+            vertical-align middle
+
+
+    &:before
+        content ''
+        display table
+    &:after
+        @extends .pagination:before
+        clear both
+
+    .art-right
+        float right
+        +mobile()
+            float none
+            display block
+            margin-bottom (yard*2)
+        &:hover
+            transform translateX(10%)
+    .art-left
+        float left
+        +mobile()
+            float none
+            display block
+            margin-top (yard*2)
+        &:hover
+            transform translateX(-10%)

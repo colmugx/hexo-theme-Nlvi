@@ -1,0 +1,56 @@
+.header
+  width 100%
+  height 110px
+  padding (yard*2)
+  display flex
+  align-items center
+  headerStyle()
+  .header-wrapper
+    display flex
+    justify-content space-between
+    align-items center
+    flex-direction row
+    width 800px
+    margin 0 auto
+    font-size 16px
+    color $theme-color-text
+  .logo
+  .main-nav
+    flex 1
+  .logo
+    display flex
+    align-items center
+    -webkit-user-select none
+    -moz-user-select none
+    user-select none
+    font-size 32px
+    a
+      color inherit
+      text-decoration none
+    span
+      display block
+      text-align left
+    #subtitle
+      margin-top (yard/2)
+      font-size 12px
+  .main-nav
+    display flex
+    justify-content flex-end
+
+  .main-nav-list
+    padding 0
+    list-style none
+    .menu-item
+      display inline-block
+      padding 0 (yard*2)
+      a
+        display flex
+        flex-direction column
+        text-decoration: none
+        color $theme-color-text
+        font-size inherit
+        text-align center
+        &:hover
+          color $theme-color-link
+      .menu-item-label
+        font-size 12px
