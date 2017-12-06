@@ -3,7 +3,7 @@
 
 {# lightbox #}
 {% if theme.lightbox %}
-    {{ css('lightbox/css/lightbox.min') }}
+    {{ css('script/lib/lightbox/css/lightbox.min') }}
 {% endif %}
 
 {# animation #}
