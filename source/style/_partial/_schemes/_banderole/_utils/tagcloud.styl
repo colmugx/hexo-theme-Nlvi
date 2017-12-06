@@ -1,49 +1,52 @@
-.show-tag
-    transform translateY(0px)
-
 .tagcloud
-    z-index: 500
-    position absolute
-    transform translateY(-120px)
-    display block
-    width 100%
-    min-height 120px
-    text-align center
-    box-sizing border-box
-    background-color $color-main
-    border-bottom 3px solid $color-main
-    box-shadow inset 0px -8px 10px 0px #585858
+  z-index: 500
+  position absolute
+  transform translateY(-200px)
+  transform-origin 75% 50%
+  opacity .7
+  display block
+  width 100%
+  min-height 120px
+  text-align center
+  box-sizing border-box
+  background-color rgba(#fff, .9)
+  box-shadow 0px 2px 6px mix(#fff, $theme-color-main)
+  transition all .3s ease-out
+  &.show
+    transform translateY(0)
+    opacity 1
 
 .tagcloud-mask
-    position fixed
-    z-index -1
-    top 0
-    left 0
-    right 0
-    bottom 0
-    background transparent
-    transition background 0.3s backwards .1s
+  position fixed
+  z-index -1
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background transparent
+  &.show
+    z-index 500
 
 .tagcloud-inner
-    display flex
-    justify-content center
-    align-items center
-    flex-flow row wrap
-    min-height inherit
-    width 100%
-    height 100%
-    a
-        flex: 0 0 17%;
-        text-decoration none
-        color #fff
-        &:before
-            content: '#'
-        &:hover
-            text-shadow: 1px 1px 1px #fff
+  display flex
+  justify-content center
+  align-items center
+  flex-flow row wrap
+  min-height inherit
+  width 100%
+  height 100%
+  a
+    flex: 0 0 20%;
+    text-decoration none
+    color $theme-color-main
+    &:before
+      content: '#'
+    &:hover
+      text-decoration underline
 
 +mobile()
-    .tagcloud
-        .tagcloud-inner
-            justify-content center
-            a
-                font-size: 9px !important
+  .tagcloud
+    .tagcloud-inner
+      justify-content center
+      a
+        font-size: 9px !important
