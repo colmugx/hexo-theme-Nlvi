@@ -27,14 +27,14 @@
           });
         });
       },
-
       picPos: function () {
         $('.post-content').each(function () {
           $(this).find('img').each(function () {
             $(this).parent('p').css('text-align', 'center');
+            $(this).replaceWith("<a href='" + this.src + "' data-title='" + this.alt + "' data-lightbox='group'><img src='" + this.src + "' alt='" + this.alt + "'></a>");
           });
         });
-      }
+      },
     };
     for (var i in boot) {
       boot[i]();

@@ -23,6 +23,19 @@ Nlvi.utils = {
     });
   },
 
+  tagcloud: function() {
+    $('#tags').on('click', function() {
+      Nlvi.tools.opreateClass('#tagcloud', 'show', 'add');
+      Nlvi.tools.opreateClass('.tagcloud-mask', 'show', 'add');
+      Nlvi.tools.opreateClass('.header', 'show', 'add');
+    });
+    $('.tagcloud-mask').on('click', function() {
+      Nlvi.tools.opreateClass('#tagcloud', 'show', 'remove');
+      Nlvi.tools.opreateClass('.tagcloud-mask', 'show', 'remove');
+      Nlvi.tools.opreateClass('.header', 'show', 'remove');
+    });
+  },
+
   showToc: function() {
     var $toclink = $('.toc-link');
     var $headerlink = $('.headerlink');
