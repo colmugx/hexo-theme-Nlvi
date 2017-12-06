@@ -27,7 +27,6 @@
         margin 0 auto
         text-align center
         width 50%
-        // border-bottom 1px solid $color-highlight
         position relative
         &:before
             content ''
@@ -36,7 +35,7 @@
             bottom 0
             left 0
             right 100%
-            background: $color-border
+            background: $theme-color-link
             transition-property right
             animation: lane-right 0.35s linear both
     .title-link
@@ -44,24 +43,24 @@
         margin-top (yard*2)
         a
             text-decoration none
-            color $color-main
+            color $theme-color-text
             padding: 0 (yard)
             font-size 14px
             &.active
-                border-left 2px solid $color-main
+                border-left 2px solid $theme-color-main
     .toc
         margin 0
         padding 0
         list-style none
         .toc-item
-            color $color-main
+            color $theme-color-text
             .toc-link
-                color $color-main
+                color inherit
                 text-decoration none
                 padding: 0 (yard)
                 font-size 14px
                 &.active
-                    border-left 2px solid $color-main
+                    border-left 2px solid $theme-color-main
 
     +mobile()
         display none

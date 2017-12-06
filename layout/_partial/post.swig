@@ -54,5 +54,6 @@
   {% if is_post() %}
     {% include "pagenum.swig" %}
     {% include "_post/comments.swig" %}
+    {% include "_post/toc.swig" %}
   {% endif %}
 {% endmacro %}

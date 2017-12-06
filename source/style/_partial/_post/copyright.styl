@@ -1,6 +1,6 @@
 .copy-line
     border none
-    border-bottom 2px dashed $color-line
+    border-bottom 2px dashed $theme-color-link
     height (yard*2)
 .post-copyright
     .copy-author,
@@ -12,6 +12,7 @@
         font-weight 300
         font-size 14px
         a
-            color $color-main
+            color $theme-color-text
+            text-decoration none
             &:hover
-                color $color-highlight
+                color $theme-color-main

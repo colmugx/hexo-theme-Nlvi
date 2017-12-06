@@ -1,24 +1,12 @@
 <!-- {{ js('script/nlvi') }}
 {{ js('script/search') }} -->
-{% if theme.lightbox %}
-    {{ js('lightbox/js/lightbox.min') }}
-{% endif %}
-<script>
-$(document).ready(function(){
-    document.body.addEventListener('touchstart', function () {});
-    $('.progress').hide();
-    $('.body').show();
-    Nlvi.tagcloud();
-    Nlvi.mobileHeader();
-    Nlvi.back2top();
-    Nlvi.smoothScroll();
-    Nlvi.onView();
-    Nlvi.showToc();
-    Nlvi.showComments();
-    Nlvi.showReward();
-    Nlvi.picPos();
+{{ js('script/lib/jquery-3.2.1.min') }}
 
-    !CONFIG.animate && Nlvi.offAnimate();
-    CONFIG.lightbox && Nlvi.onPicBox();
-})
-</script>
+{% if theme.lightbox %}
+    <!--{{ js('lightbox/js/lightbox.min') }} -->
+{% endif %}
+
+{{ js('script/src/base') }}
+{{ js('script/src/utils') }}
+{{ js('script/src/plugins') }}
+{{ js('script/bootstarp') }}
