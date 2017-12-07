@@ -1,18 +1,20 @@
 .backtop
-    display flex
-    flex-direction column
-    z-index: 10
-    position fixed
-    bottom (yard*4)
-    right @bottom
-    color $theme-color-main
-    &:hover
-        -webkit-animation-name float-in
-        animation-name float-in
-        -webkit-animation-duration 2.33s
-        animation-duration 2.33s
-        -webkit-animation-iteration-count infinite
-        animation-iteration-count infinite
-    i
-        font-size 24px
-        font-weight 100
+  display flex
+  flex-direction column
+  z-index: 10
+  position fixed
+  bottom (yard*4)
+  right @bottom
+  color $theme-color-main
+  +mobile()
+    display none
+  &:hover
+    -webkit-animation-name float-in
+    animation-name float-in
+    -webkit-animation-duration 2.33s
+    animation-duration 2.33s
+    -webkit-animation-iteration-count infinite
+    animation-iteration-count infinite
+  i
+    font-size 24px
+    font-weight 100

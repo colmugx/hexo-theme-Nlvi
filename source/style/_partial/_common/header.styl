@@ -7,12 +7,15 @@ else
   $fontColor = #fff
 
 .mobile-header
+  display none
   position fixed
   top -100%
   left 0
   right 0
   box-shadow 0 2px 2px #c4c4c4
   z-index 50
+  +mobile()
+    display block
   .mobile-header-nav
     background-color $backgroundColor
     color $fontColor

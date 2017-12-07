@@ -56,6 +56,9 @@ Nlvi.utils = {
       Nlvi.tools.opreateClass('.tagcloud-mask', 'show', 'remove');
       Nlvi.tools.opreateClass('.header', 'show', 'remove');
     });
+    $('#mobile-tags').click(function () {
+      $('.inner-cloud').css('transform', 'translateX(-96%)');
+    });
   },
 
   showToc: function() {
