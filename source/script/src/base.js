@@ -13,7 +13,7 @@
     },
 
     closeAnimate: function() {
-      return tools.opreateClass('.syuanpi', 'remove');
+      return tools.opreateClass('.syuanpi', 'syuanpi', 'remove');
     },
 
   };
@@ -48,10 +48,6 @@
   var tools = {};
 
   tools.opreateClass = function (ele, cls, opt) {
-    if (!arguments[2]) {
-      cls = arguments[0];
-      opt = arguments[1];
-    }
     return opt === 'remove'
       ? $(ele).removeClass(cls)
       : $(ele).addClass(cls);

@@ -3,6 +3,9 @@
   position relative
   font-weight 400
   border-line(bottom, #e1dede)
+  +mobile()
+    width 100%
+    padding 0 yard
   &:last-child,
   &.is_post
     background-image none
@@ -58,6 +61,8 @@
         color mix($theme-color-main, #b9b9b9)
         font-weight 500
         text-decoration none
+        &:hover
+          text-decoration none
 
         &:after
           content ''

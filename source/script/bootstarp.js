@@ -3,6 +3,7 @@ $(document).ready(function(){
   Nlvi.boot();
 
   Nlvi.utils.titleStatus();
+  Nlvi.utils.mobileHeader();
   Nlvi.utils.back2top();
   Nlvi.utils.tagcloud();
   Nlvi.utils.showToc();

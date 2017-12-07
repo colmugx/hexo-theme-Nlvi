@@ -20,8 +20,8 @@ favicon:
 ## Common
 
 # Mobile-Header
-# Light | Dark
-mobile-header: dark
+# light | dark
+mobile-header: light
 
 # Scheme
 # banderole | balance

@@ -23,6 +23,28 @@ Nlvi.utils = {
     });
   },
 
+  mobileHeader: function() {
+    function resetMobileMenu() {
+      $('.mobile-header').css({
+        top: $('.mobile-header-nav').height() - $('.mobile-header').height()
+      });
+    }
+    function closeMobileMenu() {
+      Nlvi.tools.opreateClass('#mobile-left', 'item-clicked', 'remove');
+      resetMobileMenu();
+    }
+    function openMobileMenu() {
+      Nlvi.tools.opreateClass('#mobile-left', 'item-clicked');
+      $('.mobile-header').css('top', '0');
+    }
+    resetMobileMenu();
+    $('#mobile-left').on('click', function() {
+      Nlvi.tools.existClass(this, 'item-clicked')
+        ? closeMobileMenu()
+        : openMobileMenu();
+    });
+  },
+
   tagcloud: function() {
     $('#tags').on('click', function() {
       Nlvi.tools.opreateClass('#tagcloud', 'show', 'add');
