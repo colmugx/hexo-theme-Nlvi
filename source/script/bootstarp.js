@@ -8,7 +8,7 @@ $(document).ready(function(){
   Nlvi.utils.tagcloud();
   Nlvi.utils.showToc();
 
-
+  nCONFIG.search&&Nlvi.utils.search();
 
   var plugins = Nlvi.plugins;
   if (plugins) {

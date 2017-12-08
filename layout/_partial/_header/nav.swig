@@ -1,6 +1,16 @@
 <nav class="main-nav">
   {% if theme.menu %}      
   <ul class="main-nav-list syuanpi tvIn">
+  {% if theme.search %}
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>{{ __('nav.' + 'search') }}</span>
+        {% if not config.language == '' or not config.language == 'en'  %}
+          <span class="menu-item-label">{{ 'search' }}</span>
+        {% endif %}
+      </a>
+    </li>
+  {% endif %}
   {% for name, url in theme.menu %}
     {% if name == 'search' or name == 'tags' %}
       {% set link = 'javascript:;' %}
