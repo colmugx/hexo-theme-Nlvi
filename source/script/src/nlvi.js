@@ -21,18 +21,31 @@
   Nlvi.boot = function() {
     var boot = {
       smoothScroll: function() {
-        $('.toc-link').click(function () {
+        $('.toc-link').click(function() {
           $('html, body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 200
           });
         });
       },
-      picPos: function () {
-        $('.post-content').each(function () {
-          $(this).find('img').each(function () {
+      picPos: function() {
+        $('.post-content').each(function() {
+          $(this).find('img').each(function() {
             $(this).parent('p').css('text-align', 'center');
             $(this).replaceWith("<a href='" + this.src + "' data-title='" + this.alt + "' data-lightbox='group'><img src='" + this.src + "' alt='" + this.alt + "'></a>");
           });
+        });
+      },
+      showComments: function() {
+        $('#com-switch').click(function() {
+          if ($('#post-comments').css('display') == 'none') {
+            $('#post-comments').css('display', 'block').addClass('syuanpi fallIn-light');
+            $(this).removeClass('syuanpi').css('transform', 'rotate(180deg)');
+          } else {
+            $(this).addClass('syuanpi').css('transform', '');
+            $('#post-comments').removeClass('fallIn-light').addClass('riseOut-light').one('webkitAnimationEnd AnimationEnd', function() {
+              $(this).removeClass('syuanpi riseOut-light').css('display', 'none');
+            });
+          }
         });
       },
     };

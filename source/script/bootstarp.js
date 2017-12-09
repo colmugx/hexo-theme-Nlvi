@@ -7,6 +7,7 @@ $(document).ready(function(){
   Nlvi.utils.back2top();
   Nlvi.utils.tagcloud();
   Nlvi.utils.showToc();
+  Nlvi.utils.switchToc();
 
   nCONFIG.search&&Nlvi.utils.search();
 

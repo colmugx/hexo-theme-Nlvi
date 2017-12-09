@@ -108,6 +108,33 @@ Nlvi.utils = {
       }
     });
   },
+
+  switchToc: function() {
+    function tocHide() {
+      $('.toc-inner').addClass('riseOut-light').one('webkitAnimationEnd AnimationEnd', function() {
+        $(this).hide();
+      });
+    }
+    $('.toc-inner').one('webkitAnimationEnd AnimationEnd', function() {
+      Nlvi.tools.opreateClass('.toc-inner', 'fallIn-light', 'remove');
+      Nlvi.tools.opreateClass('#toc-switch', 'not-toc');
+    });
+    tocHide();
+    $('#toc-switch').on('click', function() {
+      if (Nlvi.tools.existClass(this, 'not-toc')) {
+        Nlvi.tools.opreateClass(this, 'not-toc', 'remove');
+        Nlvi.tools.opreateClass('.toc-inner', 'riseOut-light', 'remove');
+        Nlvi.tools.opreateClass('.toc-inner', 'fallIn-light');
+        $('.toc-inner').show();
+        Nlvi.tools.opreateClass('.container-inner', 'has_toc');
+      } else {
+        Nlvi.tools.opreateClass(this, 'not-toc');
+        Nlvi.tools.opreateClass('.container-inner', 'has_toc', 'remove');
+        tocHide();
+      }
+    })
+  },
+
   search: function () {
     var $search = $('#search');
     var $mask = $('#mask');
