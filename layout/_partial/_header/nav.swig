@@ -5,7 +5,7 @@
     <li class="menu-item">
       <a href="javascript:;" id="search">
         <span>{{ __('nav.' + 'search') }}</span>
-        {% if not config.language == '' or not config.language == 'en'  %}
+        {% if not config.language or config.language !== 'en'  %}
           <span class="menu-item-label">{{ 'search' }}</span>
         {% endif %}
       </a>
@@ -20,7 +20,7 @@
     <li class="menu-item">
       <a href="{{ link }}" id="{{ name }}">
         <span class="base-name">{{ __('nav.' + name) }}</span>
-        {% if not config.language == '' or not config.language == 'en'  %}
+        {% if not config.language or config.language !== 'en'  %}
           <span class="menu-item-label">{{ name }}</span>
         {% endif %}
       </a>

@@ -65,17 +65,29 @@ $theme-list = {
   miku: {
     main: #39C5BB,
     highlight: #54DDD3
-  }
+  },
+  green: {
+    main: #70bc68,
+    highlight: #70fc77
+  },
+  blue: {
+    main: #5eb0ff,
+    highlight: #73b7f9
+  },
+  purple: {
+    main: #596fef,
+    highlight: #7597f9
+  },
 }
 
 if $theme-style in $theme-list
   $theme-select = $theme-list[$theme-style]
+  if $theme-style == 'Custom'
+    $theme-select = $custom-theme-style
+    $global-setting = $custom-theme-global
 else
   $theme-select = $theme-list['default']
 
-if $theme-style == 'Custom'
-  $theme-select = $custom-theme-style
-  $global-setting = $custom-theme-global
 
 $theme-color-main = $theme-select.main
 $theme-color-selection = $global-setting.background
