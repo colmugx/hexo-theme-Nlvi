@@ -46,10 +46,8 @@ $color-code-symbol = #cb4b16
 // ======== Global ========
 $global-setting = {
   font-size: 16px,
-  body-width: 800px,
-  background: #f0f0f0,
-  color: #49545f,
-  container-padding: (yard*2)
+  background: #fff,
+  color: #49545f
 }
 
 // ======== Theme ========
@@ -58,8 +56,7 @@ $theme-style = hexo-config("theme-style")
 $theme-list = {
   dark: {
     main: #666
-    highlight: #000,
-    color: #353535
+    highlight: #353535
   },
   sakura: {
     main: #fe89c3,
@@ -71,10 +68,14 @@ $theme-list = {
   }
 }
 
-unless $theme-style in $theme-list
-  $theme-select = $theme-list['default']
 if $theme-style in $theme-list
   $theme-select = $theme-list[$theme-style]
+else
+  $theme-select = $theme-list['default']
+
+if $theme-style == 'Custom'
+  $theme-select = $custom-theme-style
+  $global-setting = $custom-theme-global
 
 $theme-color-main = $theme-select.main
 $theme-color-selection = $global-setting.background
