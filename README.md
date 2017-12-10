@@ -8,7 +8,7 @@
 
 ![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/desktop.png)
 
-![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/device.png)
+![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/devices.png)
 
 ![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
 
