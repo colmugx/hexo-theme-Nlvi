@@ -6,9 +6,13 @@
 
 [主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
-![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-desktop.png)
+![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/desktop.png)
 
-![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-mobile.png)
+![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/device.png)
+
+![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
+
+![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
 
 目前我自己最满意的主题，就这个主题持续维护一直到过气。
 
@@ -20,7 +24,7 @@
 - 使用了lightbox
 - 文章打赏
 - 版权说明
-- 五颜六色
+- 五颜六色，初音绿
 
 ## 语言 Language
 
@@ -52,12 +56,8 @@ theme: Nlvi
 
 要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
 
-在主题的`_config.yml`应该没什么好配置的。比较浅显易懂。
-
 
 ## 博客动图展示 Gif
-
-<!-- ![Nlvi-gif](https://github.com/ColMugX/GitBed/raw/master/blog/slvi-gif.gif) -->
 
 ### 支持 Support
 
