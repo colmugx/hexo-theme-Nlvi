@@ -13,10 +13,24 @@ $normal-fonts = "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
 $header-fonts = 'Allura', cursive, serif
 
 // Article Font
-$article-fonts = 'Optima', 'PingFang SC', 'Roboto', 'Noto SansCJK', 'Helvetica Neue', 'Helvetica', "微软雅黑", "YaHei-Consolas-Hybrid", sans-serif
+$article-fonts = {
+  default: 'Optima'\, 'PingFang SC'\, 'Roboto'\, 'Noto SansCJK'\, 'Helvetica Neue'\, 'Helvetica'\, "Microsoft YaHei"\, "YaHei-Consolas-Hybrid"\, sans-serif
+  YaHei: STHeiti\, 'Microsoft YaHei'\, "微软雅黑"\, serif
+  Hel: 'Helvetica'\, 'Hiragino Sans GB'\, 'Roboto'\, 'Noto SansCJK'\, 'Heiti TC'\, 'Heiti SC'\, sans-serif
+  Simsun: 'Times New Roman'\, 'Simsun'\, 'STSong'\, '华文宋体'\, sans-serif
+}
+$fonts-style = hexo-config('fonts-style')
+if $fonts-style in $article-fonts
+  $article-fonts = $article-fonts[$fonts-style]
+  if $fonts-style == 'Custom'
+    $article-fonts = $custom-article-font
+else
+  $fonts-style = $article-fonts['default']
 
 // Code Font
 $code-fonts = 'Segoe UI', monospace, Consolas, Monaco, Menlo, sans-serif
+if hexo-config('code-style') == 'Custom'
+  $code-fonts = $custom-code-font
 
 $heading-list = {
   h1: 26px

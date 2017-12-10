@@ -1,4 +1,4 @@
-{% if theme.baidu_analytics %}
+{% if theme.analytics.baidu %}
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
