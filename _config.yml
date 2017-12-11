@@ -107,6 +107,9 @@ visit_count: false
 # Theme Settings
 # ===========================================
 
+# mathjax
+mathjax: false
+
 # lightbox
 lightbox: true
 
@@ -115,6 +118,9 @@ animate: true
 
 # Created Time
 since: 2016
+
+# plugin
+# plugins:
 
 # about
 # self:  
