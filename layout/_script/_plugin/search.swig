@@ -2,7 +2,7 @@
   <div class="search" id="search">
     <div class="mask" id="mask"></div>
     <div class="search-wrapper syuanpi">
-      <h1 id="search-header" class="syuanpi">搜索一下？</h1>
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
       <div class="input">
         <input type="text" id="local-search-input" results="0" name="">
       </div>
