@@ -1,0 +1,58 @@
+.post-toc
+  .toc-inner
+    &::-webkit-scrollbar
+      width 1px
+      height 1px
+    height 100%
+    max-height 460px
+    overflow: auto
+    white-space nowrap
+    padding (yard)
+    margin 0 (yard*2)
+    text-align left
+  ol
+    list-style none
+    padding-left (yard*2)
+  .title
+    display block
+    margin 0 auto
+    text-align center
+    width 50%
+    position relative
+    -webkit-user-select none
+    -moz-user-select none
+    user-select none
+    cursor pointer
+    z-index 1
+    color $theme-color-text
+
+  .title-link
+    list-style none
+    margin-top (yard*2)
+    a
+      text-decoration none
+      color $theme-color-text
+      padding: 0 (yard)
+      font-size 14px
+      &.active
+        border-left 2px solid $theme-color-main
+
+  .toc
+    margin 0
+    padding 0
+    list-style none
+    li
+      margin (yard/2) 0
+    .toc-item
+      color $theme-color-text
+      .toc-link
+        color inherit
+        text-decoration none
+        padding: 0 (yard)
+        font-size 14px
+        &.active
+            border-left 2px solid $theme-color-main
+  +mobile()
+    display none
+  +tablet()
+    display none

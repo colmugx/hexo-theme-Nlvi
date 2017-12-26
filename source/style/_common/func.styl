@@ -24,7 +24,14 @@ border-line($f, $c)
   background-origin border-box
 
 headerStyle()
-  if $header-style == 'block'
-    background-color rgba($theme-color-main, 0.1)
+  if hexo-config('scheme') == 'balance'
+    if $header-style == 'block'
+      background-color rgba($theme-color-main, 0.2)
+    else
+      border-right 1px solid mix($theme-color-main, #fff)
+      border-image -webkit-linear-gradient(#fff, mix($theme-color-main, #fff), #fff) 0 10 0 0
   else
-    border-top 2px solid $theme-color-main
+    if $header-style == 'block'
+      background-color rgba($theme-color-main, 0.1)
+    else
+      border-top 3px solid $theme-color-main

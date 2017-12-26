@@ -18,5 +18,7 @@
 
 {{ js('script/src/nlvi') }}
 {{ js('script/src/utils') }}
+{{ js('script/scheme/banderole') }}
+{{ js('script/scheme/balance') }}
 {{ js('script/src/plugins') }}
 {{ js('script/bootstarp') }}

@@ -6,7 +6,11 @@
 </head>
 <body>
   {% include "_partial/progress.swig" %}
-  {% include "_partial/tagcloud.swig" %}
+  
+  {% if theme.scheme == 'banderole' %}
+    {% include "_partial/tagcloud.swig" %}  
+  {% endif %}
+
   <div class="container">
 
     {% include "_partial/header.swig" %}
@@ -20,6 +24,6 @@
       {% include "./_partial/footer.swig" %}
     </div>
   </div>
-  {% include "_partial/feature.swig" %}
+  {% include "_partial/_feature/common.swig" %}
 </body>
 </html>

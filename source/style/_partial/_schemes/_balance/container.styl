@@ -1,0 +1,19 @@
+.container
+html, body
+  height 100%
+
+.container
+  position relative
+  *
+    transition-duration .35s
+  .container-inner
+    margin-left 300px
+    margin-top 2%
+    padding 0 (yard*2) 0 (yard*3)
+    +mobile()
+      width 100%
+      max-width 100%
+      margin 0
+      padding 0
+      margin-top (yard*2)+50
+      padding 0 yard

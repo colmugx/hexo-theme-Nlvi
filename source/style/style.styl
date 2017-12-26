@@ -16,5 +16,11 @@
 @import './_partial/_common/header.styl'
 @import './_partial/_common/about.styl'
 
-// banderole
-@import './_partial/_schemes/_banderole/index.styl'
+$scheme = hexo-config('scheme')
+
+if $scheme == 'banderole'
+  // banderole
+  @import './_partial/_schemes/_banderole/index.styl'
+else
+  // balance
+  @import './_partial/_schemes/_balance/index.styl'

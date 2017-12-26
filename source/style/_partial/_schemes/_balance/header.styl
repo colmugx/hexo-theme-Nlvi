@@ -1,0 +1,74 @@
+.header
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  height 100%
+  width 300px
+  headerStyle()
+  +mobile()
+    display none
+  .header-wrapper
+    width 100%
+    padding (yard*2) 0
+    text-align center
+  .logo
+    display flex
+    align-items center
+    -webkit-user-select none
+    -moz-user-select none
+    user-select none
+    font-size 42px
+    font-family $header-fonts
+    margin-top 20%
+    a
+      color inherit
+      text-decoration none
+    span
+      display block
+      text-align span
+  #subtitle
+    opacity 1
+    position absolute
+    margin-top (yard/2)
+    font-size 12px
+    text-align center
+    width 100%
+    margin-top (yard*2)
+    font-family $normal-fonts
+  .logo-inner
+    position relative
+    width 100%
+    max-width 100%
+    span:hover+#subtitle
+      opacity 1
+  .main-nav
+    margin-top 50%
+    padding 0 (yard*2)
+    display flex
+    flex-direction column
+    align-items center
+    text-align left
+    &.has_toc
+    &.has_tag
+      margin-top 20%
+
+  .main-nav-list
+    list-style none
+    padding 0
+    .menu-item
+      margin (yard*2) 0
+      &.has_toc
+      &.has_tag
+        display inline-block
+      .menu-item-label
+        display none
+      a
+        text-decoration none
+        color $theme-color-text
+        font-size inherit
+        display flex
+        flex-direction column
+        text-align center
+        &:hover
+          color $theme-color-link

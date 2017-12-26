@@ -1,22 +1,16 @@
-if (nCONFIG.theme == 'banderole') {
+if (nCONFIG.theme == 'balance') {
   Nlvi.utils.back2top = function() {
+    Nlvi.tools.opreateClass('#backtop', 'dead', 'remove');
     var scrollTop = Nlvi.tools.scroll(window);
     scrollTop(function(sct) {
-      if (sct > 110) {
-        Nlvi.tools.opreateClass('#backtop', 'bloom', 'add');
-        Nlvi.tools.opreateClass('#backtop', 'dead', 'remove');
-      } else {
-        Nlvi.tools.opreateClass('#backtop', 'dead', 'add');
-        Nlvi.tools.opreateClass('#backtop', 'bloom', 'remove');
-      }
       var scrollPercentRounded = Math.floor(
         sct
         / ($(document).height() - $(this).height())
         * 100
       );
       $('#scrollpercent').html(scrollPercentRounded);
-    });
-    $('.toTop').on('click', function () {
+    })
+    $('.toTop').on('click', function() {
       $('html, body').animate({
         scrollTop: 0
       });
@@ -40,32 +34,35 @@ if (nCONFIG.theme == 'banderole') {
         Nlvi.tools.opreateClass('.toc-inner', 'riseOut-light', 'remove');
         Nlvi.tools.opreateClass('.toc-inner', 'fallIn-light');
         $('.toc-inner').show();
-        Nlvi.tools.opreateClass('.container-inner', 'has_toc');
+        Nlvi.tools.opreateClass('.menu-item', 'has_toc');
+        Nlvi.tools.opreateClass('.main-nav', 'has_toc');
       } else {
         tocHide();
         Nlvi.tools.opreateClass(this, 'not-toc');
-        Nlvi.tools.opreateClass('.container-inner', 'has_toc', 'remove');
+        Nlvi.tools.opreateClass('.menu-item', 'has_toc', 'remove');
+        Nlvi.tools.opreateClass('.main-nav', 'has_toc', 'remove');
       }
     })
   }
 
-
-  Nlvi.utils.refreshSearch = function($header) {
-    var nowDate = new Date();
-    var hour = nowDate.getHours();
-    if (hour >= 8 && hour < 11) {
-      $header.html(GREETING.morning);
-    } else if (hour >= 11 && hour < 13) {
-      $header.html(GREETING.noon);
-    } else if (hour >= 13 && hour < 18) {
-      $header.html(GREETING.after);
-    } else if (hour >= 18 && hour < 23) {
-      $header.html(GREETING.night);
-    } else if (hour >= 23 && hour < 1) {
-      $header.html(GREETING.midnight);
-    } else if (hour >= 1 && hour < 8) {
-      $header.html(GREETING.midnight);
+  Nlvi.utils.tagcloud = function() {
+    function tagHide() {
+      $('#tagcloud').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
+        $(this).hide();
+        Nlvi.tools.opreateClass('#tagcloud', 'show syuanpi bloom dead', 'remove');
+        Nlvi.tools.opreateClass('.menu-item', 'has_tag', 'remove');
+        Nlvi.tools.opreateClass('.main-nav', 'has_tag', 'remove');
+      });
     }
+    $('#tags').on('click', function() {
+      if (Nlvi.tools.existClass('#tagcloud', 'show')) {
+        tagHide();
+      } else {
+        $('#tagcloud').show();
+        Nlvi.tools.opreateClass('#tagcloud', 'show syuanpi bloom');
+        Nlvi.tools.opreateClass('.menu-item', 'has_tag');
+        Nlvi.tools.opreateClass('.main-nav', 'has_tag');
+      }
+    });
   }
-
 }
