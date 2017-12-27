@@ -37,11 +37,11 @@
 
 ## 下载 Download
 
-1. `git clone theme/Nlvi https://github.com/ColMugX/hexo-theme-Nlvi.git`
+-  `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git  themes/Nlvi `
 
-2.  `Download ZIP`
+-  `Download ZIP`
 
-3.  `Open in Desktop`
+-  `Open in Desktop`
 
 ## 安装 Install
 
