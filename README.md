@@ -12,6 +12,8 @@
 
 ![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
 
+![Nlvi-schemes](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/schemes.png)
+
 ![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
 
 (前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
