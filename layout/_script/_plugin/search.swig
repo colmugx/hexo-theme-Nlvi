@@ -10,7 +10,7 @@
     </div>
   </div>
   <script>
-  if (CONFIG.theme === 'banderole') {
+  if (NlviConfig.theme === 'banderole') {
     var GREETING = {
       morning: "{{ theme.greetings.morning }}",
       noon: "{{ theme.greetings.noon }}",

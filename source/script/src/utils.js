@@ -116,7 +116,7 @@ Nlvi.utils = {
     });
 
     $.ajax({
-      url: CONFIG.baseUrl + 'search.xml',
+      url: NlviConfig.baseUrl + 'search.xml',
       dataType: 'xml',
       success: function (xmlResponse) {
         var searchData = $('entry', xmlResponse).map(function () {

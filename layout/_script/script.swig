@@ -1,4 +1,3 @@
-{% include "../_script/config.swig" %}
 {{ js('script/lib/jquery/jquery-3.2.1.min') }}
 
 {% if theme.lightbox %}

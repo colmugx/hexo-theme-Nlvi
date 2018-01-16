@@ -5,11 +5,11 @@
   var Nlvi = {};
   Nlvi.base = {
     isBanderole: function() {
-      return CONFIG.theme === 'banderole';
+      return NlviConfig.theme === 'banderole';
     },
 
     isBalance: function () {
-      return CONFIG.theme === 'balance';
+      return NlviConfig.theme === 'balance';
     },
 
     closeAnimate: function() {
