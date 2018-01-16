@@ -1,5 +1,5 @@
 <script>
-  var nCONFIG = {
+  window.CONFIG = {
     title: "{{ config.title }}",
     author: "{{ config.author }}",
     theme: "{{ theme.scheme }}",

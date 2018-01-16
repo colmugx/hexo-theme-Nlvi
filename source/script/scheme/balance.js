@@ -1,4 +1,4 @@
-if (nCONFIG.theme == 'balance') {
+if (Nlvi.base.isBalance()) {
   Nlvi.utils.back2top = function() {
     Nlvi.tools.opreateClass('#backtop', 'dead', 'remove');
     var scrollTop = Nlvi.tools.scroll(window);
@@ -65,4 +65,6 @@ if (nCONFIG.theme == 'balance') {
       }
     });
   }
+
+  Nlvi.utils.search = function() {}
 }

@@ -9,7 +9,7 @@ $(document).ready(function(){
   Nlvi.utils.showToc();
   Nlvi.utils.switchToc();
 
-  nCONFIG.search&&Nlvi.utils.search();
+  CONFIG.search&&Nlvi.utils.search();
 
   var plugins = Nlvi.plugins;
   if (plugins) {

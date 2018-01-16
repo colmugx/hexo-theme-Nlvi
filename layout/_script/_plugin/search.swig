@@ -10,12 +10,14 @@
     </div>
   </div>
   <script>
-  var GREETING = {
-    morning: "{{ theme.greetings.morning }}",
-    noon: "{{ theme.greetings.noon }}",
-    after: "{{ theme.greetings.after }}",
-    night: "{{ theme.greetings.night }}",
-    midnight: "{{ theme.greetings.midnight }}"
+  if (CONFIG.theme === 'banderole') {
+    var GREETING = {
+      morning: "{{ theme.greetings.morning }}",
+      noon: "{{ theme.greetings.noon }}",
+      after: "{{ theme.greetings.after }}",
+      night: "{{ theme.greetings.night }}",
+      midnight: "{{ theme.greetings.midnight }}"
+    }
   }
   </script>
 {% endif %}

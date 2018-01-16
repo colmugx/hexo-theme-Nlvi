@@ -1,5 +1,4 @@
 {{ css('style/style') }}
-{% include "../../_script/config.swig" %}
 
 {# lightbox #}
 {% if theme.lightbox %}
