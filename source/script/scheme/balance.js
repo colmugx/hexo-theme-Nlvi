@@ -66,5 +66,5 @@ if (Nlvi.base.isBalance()) {
     });
   }
 
-  Nlvi.utils.search = function() {}
+  Nlvi.utils.refreshSearch = function() {}
 }
