@@ -2,7 +2,8 @@
 
 > A simple theme named Nlvi for hexo.
 
-[在线预览](https://colmugx.github.io/PersonalBlog)
+[在线预览 · Banderole](https://colmugx.github.io/banderole/)
+[在线预览 · Balance](https://colmugx.github.io/balance/)
 
 [主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
