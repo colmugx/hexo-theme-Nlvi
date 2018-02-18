@@ -27,21 +27,17 @@ mobile-header: light
 # banderole | balance
 scheme: banderole
 
-# Article Header Sign
-header_sign: ∮
-
-
 ## Banderole
 # Header Style
 # line | block
 header-style: block
 
+# Article Header Sign
+header_sign: ∮
+
 # theme-style
 # miku | sakura | dark | green | blue | purple
 theme-style: miku
-
-## Balance
-
 
 # ===========================================
 # Article Setting
@@ -69,15 +65,18 @@ reward:
 # Comments // Please only switch one on.
 comments: 
   enable: true
+
   # disqus: 
+
   # changyan:
   #   appid: 
   #   appkey: 
+
   # gitment:
-  #   owner: ColMugX
-  #   repo: gitment-container
-  #   client_id: 5a9c60cc190b92f2f2ba
-  #   client_secret: e31770e8a80c91c63187863e7bc45d349bc5ac99
+  #   owner:
+  #   repo:
+  #   client_id:
+  #   client_secret:
 
 # sub //Please just fill out ID.
 sub:
@@ -159,6 +158,6 @@ code-style: default
 # ===========================================
 # Version
 # ===========================================
-version: 2.0.1
+version: 2.1
 
 #theme_author: Co1MugX
