@@ -1,56 +1,58 @@
 .highlight
+  position relative
+  background-color #f7f7f7
+  width 100%
+  margin (yard*2) 0
+  overflow-x auto
+  box-shadow: 0px 1px 2px rgba(#000, .06), 0px 8px 12px rgba(#000, .03)
+
+  &:after
+    content 'plain'
+    font-family 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-weight 100
+    color mix(#fff, $theme-color-comment)
+    position absolute
+    bottom 0
+    right 0
+    padding: (yard)
+
+  table
     position relative
-    background-color #f7f7f7
-    width 100%
-    margin (yard*2) 0
-    overflow-x auto
-    box-shadow: 0px 1px 2px rgba(#000, .06), 0px 8px 12px rgba(#000, .03)
 
-    &:after
-        content 'plain'
-        font-family 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-        font-weight 100
-        color mix(#fff, $theme-color-comment)
-        position absolute
-        bottom 0
-        right 0
-        padding: (yard)
-
-    table
-        position relative
-
+  pre
+    *
+        font-family $code-fonts !important
+  .gutter
+    width 10px
+    color $theme-color-comment
+    border-right 1px solid rgba($theme-color-comment, .1)
     pre
-        *
-            font-family $code-fonts !important
-    .gutter
-        width 10px
-        color $theme-color-comment
-        border-right 1px solid rgba($theme-color-comment, .1)
-        pre
-            padding: 0 (yard)
-    .code
-        color inherit
-        pre
-            padding: 0 (yard)
-    .line
-        height 22px
-    tr, td
-        margin: 0
+      padding: 0 (yard)
+  .code
+    color inherit
+    pre
+      padding: 0 (yard)
+    .comment
+      font-size 14px
+  .line
+    height 22px
+  tr, td
+    margin: 0
 
-    .code
-        .comment, .quote
-            color $color-code-comment
-        .keyword, .selector-tag, .addition
-            color $color-code-keyword
-        .number, .string, .meta .meta-string, .literal, .doctag, .regexp
-            color $color-code-number
-        .title, .section, .name, .selector-id, .selector-class
-            color $color-code-title
-        .attribute, .attr, .variable, .template-variable, .class .title, .type
-            color $color-code-attribute
-        .symbol, .bullet, .subst, .meta, .meta .keyword, .selector-attr, .selector-pseudo, .link
-            color $color-code-symbol
-        .built_in, .deletion
-            color $color-code-builtIn
-        .params
-            color $color-code-params
+  .code
+    .comment, .quote
+      color $color-code-comment
+    .keyword, .selector-tag, .addition
+      color $color-code-keyword
+    .number, .string, .meta .meta-string, .literal, .doctag, .regexp
+      color $color-code-number
+    .title, .section, .name, .selector-id, .selector-class
+      color $color-code-title
+    .attribute, .attr, .variable, .template-variable, .class .title, .type
+      color $color-code-attribute
+    .symbol, .bullet, .subst, .meta, .meta .keyword, .selector-attr, .selector-pseudo, .link
+      color $color-code-symbol
+    .built_in, .deletion
+      color $color-code-builtIn
+    .params
+      color $color-code-params
