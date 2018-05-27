@@ -68,4 +68,22 @@ if (Nlvi.base.isBalance()) {
       $('.inner-cloud').css('transform', 'translateX(-96%)');
     });
   }
+
+  Nlvi.utils.friendlist = function() {
+    $('#friendlink').on('click', function() {
+      if (Nlvi.tools.existClass('#friends', 'show')) {
+        $('#friends').addClass('dead').one('webkitAnimationEnd AnimationEnd', function() {
+          $(this).hide();
+          Nlvi.tools.opreateClass('#friends', 'show syuanpi bloom dead', 'remove');
+          Nlvi.tools.opreateClass('.menu-item', 'has_tag', 'remove');
+          Nlvi.tools.opreateClass('.main-nav', 'has_tag', 'remove');
+        });
+      } else {
+        $('#friends').show();
+        Nlvi.tools.opreateClass('#friends', 'show syuanpi bloom');
+        Nlvi.tools.opreateClass('.menu-item', 'has_tag');
+        Nlvi.tools.opreateClass('.main-nav', 'has_tag');
+      }
+    })
+  }
 }

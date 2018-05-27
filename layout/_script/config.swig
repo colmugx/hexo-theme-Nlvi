@@ -6,6 +6,7 @@
         lightbox: {{ theme.lightbox }},
         animate: {{ theme.animate }},
         baseUrl: "{{ url_for('/') }}",
-        search: {{ theme.search.enable }}
+        search: {{ theme.search.enable }},
+        friends: {{ Boolean(theme.friendLink) }}
     }
 </script>

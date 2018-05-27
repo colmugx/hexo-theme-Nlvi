@@ -5,11 +5,11 @@ nav:
   categories: カテゴリ
   about: ついて
   menu: メニュー
-  search: 検索
+  search: サーチ
   RSS: 購読
 page:
-  prev: < 新しい記事
-  next: 古い記事 >
+  prev: < 前のページ
+  next: 後のページ >
   comment: コメント
   share: シェア
   hide: 隠す

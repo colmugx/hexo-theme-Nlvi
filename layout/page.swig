@@ -18,6 +18,7 @@
           {% endif %}
         </div>
       </div>
+      {% include "_partial/friendlink.swig" %}
       {% include "_partial/_post/comments.swig" %}
     {% endif %}
   {% endblock %}
