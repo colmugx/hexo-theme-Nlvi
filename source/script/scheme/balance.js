@@ -64,5 +64,8 @@ if (Nlvi.base.isBalance()) {
         Nlvi.tools.opreateClass('.main-nav', 'has_tag');
       }
     });
+    $('#mobile-tags').on('click', function () {
+      $('.inner-cloud').css('transform', 'translateX(-96%)');
+    });
   }
 }
