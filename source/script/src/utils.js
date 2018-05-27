@@ -207,7 +207,6 @@ Nlvi.utils = {
         });
       }
     });
-    this.refreshSearch($header);
   },
 
   back2top: function() {
@@ -259,22 +258,4 @@ Nlvi.utils = {
       }
     })
   },
-
-  refreshSearch: function($header) {
-    var nowDate = new Date();
-    var hour = nowDate.getHours();
-    if (hour >= 8 && hour < 11) {
-      $header.html(GREETING.morning);
-    } else if (hour >= 11 && hour < 13) {
-      $header.html(GREETING.noon);
-    } else if (hour >= 13 && hour < 18) {
-      $header.html(GREETING.after);
-    } else if (hour >= 18 && hour < 23) {
-      $header.html(GREETING.night);
-    } else if (hour >= 23 && hour < 1) {
-      $header.html(GREETING.midnight);
-    } else if (hour >= 1 && hour < 8) {
-      $header.html(GREETING.midnight);
-    }
-  }
 };

@@ -65,6 +65,4 @@ if (Nlvi.base.isBalance()) {
       }
     });
   }
-
-  Nlvi.utils.refreshSearch = function() {}
 }
