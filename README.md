@@ -9,14 +9,6 @@
 
 ![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/desktop.png)
 
-![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/devices.png)
-
-![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
-
-![Nlvi-schemes](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/schemes.png)
-
-![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
-
 (前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
 
 目前我自己最满意的主题，就这个主题持续维护一直到过气。
@@ -29,14 +21,14 @@
 - 使用了lightbox
 - 文章打赏
 - 版权说明
-- 五颜六色，初音绿（真·五种颜六种色）
+- 五颜六色，初音绿
 
 ## 语言 Language
 
 - 简体中文
 - 正體中文（你可以告知我哪裡出問題，多謝。）
-- English ( Please tell me where wrong, Thx. )
-- 日本語 「君は私の問題を指示することができです、ありがとうございました。」
+- English ( Please tell me all errors if you mind. Thank you very much. )
+- 日本語 「テーマはすべてのエラーを教えてください、ありがとうございました。」
 
 ## 下载 Download
 
@@ -63,8 +55,15 @@ theme: Nlvi
 
 要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
 
+## 截图/风格展示 Screenshot/Schemes
 
-## 博客动图展示 Gif
+![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/devices.png)
+
+![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
+
+![Nlvi-schemes](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/schemes.png)
+
+![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
 
 ### 支持 Support
 
