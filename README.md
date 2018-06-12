@@ -11,17 +11,17 @@
 
 (前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
 
-目前我自己最满意的主题，就这个主题持续维护一直到过气。
-
-喜欢我的主题的小伙伴请不要吝啬你的Star，使用了我的主题请务必告诉我喔~
+喜欢我的主题的小伙伴请不要吝啬你的Star，或者告诉我~
 
 ## 特点 Special
 
-- 使用了动画库 [Syuanpi.css](https://colmugx.github.io/Syuanpi.css)
+- 使用了动画库 [syuanpi.css](https://github.com/colmugx/syuanpi.css)
 - 使用了lightbox
-- 文章打赏
+- 自定义样式
+- 文章打赏（二维码）
 - 版权说明
 - 五颜六色，初音绿
+- ~~或者你喜欢的颜色~~
 
 ## 语言 Language
 
@@ -67,5 +67,5 @@ theme: Nlvi
 
 ### 支持 Support
 
-Issue or Email
+{Issue, Email, Zhihu?}
 
