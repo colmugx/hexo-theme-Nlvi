@@ -19,29 +19,24 @@ nlvi.prototype.balance = function() {
     });
   }
   utils.switchToc = function() {
-    function tocHide() {
-      $('.toc-inner').addClass('fadeOutUp').one('webkitAnimationEnd AnimationEnd', function() {
-        $(this).hide();
-      });
+    tool('opreateClass')('#toc-switch', 'not-toc');
+    $('.toc-inner').hide();
+    function opMenu(opt) {
+      tool('opreateClass')('.menu-item', 'has_toc', opt);
+      tool('opreateClass')('.main-nav', 'has_toc', opt);
     }
-    $('.toc-inner').one('webkitAnimationEnd AnimationEnd', function() {
-      tool('opreateClass')('.toc-inner', 'fadeInDown', 'remove');
-      tool('opreateClass')('#toc-switch', 'not-toc');
-    });
-    tocHide();
     $('#toc-switch').on('click', function() {
       if (tool('existClass')(this, 'not-toc')) {
         tool('opreateClass')(this, 'not-toc', 'remove');
-        tool('opreateClass')('.toc-inner', 'fadeOutUp', 'remove');
-        tool('opreateClass')('.toc-inner', 'fadeInDown');
+        tool('animationEnd')('.toc-inner', 'fadeInDown')
         $('.toc-inner').show();
-        tool('opreateClass')('.menu-item', 'has_toc');
-        tool('opreateClass')('.main-nav', 'has_toc');
+        opMenu();
       } else {
-        tocHide();
+        tool('animationEnd')('.toc-inner', 'fadeOutUp', function() {
+          $('.toc-inner').hide();
+        });
         tool('opreateClass')(this, 'not-toc');
-        tool('opreateClass')('.menu-item', 'has_toc', 'remove');
-        tool('opreateClass')('.main-nav', 'has_toc', 'remove');
+        opMenu('remove');
       }
     })
   }
