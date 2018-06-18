@@ -25,29 +25,23 @@ nlvi.prototype.banderole = function() {
     });
   }
   utils.switchToc = function() {
-    function tocHide() {
-      $('.toc-inner').addClass('fadeOutRight').one('webkitAnimationEnd AnimationEnd', function() {
-        $(this).hide();
-      });
-    }
-    $('.toc-inner').one('webkitAnimationEnd AnimationEnd', function() {
-      tool('opreateClass')('.toc-inner', 'fadeInRight', 'remove');
-      tool('opreateClass')('#toc-switch', 'not-toc');
-    });
-    tocHide();
+    tool('opreateClass')('#toc-switch', 'not-toc');
+    tool('opreateClass')('.toc-inner', 'back-1', 'remove');
     $('#toc-switch').on('click', function() {
       if (tool('existClass')(this, 'not-toc')) {
         tool('opreateClass')(this, 'not-toc', 'remove');
         tool('opreateClass')('.toc-inner', 'fadeOutRight', 'remove');
-        tool('opreateClass')('.toc-inner', 'fadeInRight');
+        tool('animationEnd')('.toc-inner', 'fadeInRight');
         $('.toc-inner').show();
         tool('opreateClass')('.container-inner', 'has_toc');
       } else {
-        tocHide();
+        tool('animationEnd')('.toc-inner', 'fadeOutRight', function() {
+          $('.toc-inner').hide();
+        });
         tool('opreateClass')(this, 'not-toc');
         tool('opreateClass')('.container-inner', 'has_toc', 'remove');
       }
-    })
+    });
   }
   utils.tagcloud = function() {
     $('#tags').on('click', function() {

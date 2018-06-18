@@ -20,7 +20,6 @@ nlvi.prototype.balance = function() {
   }
   utils.switchToc = function() {
     tool('opreateClass')('#toc-switch', 'not-toc');
-    $('.toc-inner').hide();
     function opMenu(opt) {
       tool('opreateClass')('.menu-item', 'has_toc', opt);
       tool('opreateClass')('.main-nav', 'has_toc', opt);
@@ -38,7 +37,7 @@ nlvi.prototype.balance = function() {
         tool('opreateClass')(this, 'not-toc');
         opMenu('remove');
       }
-    })
+    });
   }
   utils.tagcloud = function() {
     function tagHide() {
