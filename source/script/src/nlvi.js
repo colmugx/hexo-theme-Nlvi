@@ -87,6 +87,7 @@
 
   nlvi.prototype.universal = function() {
     var tool = this.tools;
+    var config = this.config;
     var utils = {
       mobileHeader: function() {
         function resetMobileMenu() {
@@ -188,7 +189,7 @@
         });
 
         $.ajax({
-          url: NlviConfig.baseUrl + 'search.xml',
+          url: config.baseUrl + 'search.xml',
           dataType: 'xml',
           success: function (xmlResponse) {
             var searchData = $('entry', xmlResponse).map(function () {
@@ -286,6 +287,7 @@
 
   nlvi.prototype.bootstrap = function() {
     var config = this.config;
+    var theme = config.theme;
     var utils = {};
     switch (true) {
       case this.base().isBalance():
@@ -302,7 +304,7 @@
     utils.back2top();
     utils.tagcloud();
     utils.switchToc();
-    config.search && utils.search();
+    theme.search && utils.search();
   }
 
   window.nlvi = nlvi;
