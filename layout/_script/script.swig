@@ -9,6 +9,10 @@
   <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
 {% endif %}
 
+{% if theme.lazyload %}
+  {{ js('script/lib/lazyload/lazyload.min') }}
+{% endif %}
+
 {% if theme.plugins %}
   {% for plugin in theme.plugins %}
     {{js(plugin)}}

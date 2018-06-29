@@ -112,6 +112,9 @@ mathjax: false
 # lightbox
 lightbox: true
 
+# lazyload
+lazyload: false
+
 # animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
 animate: true
 
