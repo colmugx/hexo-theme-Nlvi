@@ -8,7 +8,7 @@
   {% if is_post() %} is_post {% endif %}
   ">
     <header class="post-header">
-      <div class="post-time syuanpi fadeInUp back-1">
+      <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
           <span>{{ full_date(post.date, 'YYYY-MM-DD') }}</span>
           {% if post.categories and post.categories.length %}
@@ -18,7 +18,7 @@
           {% endif %}
           {% if is_post() %}
             {% if post.tags and post.tags.length %}
-              <aside class="post-tags syuanpi fadeInUp back-3">
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
               {% for tag in post.tags %}
                 <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
               {% endfor %}
@@ -27,7 +27,7 @@
           {% endif %}
         </div>
       </div>
-      <h1 class="post-title syuanpi fadeInUp back-2">
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
         {% if is_post() %}
           {{ post.title }}
         {% else %}
@@ -35,7 +35,7 @@
         {% endif %}
       </h1>
     </header>
-    <div class="post-content syuanpi fadeInUp back-3">
+    <div class="post-content syuanpi fadeInUpShort back-3">
       {% if is_post() %}
         {{ post.content }}
       {% else %}
@@ -63,7 +63,7 @@
     {% include "_post/comments.swig" %}
 
   {% endif %}
-  {% if theme.scheme == 'banderole' %} 
+  {% if theme.scheme == 'banderole' %}
     {% include "./_feature/banderole.swig" %}
   {% endif %}
 {% endmacro %}
