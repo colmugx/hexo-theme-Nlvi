@@ -76,9 +76,9 @@
         $('.post-content').each(function() {
           $(this).find('img').each(function() {
             $(this).parent('p').css('text-align', 'center');
-            var img = "<img src='" + this.src;
+            var imgHead = "<img src='" + this.src;
             if (theme.lazy) {
-              img = "<img class='lazy' data-src='" + this.src;
+              imgHead = "<img class='lazy' data-src='" + this.src;
             }
             $(this).replaceWith("<a href='" + this.src + "' data-title='" + this.alt + "' data-lightbox='group'>" + imgHead + "' alt='" + this.alt + "'></a>");
           });
