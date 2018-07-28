@@ -1,25 +1,39 @@
 .post-reward
+    position relative
     width 100%
+    text-align center
+    margin-top: (yard*6)
     .reward-btn
-        display block
-        margin yard auto
-        padding yard
-        text-align center
-        border 1px solid $color-main
-        width 48px
-        border-radius: 8px
-        &:hover
-            color #FFF
-            background-color $color-main
-            cursor pointer
+      position relative
+      display inline
+      margin yard auto
+      padding yard
+      text-align center
+      color $theme-color-text
+      border none
+      border-radius: 4px
+      cursor pointer
+      &:after
+        content ''
+        position absolute
+        bottom 0
+        left 50%
+        right 50%
+        background-color $theme-color-main
+        height 2px
+        transition all .15s linear
+      &:hover
+        &:after
+          left 0
+          right 0
 
     .reward-wrapper
-        margin (yard*3) 0
-        flex-direction row
-        justify-content center
-        align-items center
-        .reward-item
-            margin 0 2%
-        img
-            width 150px
-            height @width
+      margin (yard*3) 0
+      flex-direction row
+      justify-content center
+      align-items center
+      .reward-item
+        margin 0 2%
+      img
+        width 150px
+        height @width

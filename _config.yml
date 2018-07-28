@@ -52,11 +52,13 @@ copyright:
   # license: 
 
 #Reword button or message(fill your QRCode of any Pay.)
-reward: 
+reward:
   enable: false
-  # alipay: 
-  # wechat: 
-  # paypal: 
+  # message:
+  qrcode:
+    # alipay:
+    # wechat:
+    # paypal:
 
 # ===========================================
 # Social Contact

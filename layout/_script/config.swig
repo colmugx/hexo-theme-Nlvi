@@ -9,6 +9,7 @@
       animate: {{ theme.animate }},
       search: {{ theme.search.enable or false }},
       friends: {{ Boolean(theme.friendLink) }},
+      reward: {{ theme.reward.enable or false }},
       lazy: {{ theme.lazyload }}
     }
   }

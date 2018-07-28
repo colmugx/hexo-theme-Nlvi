@@ -106,6 +106,7 @@
 
   nlvi.prototype.universal = function() {
     var tool = this.tools;
+    var expect = this.expect;
     var config = this.config;
     var utils = {
       mobileHeader: function() {
@@ -160,7 +161,6 @@
           }
         });
       },
-
       titleStatus: function() {
         var title = document.title;
         var tme;
@@ -178,7 +178,18 @@
           }
         });
       },
-
+      showReward: function () {
+        $('#reward-btn').click(function () {
+          if (expect('#reward-wrapper').isDisplay()) {
+            $('#reward-wrapper').css('display', 'flex');
+            tool('animationEnd')('#reward-wrapper', 'clarity');
+          } else {
+            tool('animationEnd')('#reward-wrapper', 'melt', function() {
+              $(this).hide();
+            })
+          }
+        });
+      },
       search: function() {
         var $search = $('#search');
         var $mask = $('#mask');
@@ -212,7 +223,6 @@
             $('.search').hide();
           }
         );
-
         $.ajax({
           url: config.baseUrl + 'search.xml',
           dataType: 'xml',
@@ -330,6 +340,7 @@
     utils.back2top();
     utils.tagcloud();
     utils.switchToc();
+    theme.reward && utils.showReward();
     theme.search && utils.search();
     theme.lazy && $('img.lazy').lazylaod();
   }
