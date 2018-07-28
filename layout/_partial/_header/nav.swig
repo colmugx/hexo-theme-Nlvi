@@ -1,7 +1,7 @@
 <nav class="main-nav">
-  {% if theme.menu %}      
+  {% if theme.menu %}
   <ul class="main-nav-list syuanpi tvIn">
-  {% if theme.search %}
+  {% if theme.search.enable %}
     <li class="menu-item">
       <a href="javascript:;" id="search">
         <span>{{ __('nav.' + 'search') }}</span>
@@ -24,7 +24,7 @@
           <span class="menu-item-label">{{ name }}</span>
         {% endif %}
       </a>
-    </li>  
+    </li>
   {% endfor %}
   </ul>
   {% endif %}
