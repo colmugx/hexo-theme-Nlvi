@@ -1,4 +1,5 @@
 {% extends "_layout.swig" %}
+{% import '_partial/post.swig' as postPage %}
   {% block title %}
     {{config.title}}
     {% if config.subtitle %}
@@ -7,18 +8,9 @@
   {% endblock %}
 
   {% block main %}
+    {{ postPage.render(page) }}
     {% if page.type === 'about' %}
-      <div class="about syuanpi fadeInUp">
-        <h2 class="title"> {{ __('nav.about') }} </h2>
-        <div class="content">
-          {% if theme.self %}
-            {{ theme.self }}
-          {% else %}
-            {{ page.content }}
-          {% endif %}
-        </div>
-      </div>
       {% include "_partial/friendlink.swig" %}
-      {% include "_partial/_post/comments.swig" %}
     {% endif %}
+    {% include "_partial/_post/comments.swig" %}
   {% endblock %}
