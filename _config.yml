@@ -80,6 +80,13 @@ comments:
   #   client_id:
   #   client_secret:
 
+  # gitalk:
+  #   client_id: 
+  #   client_secret: 
+  #   repo: 
+  #   owner: 
+  #   admin: 
+
 # sub //Please just fill out ID.
 sub:
   facebook: 1
