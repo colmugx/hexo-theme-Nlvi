@@ -1,31 +1,24 @@
 .post-reward
-    position relative
     width 100%
     text-align center
-    margin-top: (yard*6)
+    margin-top (yard*6)
     .reward-btn
       position relative
       display inline
       margin yard auto
-      padding yard
+      padding yard (yard*2)
       text-align center
-      color $theme-color-text
-      border none
-      border-radius: 4px
+      background-color $theme-color-selection-highlight
+      color #fff
+      font-size 14px
+      font-weight 600
+      border-radius yard
       cursor pointer
-      &:after
-        content ''
-        position absolute
-        bottom 0
-        left 50%
-        right 50%
-        background-color $theme-color-main
-        height 2px
-        transition all .15s linear
+      box-shadow: 0 1px 1px transparent
+      transition box-shadow .2s ease-in, background-color .2s ease-in
       &:hover
-        &:after
-          left 0
-          right 0
+        background-color $theme-color-main
+        box-shadow 0 1px 1px #d5d5d5;
 
     .reward-wrapper
       margin (yard*3) 0
