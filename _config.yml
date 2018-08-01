@@ -69,6 +69,7 @@ comments:
   enable: true
 
   # disqus: 
+  # livere_datauid:
 
   # changyan:
   #   appid: 
@@ -158,6 +159,6 @@ code-style: default
 # ===========================================
 # Version
 # ===========================================
-version: 2.2
+version: 2.4
 
 #theme_author: Co1MugX

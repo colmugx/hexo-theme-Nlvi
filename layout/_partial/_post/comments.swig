@@ -4,5 +4,6 @@
     {% include "../../_script/_comment/gitment.swig" %}
     {% include "../../_script/_comment/changyan.swig" %}
     {% include "../../_script/_comment/disqus.swig" %}
+    {% include "../../_script/_comment/livere.swig" %}
   </div>
 {% endif %}
