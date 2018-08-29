@@ -342,7 +342,7 @@
     utils.switchToc();
     theme.reward && utils.showReward();
     theme.search && utils.search();
-    theme.lazy && $('img.lazy').lazylaod();
+    theme.lazy && $('img.lazy').lazyload();
   }
 
   window.nlvi = nlvi;
