@@ -2,6 +2,13 @@
 
 <section class="posts">
   {% for post in page.posts %}
-    {{ postPage.render(post) }}
+    {% if post.top %}
+      {{ postPage.render(post) }}
+    {% endif %}
+  {% endfor %}
+  {% for post in page.posts %}
+    {% if not post.top %}
+      {{ postPage.render(post) }}
+    {% endif %}
   {% endfor %}
 </section>
