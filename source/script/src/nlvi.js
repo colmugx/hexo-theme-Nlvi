@@ -335,7 +335,6 @@
     }
     this.boot();
     utils.titleStatus();
-    utils.mobileHeader();
     utils.showToc();
     utils.back2top();
     utils.tagcloud();
@@ -343,6 +342,11 @@
     theme.reward && utils.showReward();
     theme.search && utils.search();
     theme.lazy && $('img.lazy').lazyload();
+
+    $(document).ready(function() {
+      $('.container').show();
+      utils.mobileHeader();
+    });
   }
 
   window.nlvi = nlvi;
