@@ -20,5 +20,7 @@
       </div>
       {% include "_partial/friendlink.swig" %}
       {% include "_partial/_post/comments.swig" %}
+    {% else %}
+      {{ page.content }}
     {% endif %}
   {% endblock %}
