@@ -24,25 +24,12 @@
       border-left 1px solid #eae7e7
       padding (yard/2) yard
       &:hover
-        &:before
-          right 0
         &:after
           opacity 1
         .archive-post-time
           padding-left (yard*2)
         .archive-post-link
           color mix(#353535, $theme-color-main)
-      &:before
-        content ''
-        background-color rgba(mix(#fff, $theme-color-main), .3)
-        border-radius 0 6px 6px 0
-        position absolute
-        top 0
-        bottom 0
-        left 0
-        right 100%
-        transition all .3s linear
-        z-index -1
       &:after
         content ''
         position absolute
