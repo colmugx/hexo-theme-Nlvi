@@ -90,9 +90,10 @@ sub:
   zhihu: 5
   github: 6
   linkedin: 7
+  douban: 8
 
 #Friend link
-# friendLink: 
+# friendLink:
 
 # ===========================================
 # Analytics

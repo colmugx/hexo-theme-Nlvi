@@ -5,28 +5,32 @@
     {% set zhihu = 'https://www.zhihu.com/people/' %}
     {% set facebook = 'https://www.facebook.com/' %}
     {% set linkedin = 'https://www.linkedin.com/in/' %}
-    {% set ins = 'https://www.instagram.com/' %}
+    {% set instagram = 'https://www.instagram.com/' %}
+    {% set douban = 'https://www.douban.com/people/' %}
     {% for name, path in theme.sub %}
         {% if name == 'github' %}
-            <a href="{{github + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+            <a href="{{github + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'weibo' %}
-            <a href="{{ weibo + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+            <a href="{{ weibo + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'twitter' %}
-            <a href="{{ twitter + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+            <a href="{{ twitter + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'zhihu' %}
             <a href="{{ zhihu + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'facebook' %}
-            <a href="{{ facebook + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+            <a href="{{ facebook + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'linkedin' %}
-            <a href="{{ linkedin + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
+            <a href="{{ linkedin + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'instagram' %}
-            <a href="{{ins + path }}" class="iconfont icon-ins" title="{{ name }}"></a>
+            <a href="{{ins + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
+        {% endif %}
+        {% if name == 'douban' %}
+            <a href="{{ins + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
         {% endif %}
     {% endfor %}
 </div>

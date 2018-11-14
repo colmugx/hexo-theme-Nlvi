@@ -2,10 +2,10 @@ $social-list = {
   github: #24292e,
   weibo: #e6162d,
   twitter: #1ab2e8,
-  zhihu: #0767c8,
   linkedin: #5290bc,
   facebook: #4e69a2,
-  ins: #d10869
+  instagram: #d10869,
+  douban: #0cb527
 }
 
 .footer
@@ -46,8 +46,10 @@ $social-list = {
         font-size 26px
 
     for $k, $c in $social-list
-      .icon-{$k}:hover
+      .icon-social-{$k}:hover
         color $c
+    .icon-zhihu:hover
+      color #0767c8
 
   .right
     flex 2
