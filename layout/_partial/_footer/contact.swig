@@ -9,7 +9,7 @@
     {% set douban = 'https://www.douban.com/people/' %}
     {% for name, path in theme.sub %}
         {% if name == 'github' %}
-            <a href="{{github + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
+            <a href="{{ github + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'weibo' %}
             <a href="{{ weibo + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
@@ -27,10 +27,10 @@
             <a href="{{ linkedin + path }}" class="iconfont icon-social-{{ name }}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'instagram' %}
-            <a href="{{ins + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
+            <a href="{{ ins + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
         {% endif %}
         {% if name == 'douban' %}
-            <a href="{{ins + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
+            <a href="{{ douban + path }}" class="iconfont icon-social-{{name}}" title="{{ name }}"></a>
         {% endif %}
     {% endfor %}
 </div>
