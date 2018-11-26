@@ -34,7 +34,7 @@
 
 你有三种方式下载到Nlvi
 
-1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git theme/Nlvi`
+1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git themes/Nlvi`
 
 2.  `Download ZIP`
 
