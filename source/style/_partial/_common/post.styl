@@ -58,6 +58,24 @@
         &:before
           content ($header-sign + ' ')
 
+    table
+      min-width 50%
+      margin 16px 0
+      border-collapse: collapse
+      list-style none
+      line-height 1.5
+      text-align center
+      tr
+        font-weight 500
+        &:nth-child(2n)
+          background rgba($theme-color-main, .06)
+      th
+      td
+        min-width 100px
+        padding 8px
+      thead
+        background-color #fafafa
+
     .content-link
       a
         position relative
