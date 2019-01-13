@@ -13,13 +13,16 @@
   {{ js('script/lib/lazyload/lazyload.min') }}
 {% endif %}
 
+{% if theme.pjax %}
+  {{ js('script/lib/pjax/pjax') }}
+{% endif %}
+
 {% if theme.plugins %}
   {% for plugin in theme.plugins %}
     {{js(plugin)}}
   {% endfor %}
 {% endif %}
 
-{{ js('script/src/nlvi') }}
 {% if theme.scheme == 'banderole' %}
   {{ js('script/scheme/banderole') }}
 {% else %}
