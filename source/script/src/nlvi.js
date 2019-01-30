@@ -77,10 +77,14 @@
           $(this).find('img').each(function() {
             $(this).parent('p').css('text-align', 'center');
             var imgHead = "<img src='" + this.src;
+
             if (theme.lazy) {
-              imgHead = "<img class='lazy' data-src='" + this.src;
+              imgHead = "<img class='lazy post-img-lazyload-cover' data-original='" + this.src + "'";
             }
-            $(this).replaceWith("<a href='" + this.src + "' data-title='" + this.alt + "' data-lightbox='group'>" + imgHead + "' alt='" + this.alt + "'></a>");
+
+            $(this).replaceWith(
+              "<a href='" + this.src + "' data-title='" + this.alt + "' data-lightbox='group'>" + imgHead + " alt='" + this.alt + "'></a>"
+            );
           });
         });
       },
@@ -341,7 +345,12 @@
     utils.switchToc();
     theme.reward && utils.showReward();
     theme.search && utils.search();
-    theme.lazy && $('img.lazy').lazyload();
+    theme.lazy && $('img.lazy').lazyload({
+      effect: "fadeIn",
+      load: function() {
+        $(this).removeClass("post-img-lazyload-cover");
+      },
+    });
 
     $(document).ready(function() {
       $('.container').show();
