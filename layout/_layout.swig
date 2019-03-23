@@ -5,14 +5,7 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  {% include "_partial/progress.swig" %}
-
-  {% if theme.scheme == 'banderole' %}
-    {% include "_partial/tagcloud.swig" %}
-  {% endif %}
-
   <div class="container" style="display:none;">
-
     {% include "_partial/header.swig" %}
     <div class="container-inner">
       <main class="main" id="main">

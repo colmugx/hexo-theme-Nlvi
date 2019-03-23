@@ -7,7 +7,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="msapplication-navbutton-color" content="#666666">
 <meta name= "format-detection" content="telephone=no" />
-<meta name="keywords" content="nlvi, Nlvi" />
 {% if theme.favicon %}
   <link rel="apple-touch-icon"  sizes="72x72"  href="{{theme.favicon}}">
   <link rel="apple-touch-icon-precomposed"  sizes="72x72"  href="{{theme.favicon}}">
@@ -22,5 +21,5 @@
   <meta name="keywords" content="{{ config.keywords }}" />
 {% endif %}
 {% if page.tags and page.tags.length %}
-  <meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }}, {% endfor %}Nlvi" />
+  <meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }}, {% endfor %}nlvi" />
 {% endif %}
