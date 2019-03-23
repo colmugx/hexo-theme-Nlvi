@@ -6,6 +6,7 @@ $(document).ready(function(){
   app.switchToc();
   app.titleStatus();
   app.init();
+  window.nlviconfig.theme.scheme === "banderole" && app.pushHeader();
   $(document).ready(function() {
     $('.container').show();
   });
