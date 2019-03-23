@@ -16,22 +16,23 @@ transition-delay()
   -moz-transition-delay: arguments
   -webkit-transition-delay: arguments
 
-border-line($f, $c)
-  background-image linear-gradient(180deg, $c, $c 50%, transparent 50%)
-  background-size 100% 1px
-  background-repeat no-repeat
-  background-position $f center
-  background-origin border-box
+flex-wrapper($direction)
+  display: flex
+  flex-flow: $direction nowrap
+  align-items: center
+  { block }
+
+transition-sign($sign = all)
+  transition: $sign 280ms ease
+
 
 headerStyle()
   if hexo-config('scheme') == 'balance'
     if $header-style == 'block'
-      background-color rgba($theme-color-main, 0.2)
+      background-color: mix($theme-color-main, #fff, 15%)
     else
-      border-right 1px solid mix($theme-color-main, #fff)
-      border-image -webkit-linear-gradient(#fff, mix($theme-color-main, #fff), #fff) 0 10 0 0
+      border-right: 1px solid mix($theme-color-main, #fff)
+      border-image: -webkit-linear-gradient(#fff, mix($theme-color-main, #fff), #fff) 0 10 0 0
   else
     if $header-style == 'block'
-      background-color rgba($theme-color-main, 0.1)
-    else
-      border-top 3px solid $theme-color-main
+      background-color: mix($theme-color-main, #fff, 5%)

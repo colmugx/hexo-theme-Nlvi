@@ -10,7 +10,7 @@ yard = 8px
 font-weight = 400
 
 // Normal Font
-$normal-fonts = "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+$normal-fonts = "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif
 $header-fonts = 'Allura', cursive, serif
 
 // Article Font
@@ -26,7 +26,7 @@ if $fonts-style in $article-fonts
   if $fonts-style == 'Custom'
     $article-fonts = $custom-article-font
 else
-  $fonts-style = $article-fonts['default']
+  $article-fonts = $article-fonts['default']
 
 // Code Font
 $code-fonts = 'Segoe UI', monospace, Consolas, Monaco, Menlo, 'Microsoft YaHei', sans-serif
@@ -34,12 +34,12 @@ if hexo-config('code-style') == 'Custom'
   $code-fonts = $custom-code-font
 
 $heading-list = {
-  h1: 26px
-  h2: 24px
-  h3: 20px
-  h4: 18px
+  h1: 36px
+  h2: 28px
+  h3: 24px
+  h4: 20px
   h5: 16px
-  h6: 12px
+  h6: 14px
 }
 
 // ======== Color ========
@@ -62,37 +62,20 @@ $color-code-symbol = #cb4b16
 $global-setting = {
   font-size: 16px,
   background: #fff,
-  color: #49545f
+  color: #383838
 }
 
 // ======== Theme ========
 $theme-style = hexo-config("theme-style")
 
 $theme-list = {
-  dark: {
-    main: #666
-    highlight: #353535
-  },
-  sakura: {
-    main: #fe89c3,
-    highlight: #ff99cc
-  },
-  miku: {
-    main: #39C5BB,
-    highlight: #54DDD3
-  },
-  green: {
-    main: #70bc68,
-    highlight: #70fc77
-  },
-  blue: {
-    main: #5eb0ff,
-    highlight: #73b7f9
-  },
-  purple: {
-    main: #596fef,
-    highlight: #7597f9
-  },
+  default: #383838,
+  sakura:  #fe89c3,
+  green:   #70bc68,
+  blue:    #5eb0ff,
+  purple:  #596fef,
+  miku:    #39c5bb,
+  snowmiku: #56d0ff
 }
 
 if $theme-style in $theme-list
@@ -104,9 +87,13 @@ else
   $theme-select = $theme-list['default']
 
 
-$theme-color-main = $theme-select.main
-$theme-color-selection = $global-setting.background
-$theme-color-selection-highlight = rgba($theme-color-main, .7)
-$theme-color-link = $theme-select.highlight
-$theme-color-text = $global-setting.color
-$theme-color-comment = rgba($global-setting.color, .7)
+$theme-text-color-main = #383838
+$theme-text-color-sub = #666
+$theme-text-color-desc = #999
+$theme-text-color-comment = #c0c0c0
+
+$theme-line-color = #f8f8f8
+
+$theme-color-main = $theme-select
+$theme-color-hover = mix($theme-color-main, #fff, 55%)
+$theme-color-link = mix($theme-color-main, #fff, 75%)

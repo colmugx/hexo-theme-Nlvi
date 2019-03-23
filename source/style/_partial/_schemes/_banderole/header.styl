@@ -1,70 +1,78 @@
 .header
-  width 100%
-  height 110px
-  padding (yard*2)
-  display flex
-  align-items center
+  position: fixed
+  top: 0
+  z-index: 9
+  width: 100%
+  padding: (yard*3) 0
+  background-color #fff
+  transition-sign(all)
+  flex-wrapper(row)
   headerStyle()
   +mobile()
     display none
-  &.show
-    filter blur(3px)
   .header-wrapper
-    display flex
-    justify-content space-between
-    align-items center
-    flex-direction row
-    width 800px
-    margin 0 auto
-    font-size 16px
-    color $theme-color-text
+    +flex-wrapper(row)
+      justify-content: space-between
+    width: 100%
+    font-size: 16px
+    color: $theme-text-color-sub
+    padding: 0 (yard*5)
   .logo
-    display flex
-    align-items center
-    -webkit-user-select none
-    -moz-user-select none
-    user-select none
-    font-size 42px
+    flex-wrapper(row)
+    -webkit-user-select: none
+    -moz-user-select: none
+    user-select: none
+    font-size: 42px
     font-family: $header-fonts
+    margin-left: (yard*2)
     a
-      color inherit
-      text-decoration none
+      color: inherit
+      text-decoration: none
+      font-weight: 100;
     span
-      display block
-      text-align left
+      display: block
+      text-align: left
     #subtitle
-      opacity 0
-      position absolute
-      margin-top (yard/2)
-      font-size 12px
-      width 100%
-      font-family $normal-fonts
+      opacity: 0
+      position: absolute
+      margin-top: (yard/4)
+      font-size: 12px
+      width: 100%
+      font-family: $normal-fonts
+      transition-sign(opacity)
   .logo-inner
-    position relative
-    width 100%
-    max-width 100%
-    span:hover+#subtitle
-        opacity 1
+    position: relative
+    width: 100%
+    max-width: 100%
+    h1
+      margin: 0
+      &:hover+#subtitle
+        opacity: 1
   .main-nav
-    display flex
-    justify-content flex-end
+    display: flex
+    justify-content: flex-end
     +tablet()
-      flex 2
+      flex: 2
 
   .main-nav-list
-    padding 0
-    list-style none
+    padding: 0
+    list-style: none
     .menu-item
-      display inline-block
-      padding 0 (yard*2)
+      display: inline-block
+      margin-right: (yard*2)
       a
-        display flex
-        flex-direction column
         text-decoration: none
-        color $theme-color-text
-        font-size inherit
-        text-align center
+        color: inherit
+        font-size: inherit
+        text-align: center
+        letter-spacing: 1.2px
+        transition-sign()
         &:hover
-          color $theme-color-link
-      .menu-item-label
-        font-size 12px
+          text-shadow: 1px 1px 0px #d6d6d6
+          color: $theme-color-link
+
+.header-scroll
+  padding: yard 0
+  box-shadow: -4px -1px 8px mix(#fff, $theme-color-main)
+  #subtitle
+    opacity: 0 !important
