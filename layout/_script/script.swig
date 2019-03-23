@@ -17,15 +17,16 @@
   {{ js('script/lib/pjax/pjax') }}
 {% endif %}
 
+{% if theme.scheme == 'banderole' %}
+  {{ js('script/scheme/banderole') }}
+{% else %}
+  {{ js('script/scheme/balance') }}
+{% endif %}
+
 {% if theme.plugins %}
   {% for plugin in theme.plugins %}
     {{js(plugin)}}
   {% endfor %}
 {% endif %}
 
-{% if theme.scheme == 'banderole' %}
-  {{ js('script/scheme/banderole') }}
-{% else %}
-  {{ js('script/scheme/balance') }}
-{% endif %}
 {{ js('script/bootstarp') }}
