@@ -32,12 +32,10 @@ scheme: banderole
 # line | block
 header-style: block
 
-# Article Header Sign
-header_sign: ∮
-
 # theme-style
-# miku | sakura | dark | green | blue | purple
-theme-style: miku
+# default: dark | green | blue | purple
+# miku | sakura | snowmiku
+theme-style: sakura
 
 # ===========================================
 # Article Setting
