@@ -8,8 +8,8 @@ nav:
   search: サーチ
   RSS: 購読
 page:
-  prev: < 前のページ
-  next: 後のページ >
+  prev: 前のページ
+  next: 後のページ
   comment: コメント
   share: シェア
   hide: 隠す

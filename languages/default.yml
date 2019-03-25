@@ -9,8 +9,8 @@ nav:
   RSS: RSS
 
 page:
-  prev: < Prev
-  next: Next >
+  prev: Prev
+  next: Next
   comment: Comment
   share: Share
   hide: Hide
