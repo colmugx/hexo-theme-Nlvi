@@ -1,15 +1,27 @@
 .post
+  position: relative
   margin-top: yard*3
   padding: yard*2
   position: relative
   font-weight: font-weight
-  border-bottom: 1px solid $theme-line-color
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 0
+    height: 0
+    border: 12px solid transparent
+    border-bottom: 12px solid rgba($theme-color-main, 50%)
+    transform-origin: 63% 86%
+    transform: rotate(135deg)
+  &:last-child
+  &.is_post
+    &:after
+      display: none
   +mobile()
     width: 100%
     padding: 0 yard
-  &:last-child,
-  &.is_post
-    background-image: none
   .post-header
     margin-bottom: (yard*2)
     font-family: $normal-fonts
@@ -18,12 +30,14 @@
       color: $theme-text-color-main
     .post-time
       color: $theme-text-color-desc
+      letter-spacing: 1px
+      margin-left: (yard/4)
       .post-category
         font-size: 14px
         a
           color: $theme-text-color-desc
         &:before
-          content: ' | '
+          content: ' · '
 
     .post-title
       position: relative
@@ -41,28 +55,27 @@
 
 
   .post-tags
-    display: inline
+    margin: (yard*1.5) 0
     padding-left: yard
     font-family: $normal-fonts
-    color: $theme-color-main
+    color: $theme-color-hover
     a
       position: relative
       text-decoration: none
       color: inherit
+      margin-right: yard
       &:before
         content: '#'
+        margin-right: 2px
 
   .post-content
     color: $theme-text-color-main
     font-family: $article-fonts
     padding-bottom: yard
+    border-bottom: 1px solid $theme-line-color
     for $k, $v in $heading-list
       {$k}
         font-family: $article-fonts
-        font-weight: inherit
-        margin: (yard*2) 0
-        &:before
-          content: ($header-sign + ' ')
 
     table
       min-width: 50%
@@ -85,8 +98,8 @@
     .content-link
       a
         position: relative
-        color: mix($theme-color-main, #b9b9b9)
-        font-weight: 500
+        color: $theme-color-link
+        font-size 18px
         text-decoration: none
         &:hover
           text-decoration: none
@@ -115,9 +128,6 @@
     a
       color: $theme-color-main
       text-decoration: none
-      margin: 0 (yard/2)
-      &:hover
-        text-decoration: underline
 
     i
       font-weight: 300
@@ -139,7 +149,7 @@
       padding: (yard/4) yard
       background-color: rgba($theme-color-main, .1)
       border-left: 4px solid $theme-color-main
-      color: mix(#282626, $theme-color-main)
+      color: mix(#383838, $theme-color-main)
       &:before
         content: ''
         position: absolute

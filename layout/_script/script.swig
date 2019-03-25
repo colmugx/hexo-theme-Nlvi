@@ -10,7 +10,7 @@
 {% endif %}
 
 {% if theme.lazyload %}
-  {{ js('script/lib/lazyload/lazyload.min') }}
+  {{ js('script/lib/layzr/layzr') }}
 {% endif %}
 
 {% if theme.pjax %}

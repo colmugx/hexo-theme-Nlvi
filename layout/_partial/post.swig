@@ -16,15 +16,6 @@
               <span class="post-category"><a href="{{ url_for(category.path) }}">{{ category.name }}</a></span>
             {% endfor %}
           {% endif %}
-          {% if is_post() %}
-            {% if post.tags and post.tags.length %}
-              <aside class="post-tags syuanpi fadeInUpShort back-3">
-              {% for tag in post.tags %}
-                <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-              {% endfor %}
-              </aside>
-            {% endif %}
-          {% endif %}
         </div>
       </div>
       <h2 class="post-title syuanpi fadeInUpShort back-2">
@@ -53,6 +44,13 @@
       </p>
     {% endif %}
     </div>
+    {% if post.tags and post.tags.length %}
+      <div class="post-tags syuanpi fadeInUpShort back-3">
+      {% for tag in post.tags %}
+        <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+      {% endfor %}
+      </div>
+    {% endif %}
     {% if is_post() %}
       {% include "_post/reward.swig" %}
       {% include "_post/copyright.swig" %}

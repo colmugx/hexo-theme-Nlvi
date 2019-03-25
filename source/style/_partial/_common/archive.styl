@@ -1,53 +1,34 @@
 .archive
-  color $theme-text-color-main
+  color: $theme-text-color-main
   .archive-title
-    display inline-block
-    margin 0
-    font-family inherit
-    font-weight 400
-    color $theme-color-main
+    display: inline-block
+    margin: 0
+    font-family: inherit
   .archive-num
-    margin yard
-    font-weight 300
+    margin: yard
   .archive-name
-    font-size 16px
-    font-weight 300
+    font-size: 16px
   .archive-list
     .archive-year
-      font-family $normal-fonts
-      font-weight 400
+      font-family: $normal-fonts
+      color: $theme-color-main
     ul
-      list-style none
-      padding 0
+      list-style: none
+      padding: 0
     .archive-post
-      position relative
-      border-left 1px solid #eae7e7
-      padding (yard/2) yard
+      position: relative
+      border-left: 1px solid $theme-line-color
+      padding: (yard/2) yard
       &:hover
-        &:after
-          opacity 1
-        .archive-post-time
-          padding-left (yard*2)
         .archive-post-link
-          color mix(#353535, $theme-color-main)
-      &:after
-        content ''
-        position absolute
-        top 0
-        bottom 0
-        left 0
-        opacity 0
-        border-top: 10px solid transparent
-        border-bottom  @border-top
-        border-left 10px solid mix(#fff, $theme-color-main)
-        transition all .3s linear .1s
+          color: mix(#383838, $theme-color-main)
       .archive-post-time
-        font-family $normal-fonts
-        color $theme-text-color-desc
+        font-family: $normal-fonts
+        color: $theme-text-color-desc
       .archive-post-link
-        line-height (line-height*1.2)
-        color $theme-color-main
-        a
-          margin 0 yard
-          text-decoration none
-          color inherit
+        line-height: (line-height*1.2)
+        color: $theme-color-main
+      a
+        display block
+        text-decoration: none
+        color: inherit

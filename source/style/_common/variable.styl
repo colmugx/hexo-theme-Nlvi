@@ -5,6 +5,7 @@
 // ======== Space ========
 line-height = 1.5
 yard = 8px
+max-width = 900px
 
 // ======== Font ========
 font-weight = 400
@@ -70,12 +71,12 @@ $theme-style = hexo-config("theme-style")
 
 $theme-list = {
   default: #383838,
-  sakura:  #fe89c3,
+  sakura:  #fd9999,
   green:   #70bc68,
   blue:    #5eb0ff,
   purple:  #596fef,
   miku:    #39c5bb,
-  snowmiku: #56d0ff
+  snowmiku: #6ed5fd
 }
 
 if $theme-style in $theme-list
@@ -92,8 +93,8 @@ $theme-text-color-sub = #666
 $theme-text-color-desc = #999
 $theme-text-color-comment = #c0c0c0
 
-$theme-line-color = #f8f8f8
+$theme-line-color = #f0f0f0
 
 $theme-color-main = $theme-select
-$theme-color-hover = mix($theme-color-main, #fff, 55%)
-$theme-color-link = mix($theme-color-main, #fff, 75%)
+$theme-color-hover = mix($theme-color-main, #fff, 75%)
+$theme-color-link = mix($theme-color-main, #000, 75%)
