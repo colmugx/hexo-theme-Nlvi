@@ -1,9 +1,18 @@
+body
+  &.under
+    overflow-y: hidden
+
 .container
-  margin-top: 122px;
+  position: relative
   .container-inner
     width: 100%
-    margin-top: yard*4
+    margin-top: 122px
     transition-sign()
+    &.under
+      border-radius: 12px
+      transform: scale(0.95)
+      transform-origin: top
+      filter: blur(16px)
     &.has_toc
       padding-left: yard
       padding-right: 200px
