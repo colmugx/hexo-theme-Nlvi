@@ -13,9 +13,9 @@
           {% block main %} {% endblock %}
         </div>
       </main>
-
       {% include "./_partial/footer.swig" %}
     </div>
+    {% include "./_partial/tagcloud.swig" %}
   </div>
   {% include "_partial/_feature/common.swig" %}
 </body>

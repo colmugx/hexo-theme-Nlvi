@@ -10,7 +10,7 @@
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>{{ full_date(post.date, 'YYYY-MM-DD') }}</span>
+          <time>{{ full_date(post.date, 'YYYY-MM-DD') }}</time>
           {% if post.categories and post.categories.length %}
             {% for category in post.categories %}
               <span class="post-category"><a href="{{ url_for(category.path) }}">{{ category.name }}</a></span>

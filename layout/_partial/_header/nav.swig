@@ -12,8 +12,13 @@
     </li>
   {% endif %}
   {% for name, url in theme.menu %}
+  {% if name == 'search' or name == 'tags' %}
+    {% set link = 'javascript:;' %}
+  {% else %}
+    {% set link = url_for(url) %}
+  {% endif %}
     <li class="menu-item">
-      <a href="{{ url_for(url) }}" id="{{ name }}">
+      <a href="{{ link }}" id="{{ name }}">
         <span class="base-name">{{ name | upper }}</span>
       </a>
     </li>
