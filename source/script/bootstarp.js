@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   app.switchToc();
   app.titleStatus();
   app.init();
-  window.nlviconfig.theme.scheme === "banderole" && app.pushHeader();
+  app.pushHeader();
+  app.tagcloud();
 });
 $(document).ready(function() {
   $('.container').show();
