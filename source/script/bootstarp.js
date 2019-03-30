@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   app.init();
   app.pushHeader();
   app.tagcloud();
+  app.search();
 });
 $(document).ready(function() {
   $('.container').show();
