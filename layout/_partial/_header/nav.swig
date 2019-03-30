@@ -3,11 +3,8 @@
   <ul class="main-nav-list syuanpi tvIn">
   {% if theme.search.enable %}
     <li class="menu-item">
-      <a href="javascript:;" id="search">
-        <span>{{ __('nav.' + 'search') }}</span>
-        {% if not config.language or config.language !== 'en'  %}
-          <span class="menu-item-label">{{ 'search' }}</span>
-        {% endif %}
+      <a href="javascript:;" id="search-btn">
+        <i class="iconfont icon-search"></i>
       </a>
     </li>
   {% endif %}
