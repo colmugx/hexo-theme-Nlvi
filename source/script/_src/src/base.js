@@ -1,5 +1,6 @@
-import { fromEvent } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { fromEvent, from, zip } from 'rxjs'
+import { map, switchMap, filter } from 'rxjs/operators'
+import genSearch from './search'
 
 class Base {
 
@@ -143,6 +144,102 @@ class Base {
         })
       }
     })
+  }
+
+  depth(open, close) {
+    const utils = this.utils
+    const $container = utils('cls', 'body')
+    const $containerInner = utils('cls', '.container-inner')
+    if ($container.exist('under')) {
+      $container.opreate('under', 'remove')
+      $containerInner.opreate('under', 'remove')
+      close.call(this)
+    } else {
+      $container.opreate('under', 'add')
+      $containerInner.opreate('under', 'add')
+      open.call(this)
+    }
+  }
+
+  tagcloud() {
+    const utils = this.utils
+    const $tag = $('#tags')
+    const $tagcloud = utils('cls', '#tagcloud')
+    const $tagcloudAni = utils('ani', '#tagcloud')
+    const $search = utils('cls', '#search')
+    const $searchAni = utils('ani', '#search')
+    $tag.on('click', () => {
+      if ($search.exist('show')) {
+        $tagcloud.opreate('syuanpi shuttleIn show')
+        $search.opreate('shuttleIn', 'remove')
+        $searchAni.end('zoomOut', () => {
+          $search.opreate('syuanpi show', 'remove')
+        })
+        return
+      }
+      this.depth(() => {
+        $tagcloud.opreate('syuanpi shuttleIn show')
+      }, () => {
+        $tagcloud.opreate('shuttleIn', 'remove')
+        $tagcloudAni.end('zoomOut', () => {
+          $tagcloud.opreate('syuanpi show', 'remove')
+        })
+      })
+    })
+    const tags$ = fromEvent(document.querySelectorAll('.tagcloud-tag button'), 'click').pipe(
+      map(({ target }) => target)
+    )
+    const postlist$ = from(document.querySelectorAll('.tagcloud-postlist'))
+    const cleanlist$ = postlist$.pipe(map(dom => dom.classList.remove('active')))
+    const click$ = tags$.pipe(switchMap(() => cleanlist$))
+    zip(click$, tags$).pipe(
+      map(([_, dom]) => dom),
+      switchMap(v => postlist$.pipe(
+        filter(dom => dom.firstElementChild.innerHTML === v.innerHTML)
+      ))
+    ).subscribe(v => v.classList.add('active'))
+  }
+
+  search() {
+    if (!this.theme.search) return
+    $('body').append(`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`)
+    const utils = this.utils
+    const $searchbtn = $('#search-btn')
+    const $result = $('#search-result')
+    const $search = utils('cls', '#search')
+    const $searchAni = utils('ani', '#search')
+    const $tagcloud = utils('cls', '#tagcloud')
+    const $tagcloudAni = utils('ani', '#tagcloud')
+    $searchbtn.on('click', () => {
+      if ($tagcloud.exist('show')) {
+        $search.opreate('syuanpi shuttleIn show')
+        $tagcloud.opreate('shuttleIn', 'remove')
+        $tagcloudAni.end('zoomOut', () => {
+          $tagcloud.opreate('syuanpi show', 'remove')
+        })
+        return
+      }
+      this.depth(() => {
+        $search.opreate('syuanpi shuttleIn show')
+      }, () => {
+        $search.opreate('shuttleIn', 'remove')
+        $searchAni.end('zoomOut', () => {
+          $search.opreate('syuanpi show', 'remove')
+        })
+      })
+    })
+    genSearch(`${this.config.baseUrl}search.xml`, 'search-input')
+      .subscribe(vals => {
+        const list = body => `<ul class="search-result-list syuanpi fadeInUpShort">${body}</ul>`
+        const item = ({ url, title, content }) => `
+          <li class="search-result-item">
+            <a href="${url}"><h2>${title}</h2></a>
+            <p>${content}</p>
+          </li>
+        `
+        const output = vals.map(item)
+        $result.html(list(output.join('')))
+      })
   }
 
   pjax() {
