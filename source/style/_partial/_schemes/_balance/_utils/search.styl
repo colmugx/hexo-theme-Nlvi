@@ -11,14 +11,14 @@
 .search
   display none
   position: fixed
-  top: 98px
+  top: 0
   right: 0
   bottom: 0
-  left: 0
+  left: 300px
   z-index: 500
   overflow: auto
   overflow-x: hidden
-  margin-top: 4em
+  margin-top: 6em
   padding: 0 (yard*5)
   &.show
     display: block
@@ -26,8 +26,6 @@
     font-size 32px
     padding yard
     border-bottom: 1px solid $theme-color-main
-    max-width: max-width
-    margin: 0 auto
     +tablet()
       width 570px
       font-size 24px
@@ -42,8 +40,6 @@
     .search-result-list
       list-style: none
       padding: yard
-      max-width: max-width
-      margin: 0 auto
       .search-result-item
         border-bottom: 1px solid $theme-line-color
         &:last-child
