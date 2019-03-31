@@ -27,7 +27,6 @@ mobile-header: light
 # banderole | balance
 scheme: banderole
 
-## Banderole
 # Header Style
 # line | block
 header-style: block
@@ -64,7 +63,7 @@ reward:
 
 # Comments // Please only switch one on.
 comments: 
-  enable: true
+  enable: false
 
   # disqus: 
   # livere_datauid:
@@ -107,6 +106,9 @@ visit_count: false
 # ===========================================
 # Theme Settings
 # ===========================================
+
+# pjax
+pjax: false
 
 # mathjax
 mathjax: false
@@ -158,6 +160,6 @@ code-style: default
 # ===========================================
 # Version
 # ===========================================
-version: 2.4
+version: 3.0
 
 #theme_author: Co1MugX
