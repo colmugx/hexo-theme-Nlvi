@@ -7,7 +7,7 @@
 
 [主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
-![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/desktop.png)
+![Nlvi-desktop](screenshots/desktop.png)
 
 (前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
 
@@ -57,13 +57,13 @@ theme: Nlvi
 
 ## 截图/风格展示 Screenshot/Schemes
 
-![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/devices.png)
+![Nlvi-device](screenshots/devices.png)
 
-![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
+![Nlvi-line-block](screenshots/line-block.png)
 
-![Nlvi-schemes](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/schemes.png)
+![Nlvi-schemes](screenshots/schemes.png)
 
-![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
+![Nlvi-mobile](screenshots/mobile.png)
 
 ### 支持 Support
 
