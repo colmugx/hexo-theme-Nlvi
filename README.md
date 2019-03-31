@@ -7,11 +7,9 @@
 
 [主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
-![Nlvi-desktop](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/desktop.png)
+![Nlvi](screenshots/nlvi.png)
 
-(前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
-
-喜欢我的主题的小伙伴请不要吝啬你的Star，或者告诉我~
+(前排提醒老粉：你们熟悉的Nlvi现已归入 1.x 分支与 2.x 分支)
 
 ## 特点 Special
 
@@ -33,7 +31,7 @@
 
 你有三种方式下载到Nlvi
 
-1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git theme/Nlvi`
+1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git themes/Nlvi`
 
 2.  `Download ZIP`
 
@@ -55,14 +53,6 @@ theme: Nlvi
 要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
 
 ## 截图/风格展示 Screenshot/Schemes
-
-![Nlvi-device](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/devices.png)
-
-![Nlvi-line-block](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/line-block.png)
-
-![Nlvi-schemes](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/schemes.png)
-
-![Nlvi-mobile](https://github.com/ColMugX/GitBed/raw/master/blog/nlvi/mobile.png)
 
 ### 支持 Support
 
