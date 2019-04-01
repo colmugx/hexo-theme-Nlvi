@@ -8,6 +8,8 @@ body
     width: 100%
     margin-top: 122px
     transition-sign()
+    +mobile()
+      margin-top: 72px
     &.under
       border-radius: 12px
       transform: scale(0.95)
@@ -26,8 +28,3 @@ body
     width: 100%
     max-width: 100%
     padding: 0 (yard*2)
-  +mobile()
-    width: 100%
-    max-width: 100%
-    margin-top: (yard*2)+50
-    padding: 0 yard
