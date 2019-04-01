@@ -1,45 +1,47 @@
 {% macro render() %}
   <div class="archive syuanpi fadeInUp" id="archive">
     {% if page.archive %}
-      <h1 class="archive-title">Total</h1>
+      <aside class="archive-title">Total</aside>
       <span class="archive-num">{{ __('page.para', site.posts.length) }}</span>
-    {% elif page.tag %}
-      <h2 class="archive-title"> {{ __('page.now') }} </h2>
-      <span class="archive-name"> — {{ page.tag }}</span>
     {% elif page.category %}
-      <h2 class="archive-title"> {{ __('page.now') }} </h2>
+      <span class="archive-title"> {{ __('page.now') }} </span>
       <span class="archive-name"> — {{ page.category }}</span>
     {% endif %}
-    <div class="archive-list">
-      <ul>
-        {% for post in page.posts %}
-          {% if page.archive %}
-            {% set year %}
-            {% set post.year = date(post.date, 'YYYY') %}
-            {% if post.year !== year %}
-              {% set year = post.year %}
-              {% if year %}
-                <h2 class="archive-year"> {{ year }} </h2>
-              {% endif %}
+      {% set year %}
+      {% for post in page.posts %}
+        {% if page.archive %}
+          {% set post.year = date(post.date, 'YYYY') %}
+          {% if post.year !== year %}
+            {% if year !== null %}
+              </div></section>
             {% endif %}
+            {% set year = post.year %}
+            <section class="archive-group">
+            <time class="archive-year"> {{ year }} </time>
+            <div class="archive-list">
           {% endif %}
-          <li class="archive-post">
-            <a href="{{ url_for(post.path) }}">
-              <span class="archive-post-time">
-              {% if page.archive %}
-                {{ date(post.date, 'MM-DD') }}
-              {% else %}
-                {{ date(post.date, 'YYYY-MM-DD') }}
-              {% endif %}
-              </span>
-              <span class="archive-post-link">
-                {{ post.title }}
-              </span>
+        {% endif %}
+        <div class="archive-post">
+          <div class="archive-post-content">
+            {% if post.excerpt %}
+              {{ post.excerpt }}
+            {% else %}
+              {{ post.content }}
+            {% endif %}
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              {{ date(post.date, 'YYYY-MM-DD') }}
+            </time>
+            <a  class="archive-post-link" href="{{ url_for(post.path) }}">
+              {{ post.title }}
             </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+          </div>
+        </div>
+      {% endfor %}
+      {% if page.posts.length %}
+        </div></section>
+      {% endif %}
   </div>
   {% include "pagenum.swig" %}
 {% endmacro %}

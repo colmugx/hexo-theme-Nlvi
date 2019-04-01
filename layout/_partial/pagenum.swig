@@ -1,7 +1,7 @@
 {% if not is_post() %}
   <nav class="pagination">
       {{ paginator({
-          prev_text: __("page.prev"),
+          prev_text: '<i class="iconfont icon-back"></i>' + __("page.prev"),
           next_text: __("page.next") + '<i class="iconfont icon-enter"></i>'
       }) }}
   </nav>
