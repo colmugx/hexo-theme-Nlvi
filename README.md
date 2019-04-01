@@ -9,6 +9,8 @@
 
 ![Nlvi](screenshots/nlvi.png)
 
+![Nlvi-style](screenshots/style.png)
+
 (前排提醒老粉：你们熟悉的Nlvi现已归入 1.x 分支与 2.x 分支)
 
 ## 特点 Special
@@ -51,8 +53,6 @@ theme: Nlvi
 ## 配置 Setting
 
 要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
-
-## 截图/风格展示 Screenshot/Schemes
 
 ### 支持 Support
 
