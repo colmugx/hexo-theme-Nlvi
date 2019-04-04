@@ -16,10 +16,12 @@
               </div></section>
             {% endif %}
             {% set year = post.year %}
-            <section class="archive-group">
+            <div class="archive-group">
             <time class="archive-year"> {{ year }} </time>
             <div class="archive-list">
           {% endif %}
+          {% else %}
+          </section>
         {% endif %}
         <div class="archive-post">
           <div class="archive-post-content">
@@ -40,7 +42,7 @@
         </div>
       {% endfor %}
       {% if page.posts.length %}
-        </div></section>
+        </section></section>
       {% endif %}
   </div>
   {% include "pagenum.swig" %}
