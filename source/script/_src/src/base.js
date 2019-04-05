@@ -243,7 +243,29 @@ class Base {
   }
 
   pjax() {
+    if (!this.theme.pjax) return
+    const utils = this.utils
+    const $container = utils('cls', '.container-inner')
+    const $header = utils('cls', '.header')
+    const $headerWrapper = utils('cls', '.header-wrapper')
+    $(document).pjax('.container-inner a', '.container-inner', { fragment: 'container-inner' })
+    $(document).on('pjax:send', function () {
+      $container.opreate('syuanpi fadeOutLeftShort')
+      $headerWrapper.opreate('syuanpi fadeOutLeftShort')
+      $header.opreate('melt')
+    })
+  }
 
+  bootstarp() {
+    this.showToc()
+    this.back2top()
+    this.switchToc()
+    this.titleStatus()
+    this.init()
+    this.pushHeader()
+    this.tagcloud()
+    this.search()
+    this.pjax()
   }
 
   static utils(g, e) {
