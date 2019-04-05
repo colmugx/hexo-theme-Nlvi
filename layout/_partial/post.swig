@@ -8,7 +8,7 @@
   {% if is_post() %} is_post {% endif %}
   ">
     <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
+      <div class="post-time syuanpi fadeInRightShort back-1">
         <div class="post-time-wrapper">
           <time>{{ full_date(post.date, 'YYYY-MM-DD') }}</time>
           {% if post.categories and post.categories.length %}
@@ -18,7 +18,7 @@
           {% endif %}
         </div>
       </div>
-      <h2 class="post-title syuanpi fadeInUpShort back-2">
+      <h2 class="post-title syuanpi fadeInRightShort back-2">
         {% if is_post() %}
           {{ post.title }}
         {% else %}
@@ -26,7 +26,7 @@
         {% endif %}
       </h2>
     </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
+    <div class="post-content syuanpi fadeInRightShort back-3">
       {% if is_post() %}
         {{ post.content }}
       {% else %}
@@ -45,7 +45,7 @@
     {% endif %}
     </div>
     {% if post.tags and post.tags.length %}
-      <div class="post-tags syuanpi fadeInUpShort back-3">
+      <div class="post-tags syuanpi fadeInRightShort back-3">
       {% for tag in post.tags %}
         <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
       {% endfor %}

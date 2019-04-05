@@ -23,10 +23,4 @@
   {{ js('script/scheme/balance') }}
 {% endif %}
 
-{% if theme.plugins %}
-  {% for plugin in theme.plugins %}
-    {{js(plugin)}}
-  {% endfor %}
-{% endif %}
-
 {{ js('script/bootstarp') }}

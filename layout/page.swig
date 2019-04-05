@@ -8,7 +8,7 @@
 
   {% block main %}
     {% if page.type === 'about' %}
-      <div class="about syuanpi fadeInUp">
+      <div class="about syuanpi fadeInRightShort">
         <h2 class="title"> {{ __('nav.about') }} </h2>
         <div class="content">
           {% if theme.self %}

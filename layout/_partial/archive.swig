@@ -1,5 +1,5 @@
 {% macro render() %}
-  <div class="archive syuanpi fadeInUp" id="archive">
+  <div class="archive syuanpi fadeInRightShort" id="archive">
     {% if page.archive %}
       <aside class="archive-title">Total</aside>
       <span class="archive-num">{{ __('page.para', site.posts.length) }}</span>
