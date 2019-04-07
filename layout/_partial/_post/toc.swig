@@ -1,8 +1,7 @@
 {% if theme.toc %}
   <aside class="post-toc">
-    <span class="title" id="toc-switch"><span>{{ __('page.index') }}</span></span>
-    <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">{{page.title}}</a></li>
+    <div class="title"><span>{{ __('page.index') }}</span></div>
+    <div class="toc-inner">
       {{ toc(page.content, {list_number: false}) }}
     </div>
   </aside>

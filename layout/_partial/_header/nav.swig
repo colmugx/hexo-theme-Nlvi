@@ -20,6 +20,13 @@
       </a>
     </li>
   {% endfor %}
+  {% if theme.scheme == 'balance' %}
+    {% if is_post() %}
+      <li class="menu-item">
+        <a href="javascript:;" id="switch-toc">{{ __('page.index') | upper }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
   </ul>
   {% endif %}
 </nav>

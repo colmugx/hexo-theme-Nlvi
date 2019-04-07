@@ -24,3 +24,19 @@
 {% endif %}
 
 {{ js('script/bootstarp') }}
+
+{% if is_post() %}
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+{% endif %}
