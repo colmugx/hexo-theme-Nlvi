@@ -16,26 +16,16 @@ export default class Balance extends Base {
   }
 
   switchToc() {
+    if (!this.theme.toc) false
     const utils = this.utils
-    const tocSwitch = utils('cls', '#toc-switch')
-    const aniInner = utils('ani', '.toc-inner')
-    utils('cls', '#toc-switch').opreate('not-toc')
-    function opMenu(opt) {
-      utils('cls', '.menu-item').opreate('has_toc', opt)
-      utils('cls', '.main-nav').opreate('has_toc', opt)
-    }
-    $('#toc-switch').on('click', () => {
-      if (tocSwitch.exist('not-toc')) {
-        tocSwitch.opreate('not-toc', 'remove')
-        aniInner.end('fadeInDown')
-        $('.toc-inner').show()
-        opMenu()
-      } else {
-        aniInner.end('fadeOutUp', () => {
-          $('.toc-inner').hide()
-        })
-        tocSwitch.opreate('not-toc')
-        opMenu('remove')
+    const $header = utils('cls', '#header')
+    $('#switch-toc').on('click', e => {
+      e.stopPropagation()
+      $header.opreate('show_toc')
+    })
+    $('#header').on('click', () => {
+      if ($header.exist('show_toc')) {
+        $header.opreate('show_toc', 'remove')
       }
     })
   }

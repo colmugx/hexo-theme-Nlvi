@@ -18,7 +18,7 @@ export default function(path, inputId) {
 
   const input$ = fromEvent(document.getElementById(inputId), 'input').pipe(
     debounceTime(500),
-    map(({ target }) => target.value)
+    map(({ target }) => target.value.trim())
   )
 
   const novalue$ = input$.pipe(

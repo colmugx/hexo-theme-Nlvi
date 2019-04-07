@@ -35,27 +35,21 @@ export default class Banderole extends Base {
   }
 
   switchToc() {
+    if (!this.theme.toc) false
     const utils = this.utils
-    const tocSwitch = utils('cls', '#toc-switch')
-    const aniInner = utils('ani', '.toc-inner')
-    const clsInner = utils('cls', '.toc-inner')
-    const container = utils('cls', '.container-inner')
+    const $inner = utils('cls', '.toc-inner')
+    const $title = utils('cls', '.post-toc .title')
+    const $container = utils('cls', '.container-inner')
 
-    tocSwitch.opreate('not-toc')
-    clsInner.opreate('back-1', 'remove')
-    $('#toc-switch').on('click', () => {
-      if (tocSwitch.exist('not-toc')) {
-        tocSwitch.opreate('not-toc', 'remove')
-        clsInner.opreate('fadeOutRight', 'remove')
-        aniInner.end('fadeInRight')
-        $('.toc-inner').show()
-        container.opreate('has_toc')
+    $('.post-toc .title').on('click', () => {
+      if ($title.exist('show')) {
+        $title.opreate('show', 'remove')
+        $inner.opreate('show', 'remove')
+        $container.opreate('has_toc', 'remove')
       } else {
-        aniInner.end('fadeOutRight', function() {
-          $('.toc-inner').hide()
-        })
-        tocSwitch.opreate('not-toc')
-        container.opreate('has_toc', 'remove')
+        $title.opreate('show')
+        $inner.opreate('show')
+        $container.opreate('has_toc')
       }
     })
   }
