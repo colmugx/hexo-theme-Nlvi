@@ -7,7 +7,7 @@
 
 [主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
 
-![Nlvi-desktop](screenshots/desktop.png)
+![Nlvi](screenshots/nlvi.png)
 
 ![Nlvi-style](screenshots/style.png)
 
