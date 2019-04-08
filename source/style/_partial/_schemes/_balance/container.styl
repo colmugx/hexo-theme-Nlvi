@@ -1,22 +1,25 @@
 .container
 html, body
-  height 100%
+  height: 100%
+
+body
+  &.under
+    overflow-y: hidden
 
 .container
   position relative
-  *
-    transition-duration .35s
   .container-inner
-    margin-left 300px
-    margin-top 2%
-    padding 0 (yard*2)
-    +mobile()
-      width 100%
-      max-width 100%
-      margin 0
-      padding 0
-      margin-top (yard*2)+50
-      padding 0 yard
+    position relative
+    margin-left: 300px
+    margin-top: 2%
+    padding: 0 (yard*2)
+    transform-origin: center top
+    transition: all 280ms ease-in-out
+    &.under
+      border-radius: 12px
+      transform: scale(0.9)
+      transform-origin: 30% 20%
+      filter: blur(16px)
   .main
-    max-width 800px
-    margin 0 auto
+    max-width: max-width
+    margin: 0 auto

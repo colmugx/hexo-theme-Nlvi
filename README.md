@@ -9,9 +9,9 @@
 
 ![Nlvi-desktop](screenshots/desktop.png)
 
-(前排提醒老粉：你们熟悉的Nlvi现已归入1.x分支)
+![Nlvi-style](screenshots/style.png)
 
-喜欢我的主题的小伙伴请不要吝啬你的Star，或者告诉我~
+(前排提醒老粉：你们熟悉的Nlvi现已归入 1.x 分支与 2.x 分支)
 
 ## 特点 Special
 
@@ -20,8 +20,7 @@
 - 自定义样式
 - 文章打赏（二维码）
 - 版权说明
-- 五颜六色，初音绿
-- ~~或者你喜欢的颜色~~
+- 主题：常规颜色、桜、初音绿、雪初音蓝。自定义颜色（建议明度不要太低）
 
 ## 语言 Language
 
@@ -34,7 +33,7 @@
 
 你有三种方式下载到Nlvi
 
-1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git theme/Nlvi`
+1. `git clone https://github.com/ColMugX/hexo-theme-Nlvi.git themes/Nlvi`
 
 2.  `Download ZIP`
 
@@ -54,16 +53,6 @@ theme: Nlvi
 ## 配置 Setting
 
 要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
-
-## 截图/风格展示 Screenshot/Schemes
-
-![Nlvi-device](screenshots/devices.png)
-
-![Nlvi-line-block](screenshots/line-block.png)
-
-![Nlvi-schemes](screenshots/schemes.png)
-
-![Nlvi-mobile](screenshots/mobile.png)
 
 ### 支持 Support
 

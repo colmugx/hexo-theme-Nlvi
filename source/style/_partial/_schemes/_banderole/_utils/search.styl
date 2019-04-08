@@ -1,81 +1,60 @@
 .search
-  display none
-  .slide
-    transform translateY(-100px)
-  .mask
-    position fixed
-    z-index 500
-    top 0
-    left 0
-    right 0
-    bottom 0
-    background-color rgba(0, 0, 0, 0.75)
-  .search-wrapper
+  input
+    outline: none
+    border: none
     background-color transparent
-    width 100%
-    max-width 100%
-    position absolute
-    top 20%
-    z-index 999
-    display flex
-    flex-direction column
-    align-items center
-    #search-header
-      user-select none
-      -webkit-user-select none
-      -moz-user-select none
-      color #FFF
-      font-weight 100
-      font-size 3.6rem
-      transition transform 0.25s ease-out
-      +tablet()
-        font-size 3rem
-      +mobile()
-        font-size 1.2rem
-    input
-      width 800px
-      height 60px
-      outline none
-      border none
-      background-color transparent
-      border 1px solid #FFF
-      color #FFF
-      font-size 32px
-      padding yard
-      font-weight 100
-      transition transform 0.25s ease-out
-      +tablet()
-        width 570px
-        font-size 24px
-      +mobile()
-        width 230px
-        font-size 18px
-        height 24px
-  #local-search-result
-    background-color rgba(0, 0, 0, 0.2)
+    width: 100%
+    padding: 0 yard
+  ::placeholder
+      color: $theme-text-color-comment
+
+.search
+  display none
+  position: fixed
+  top: 98px
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 500
+  overflow: auto
+  overflow-x: hidden
+  margin-top: 4em
+  padding: 0 (yard*5)
+  &.show
+    display: block
+  .input
+    font-size 32px
+    padding yard
+    border-bottom: 1px solid $theme-color-main
+    max-width: max-width
+    margin: 0 auto
     +tablet()
-      width 590px
+      width 570px
+      font-size 24px
+    +mobile()
+      width 230px
+      font-size 18px
+      height 24px
+  #search-result
+    margin-top: (yard*4)
     +mobile()
       width 100%
     .search-result-list
-      font-weight 300
-      list-style none
-      width 800px
-      color #FFF
-      padding yard
-      +tablet()
-        width auto
-      .search-result-title
-        color #FFF
-        text-decoration none
-        font-weight 400
-      .search-keyword
-        font-weight 400
+      list-style: none
+      padding: yard
+      max-width: max-width
+      margin: 0 auto
       .search-result-item
-        padding yard
-        border-top 1px solid #707070
-        &hover
-          background-color rgba(0, 0, 0, 0.2)
-  .end-line
-    border none
-    border-top 1px dashed #FFF
+        border-bottom: 1px solid $theme-line-color
+        &:last-child
+          border-color: transparent
+        h2
+          font-size 22px
+        a
+          text-decoration: none
+          color: $theme-color-main
+          transition-sign(color)
+          &:hover
+            color: $theme-color-hover
+      .search-keyword
+        color: $theme-color-main

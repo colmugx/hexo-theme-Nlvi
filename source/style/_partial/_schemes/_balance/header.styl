@@ -3,9 +3,11 @@
   top 0
   bottom 0
   left 0
+  z-index: 9
   height 100%
   width 300px
   headerStyle()
+  transition-sign()
   +mobile()
     display none
   .header-wrapper
@@ -24,6 +26,7 @@
     a
       color inherit
       text-decoration none
+      font-weight: 100
     span
       display block
       text-align span
@@ -49,26 +52,28 @@
     flex-direction column
     align-items center
     text-align left
-    &.has_toc
-    &.has_tag
-      margin-top 20%
 
   .main-nav-list
     list-style none
     padding 0
     .menu-item
       margin (yard*2) 0
-      &.has_toc
-      &.has_tag
-        display inline-block
       .menu-item-label
         display none
       a
         text-decoration none
-        color $theme-color-text
+        color $theme-text-color-main
         font-size inherit
         display flex
         flex-direction column
         text-align center
         &:hover
           color $theme-color-link
+  &.melt
+    opacity: 0
+    transition-sign(opacity)
+  &.show_toc
+    opacity: 0.5
+    cursor: pointer
+    transform: translateX(-200px)
+    box-shadow: 0 0 16px mix(#fff, $theme-color-main, 50%)

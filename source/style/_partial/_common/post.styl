@@ -1,156 +1,175 @@
 .post
-  margin-top 16px
-  padding-top (yard*4)
-  position relative
-  font-weight font-weight
-  border-line(bottom, #e1dede)
-  +mobile()
-    width 100%
-    padding 0 yard
-  &:first-child
-    padding-top 0
-  &:last-child,
+  position: relative
+  margin-top: yard*3
+  padding: yard*2
+  position: relative
+  font-weight: font-weight
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 0
+    height: 0
+    border: 12px solid transparent
+    border-bottom: 12px solid rgba($theme-color-main, 50%)
+    transform-origin: 63% 86%
+    transform: rotate(135deg)
+  &:last-child
   &.is_post
-    background-image none
+    &:after
+      display: none
+  +mobile()
+    width: 100%
+    padding: 0 yard
   .post-header
-    margin-bottom (yard*2)
+    margin-bottom: (yard*2)
+    font-family: $normal-fonts
     a
-      text-decoration none
-      color $theme-color-text
+      text-decoration: none
+      color: $theme-text-color-main
     .post-time
-      padding-left yard
-      font-family $normal-fonts
-      color $theme-color-comment
+      color: $theme-text-color-desc
+      letter-spacing: 1px
+      margin-left: (yard/4)
       .post-category
-        font-size 14px
+        font-size: 14px
         a
-          color $theme-color-comment
+          color: $theme-text-color-desc
         &:before
-          content ' | '
+          content: ' · '
 
     .post-title
-      width 100%
-      margin yard 0
-      margin-bottom (yard*2)
-      font-weight inherit
+      position: relative
+      width: 100%
+      margin-top: 0
+      padding: (yard/2) 0 (yard*1.5)
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 24px
+        height: 3px
+        background-color: $theme-color-main
+
 
   .post-tags
-    display inline
-    padding-left yard
-    font-family $normal-fonts
-    color $theme-color-main
+    margin: (yard*1.5) 0
+    padding-left: yard
+    font-family: $normal-fonts
+    color: $theme-color-hover
     a
-      position relative
-      text-decoration none
-      color inherit
+      position: relative
+      text-decoration: none
+      color: inherit
+      margin-right: yard
       &:before
-        content '#'
+        content: '#'
+        margin-right: 2px
 
   .post-content
-    color $theme-color-text
-    font-family $article-fonts
-    padding-bottom yard
+    color: $theme-text-color-main
+    font-family: $article-fonts
+    padding-bottom: yard
+    border-bottom: 1px solid $theme-line-color
     for $k, $v in $heading-list
       {$k}
-        font-family $article-fonts
-        font-weight inherit
-        margin (yard*2) 0
-        &:before
-          content ($header-sign + ' ')
+        font-family: $article-fonts
 
     table
-      min-width 50%
-      margin 16px 0
+      min-width: 50%
+      margin: 16px 0
       border-collapse: collapse
-      list-style none
-      line-height 1.5
-      text-align center
+      list-style: none
+      line-height: 1.5
+      text-align: center
       tr
-        font-weight 500
+        font-weight: 500
         &:nth-child(2n)
-          background rgba($theme-color-main, .06)
+          background: rgba($theme-color-main, .06)
       th
       td
-        min-width 100px
-        padding 8px
+        min-width: 100px
+        padding: 8px
       thead
-        background-color #fafafa
+        background-color: #fafafa
 
     .content-link
       a
-        position relative
-        color mix($theme-color-main, #b9b9b9)
-        font-weight 500
-        text-decoration none
+        position: relative
+        color: $theme-color-link
+        font-size 18px
+        text-decoration: none
         &:hover
-          text-decoration none
+          text-decoration: none
 
         &:after
-          content ''
-          position absolute
-          bottom -(yard/2)
-          left 50%
-          right 50%
-          background-color $theme-color-main
-          height 2px
-          transition all .15s linear
+          content: ''
+          position: absolute
+          bottom: -(yard/2)
+          left: 50%
+          right: 50%
+          background-color: $theme-color-main
+          height: 2px
+          transition-sign(all)
         &:hover
           &:after
-            left 0
-            right 0
+            left: 0
+            right: 0
 
     p
-      font-family inherit
-      line-height line-height
+      font-family: inherit
+      line-height: line-height
 
     strong
-      font-weight 600
+      font-weight: 600
 
     a
-      color $theme-color-main
-      text-decoration none
-      margin 0 (yard/2)
-      &:hover
-        text-decoration underline
+      color: $theme-color-main
+      text-decoration: none
 
     i
-      font-weight 300
+      font-weight: 300
 
     img
-      max-width 100%
-      display inline
+      max-width: 100%
+      display: inline
 
     code
-      background-color rgba($theme-color-main, .1)
-      color mix(#000, $theme-color-link)
-      font-family $code-fonts
-      margin 0 (yard/2)
-      padding 0 (yard/2)
+      background-color: rgba($theme-color-main, .1)
+      color: mix(#000, $theme-color-link)
+      font-family: $code-fonts
+      margin: 0 (yard/2)
+      padding: 0 (yard/2)
 
     blockquote
-      position relative
-      margin yard (yard*2)
-      padding (yard/4) yard
-      background-color rgba($theme-color-main, .1)
-      border-left 4px solid $theme-color-main
-      color mix(#282626, $theme-color-main)
+      position: relative
+      margin: yard (yard*2)
+      padding: (yard/4) yard
+      background-color: rgba($theme-color-main, .1)
+      border-left: 4px solid $theme-color-main
+      color: mix(#383838, $theme-color-main)
       &:before
-        content ''
-        position absolute
-        top 0
-        right 0
-        border-width 0 12px 12px 0
-        border-color #fff #fff transparent transparent
-        background transparent
-        border-style solid
-        width 0
-        box-shadow -1px 1px 1px -1px #bbb4b4
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        border-width: 0 12px 12px 0
+        border-color: #fff #fff transparent transparent
+        background: transparent
+        border-style: solid
+        width: 0
+        box-shadow: -1px 1px 1px -1px #bbb4b4
       p
-        margin yard 0
+        margin: yard 0
+    ul
+    ol
+      line-height: 2
 
 #com-switch
-  color $theme-color-main
+  color: $theme-color-main
 
 #disqus_thread
   a
-    color $theme-color-text
+    color: $theme-text-color-main

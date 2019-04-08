@@ -8,34 +8,25 @@
   {% if is_post() %} is_post {% endif %}
   ">
     <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
+      <div class="post-time syuanpi fadeInRightShort back-1">
         <div class="post-time-wrapper">
-          <span>{{ full_date(post.date, 'YYYY-MM-DD') }}</span>
+          <time>{{ full_date(post.date, 'YYYY-MM-DD') }}</time>
           {% if post.categories and post.categories.length %}
             {% for category in post.categories %}
               <span class="post-category"><a href="{{ url_for(category.path) }}">{{ category.name }}</a></span>
             {% endfor %}
           {% endif %}
-          {% if is_post() %}
-            {% if post.tags and post.tags.length %}
-              <aside class="post-tags syuanpi fadeInUpShort back-3">
-              {% for tag in post.tags %}
-                <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-              {% endfor %}
-              </aside>
-            {% endif %}
-          {% endif %}
         </div>
       </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
+      <h2 class="post-title syuanpi fadeInRightShort back-2">
         {% if is_post() %}
           {{ post.title }}
         {% else %}
           <a href="{{ url_for(post.path) }}">{{ post.title }}</a>
         {% endif %}
-      </h1>
+      </h2>
     </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
+    <div class="post-content syuanpi fadeInRightShort back-3">
       {% if is_post() %}
         {{ post.content }}
       {% else %}
@@ -53,6 +44,13 @@
       </p>
     {% endif %}
     </div>
+    {% if post.tags and post.tags.length %}
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      {% for tag in post.tags %}
+        <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+      {% endfor %}
+      </div>
+    {% endif %}
     {% if is_post() %}
       {% include "_post/reward.swig" %}
       {% include "_post/copyright.swig" %}

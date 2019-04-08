@@ -10,19 +10,33 @@
 {% endif %}
 
 {% if theme.lazyload %}
-  {{ js('script/lib/lazyload/lazyload.min') }}
+  {{ js('script/lib/layzr/layzr') }}
 {% endif %}
 
-{% if theme.plugins %}
-  {% for plugin in theme.plugins %}
-    {{js(plugin)}}
-  {% endfor %}
+{% if theme.pjax %}
+  {{ js('script/lib/pjax/pjax') }}
 {% endif %}
 
-{{ js('script/src/nlvi') }}
 {% if theme.scheme == 'banderole' %}
   {{ js('script/scheme/banderole') }}
 {% else %}
   {{ js('script/scheme/balance') }}
 {% endif %}
+
 {{ js('script/bootstarp') }}
+
+{% if is_post() %}
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+{% endif %}

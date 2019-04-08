@@ -1,53 +1,56 @@
 .archive
-  color $theme-color-text
-  .archive-title
-    display inline-block
-    margin 0
-    font-family inherit
-    font-weight 400
-    color $theme-color-main
-  .archive-num
-    margin yard
-    font-weight 300
-  .archive-name
-    font-size 16px
-    font-weight 300
+  margin-top: 6em
   .archive-list
-    .archive-year
-      font-family $normal-fonts
-      font-weight 400
-    ul
-      list-style none
-      padding 0
-    .archive-post
-      position relative
-      border-left 1px solid #eae7e7
-      padding (yard/2) yard
-      &:hover
-        &:after
-          opacity 1
-        .archive-post-time
-          padding-left (yard*2)
-        .archive-post-link
-          color mix(#353535, $theme-color-main)
-      &:after
-        content ''
-        position absolute
-        top 0
-        bottom 0
-        left 0
-        opacity 0
-        border-top: 10px solid transparent
-        border-bottom  @border-top
-        border-left 10px solid mix(#fff, $theme-color-main)
-        transition all .3s linear .1s
+    max-width 100%
+  .archive-title
+    font-size: 32px
+    margin: yard
+    display: inline
+  .archive-year
+    display: block
+    font-size: 28px
+    margin: (yard*3) yard
+    font-weight bolder
+    color: $theme-color-main
+  .archive-post
+    max-width 100%
+    max-height: 320px
+    overflow: hidden
+    padding: (yard*2)
+    position: relative
+    border-bottom: 1px solid $theme-line-color
+    .archive-post-content
+      @extend .post .post-content
+    .archive-post-info
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      padding: 16px
+      z-index: 1
+      overflow: hidden
+      +flex-wrapper(column)
+        align-items: initial
+        justify-content: flex-end
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index -1
+        background: linear-gradient(transparent 12%, #fff 76%)
+      a
+        text-decoration: none
       .archive-post-time
-        font-family $normal-fonts
-        color $theme-color-comment
+        font-size: 14px
+        color: $theme-text-color-sub
       .archive-post-link
-        line-height (line-height*1.2)
-        color $theme-color-main
-        a
-          margin 0 yard
-          text-decoration none
-          color inherit
+        color: $theme-color-main
+        font-size: 22px
+        margin: 0
+        margin-top: yard
+        &:hover
+          color: $theme-color-hover

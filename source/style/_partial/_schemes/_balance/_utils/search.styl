@@ -1,0 +1,57 @@
+.search
+  input
+    outline: none
+    border: none
+    background-color transparent
+    width: 100%
+    padding: 0 yard
+  ::placeholder
+      color: $theme-text-color-comment
+
+.search
+  display none
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 300px
+  z-index: 500
+  overflow: auto
+  overflow-x: hidden
+  margin-top: 6em
+  padding: 0 (yard*5)
+  &.show
+    display: block
+  .input
+    font-size 32px
+    padding yard
+    border-bottom: 1px solid $theme-color-main
+    +tablet()
+      width 570px
+      font-size 24px
+    +mobile()
+      width 230px
+      font-size 18px
+      height 24px
+  #search-result
+    margin-top: (yard*4)
+    +mobile()
+      width 100%
+    .search-result-list
+      list-style: none
+      padding: yard
+      .search-result-item
+        border-bottom: 1px solid $theme-line-color
+        &:last-child
+          border-color: transparent
+        h2
+          font-size 22px
+        a
+          text-decoration: none
+          color: $theme-color-main
+          transition-sign(color)
+          &:hover
+            color: $theme-color-hover
+      .search-keyword
+        padding: 0 (yard/2)
+        color: $theme-color-main

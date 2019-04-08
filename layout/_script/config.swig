@@ -10,7 +10,9 @@
       search: {{ theme.search.enable or false }},
       friends: {{ Boolean(theme.friendLink) }},
       reward: {{ theme.reward.enable or false }},
-      lazy: {{ theme.lazyload }}
+      pjax: {{ theme.pjax or false }},
+      lazy: {{ theme.lazyload or false }},
+      toc: {{ theme.toc or false }}
     }
   }
 </script>

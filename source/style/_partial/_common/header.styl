@@ -7,102 +7,42 @@ else
   $fontColor = #fff
 
 .mobile-header
-  display none
-  position fixed
-  top -100%
-  left 0
-  right 0
-  box-shadow 0 2px 2px #c4c4c4
-  z-index 50
+  display: none
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 50
   +mobile()
-    display block
+    display: block
   .mobile-header-nav
-    background-color $backgroundColor
-    color $fontColor
-    display flex
-    flex-direction row
-    align-items center
-    min-height 50px
-    height 50px
+    +flex-wrapper(row)
+      justify-content: space-between
+    background-color: $backgroundColor
+    color: $fontColor
+    min-height: 48px
+    height: 48px
     .mobile-header-item
-      flex .5
-      width 100%
-      height @width
-      color inherit
-      &.item-clicked
-        .header-menu-line
-          background-color transparent
-          &:before
-            top 0
-            transform rotate(45deg)
-          &:after
-            top 0
-            transform rotate(-45deg)
+      flex: .5
+      width: 100%
+      height: @width
+      color: inherit
     .mobile-header-title
-      flex 1
-      text-align center
-      margin .2rem
-      color inherit
-      font-weight 300
+      flex: 1
+      text-align: center
+      color: inherit
+      font-weight: 300
+      font-size: initial
       a
-        font-family $header-fonts
-        text-decoration none
-        font-size 32px
-        color inherit
-        line-height 1
-  .mobile-header-body
-    .mobile-header-list
-      background-color $backgroundColor
-      opacity 0.9
-      padding yard 0
-      .mobile-nav-item
-        position relative
-        padding (yard) (yard*3)
-        a
-          text-decoration none
-          color $fontColor
-        .mobile-nav-tagcloud
-          position absolute
-          overflow-x auto
-          top (yard)
-          left (yard*3)
-          right (yard*3)
-          width 80%
-          transform: translateX(120%)
-          .mobile-tagcloud-inner
-            display inline-block
-            white-space nowrap
-            word-break:keep-all
-            a
-              margin 0 (yard/2)
-              &:before
-                content: '#'
+        font-family: $header-fonts
+        text-decoration: none
+        font-size: 32px
+        color: inherit
+        line-height: 1
   .header-menu-item
-    position relative
-    padding 0 12px
-    box-sizing border-box
-    height 100%
-    .header-menu-line
-      position absolute
-      top 50%
-      background-color $fontColor
-      height 1px
-      width (yard*3)
-      &:before
-        content ''
-        position absolute
-        top -6px
-        background-color $fontColor
-        height 1px
-        width (yard*3)
-        transition: transform .3s
-        transition: top .3s
-      &:after
-        content ''
-        position absolute
-        top 6px
-        background-color $fontColor
-        height 1px
-        width (yard*3)
-        transition-property top, transform
-        transition-duration .3s
+    position: relative
+    padding: 0 12px
+    box-sizing: border-box
+    height: 100%
+&.header-scroll
+  transition-sign()
+  box-shadow: -4px -1px 8px mix(#fff, $theme-color-main)

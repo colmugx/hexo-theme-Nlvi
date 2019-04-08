@@ -9,10 +9,10 @@
 ::-webkit-scrollbar-track
 ::-webkit-scrollbar-thumb
   border-radius 3px
-  background-color $theme-color-selection
+  background-color rgba($theme-text-color-comment, .1)
 
 ::-webkit-scrollbar-thumb
-  background-color $theme-color-selection-highlight
+  background-color rgba($theme-color-main, .5)
 
 ::selection
   background-color rgba($theme-color-main, .2)
@@ -28,6 +28,8 @@ body
 
 a
   -webkit-tap-highlight-color transparent
+  text-decoration: none
+  color: $theme-text-color-main
 
 for $k, $v in $heading-list
   {$k}

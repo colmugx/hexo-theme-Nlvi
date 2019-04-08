@@ -3,81 +3,62 @@
   top 0
   right 0
   bottom 0
-  height 40%
   width 200px
-  margin auto (yard*2) auto 0
-  border none
-  line-height 1.5rem
-  word-wrap break-word
-  box-sizing border-box
+  margin 230px 0
+  margin-right: (yard*2)
+  line-height: line-height
   .toc-inner
-    &::-webkit-scrollbar
-      width 1px
-      height 1px
-    height: 80%
-    overflow: auto
-    white-space nowrap
-    padding (yard)
-  ol
-    list-style none
-    padding-left (yard*2)
-  .title
-    display block
-    margin 0 auto
-    text-align center
-    width 50%
-    position relative
-    -webkit-user-select none
-    -moz-user-select none
-    user-select none
-    cursor pointer
-    z-index 1
-    &.not-toc
-      transform rotate(90deg) translateY(-300%)
-      > span
-        opacity 0
-
-    &:before
-      content ''
-      position absolute
-      height 1px
-      bottom 0
-      left 0
-      right 100%
-      cursor pointer
-      background: $theme-color-link
-      transition-property right
-      animation: lane-right 0.35s linear both
-  .title-link
-    list-style none
-    margin-top (yard*2)
-    a
-      text-decoration none
-      color $theme-color-text
-      padding: 0 (yard)
-      font-size 14px
-      &.active
-        border-left 2px solid $theme-color-main
+    padding: 0 (yard*2)
+    opacity: 0
+    transform-origin: right center
+    transform: rotateY(70deg)
+    transition-sign()
+    transition-delay: 100ms
+    &.show
+      opacity: 1
+      transform: rotateY(0deg)
+  .toc-item
+    list-style: none
+    padding-left: (yard*2)
+  .toc-link
+    word-break: break-all
+    &.active
+      @extends .iconfont
+      &:before
+        content: '\e78b'
+        color: $theme-color-main
+      .toc-text
+        padding: 0 (yard/2)
+        font-weight: bold
   .toc
-    margin 0
-    padding 0
-    list-style none
-    .toc-item
-      color $theme-color-text
-      .toc-link
-        color inherit
-        text-decoration none
-        padding: 0 (yard)
-        font-size 14px
-        &.active
-            border-left 2px solid $theme-color-main
+    margin: 0
+    padding: 0
+  .toc-child
+    margin: 0
+    padding: 0
+  .title
+    position relative
+    text-align: center
+    font-weight: bold
+    margin: yard 0
+    cursor: pointer
+    padding: (yard/2) 0
+    opacity: 0.5
+    &:after
+      content: ''
+      position: absolute
+      left: 50%
+      right: 50%
+      bottom: 0
+      height: 1px
+      background-color $theme-color-main
+      transition-sign()
+    &.show
+      opacity: 1
+      &:after
+        left: 30%
+        right: 30%
   +mobile()
     display none
   +tablet()
     display none
-
-@keyframes lane-right
-  from
-    right: 100%
-  to
-    right 0

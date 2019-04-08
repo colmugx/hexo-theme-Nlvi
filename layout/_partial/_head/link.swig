@@ -1,3 +1,4 @@
+<link rel="apple-touch-startup-image" media="screen and (orientation: portrait)" href="assets/startscreen.png">
 {{ css('style/style') }}
 {% include "../../_script/config.swig" %}
 
