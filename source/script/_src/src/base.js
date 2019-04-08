@@ -22,7 +22,7 @@ class Base {
       },
       picPos() {
         const _this = this
-        const instance = Layzr()
+
         $('.post-content').each(function() {
           $(this).find('img').each(function() {
             $(this).parent('p').css('text-align', 'center')
@@ -33,9 +33,12 @@ class Base {
             $(this).replaceWith(`<a href="${this.src}" data-title="${this.alt}" data-lightbox="group">${imgHead} alt="${this.alt}"></a>`)
           })
         })
-        instance
-          .update()
-          .handlers(true)
+        if (this.theme.lazy) {
+          const instance = Layzr()
+          instance
+            .update()
+            .handlers(true)
+        }
       },
       showComments() {
         $('#com-switch').on('click', () => {
