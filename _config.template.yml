@@ -1,0 +1,165 @@
+# ===========================================
+# Information Settings
+# ===========================================
+
+#navigation
+menu:
+  article: /
+  archives: /archives
+  tags: /tags
+  about: /about
+  # RSS: /atom.xml
+
+# favicon
+favicon:
+
+# ===========================================
+# Color&Schemes Setting
+# ===========================================
+
+## Common
+
+# Mobile-Header
+# light | dark
+mobile-header: light
+
+# Scheme
+# banderole | balance
+scheme: banderole
+
+# Header Style
+# line | block
+header-style: block
+
+# theme-style
+# default: dark | green | blue | purple
+# miku | sakura | snowmiku
+theme-style: sakura
+
+# ===========================================
+# Article Setting
+# ===========================================
+
+# Navigator in post
+toc: true
+
+# Use copyright infomation
+copyright:
+  enable: true
+  # license:
+
+#Reword button or message(fill your QRCode of any Pay.)
+reward:
+  enable: false
+  # message:
+  qrcode:
+    # alipay:
+    # wechat:
+    # paypal:
+
+# ===========================================
+# Social Contact
+# ===========================================
+
+# Comments // Please only switch one on.
+comments:
+  enable: false
+
+  # disqus:
+  # livere_datauid:
+
+  # changyan:
+  #   appid:
+  #   appkey:
+
+  # gitment:
+  #   owner:
+  #   repo:
+  #   client_id:
+  #   client_secret:
+
+# sub //Please just fill out ID.
+sub:
+  facebook: 1
+  twitter: 2
+  instagram: 3
+  weibo: 4
+  zhihu: 5
+  github: 6
+  linkedin: 7
+  douban: 8
+
+#Friend link
+# friendLink:
+
+# ===========================================
+# Analytics
+# ===========================================
+
+analytics:
+  google:
+  baidu:
+
+#visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
+visit_count: false
+
+# ===========================================
+# Theme Settings
+# ===========================================
+
+# pjax
+pjax: false
+
+# mathjax
+mathjax: false
+
+# lightbox
+lightbox: true
+
+# lazyload
+lazyload: false
+
+# animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
+animate: true
+
+# Created Time
+since: 2016
+
+# plugin
+# plugins:
+
+# about
+# self:
+
+# ===========================================
+# Search Settings
+# ===========================================
+
+# Search
+search:
+  enable: true
+  label: 搜索一下？
+
+# ===========================================
+# Documents Styles
+# ===========================================
+
+# article-fonts
+# default | Simsun | YaHei | Hel | Custom
+fonts-style: default
+
+# code-fonts
+# default | Custom
+code-style: default
+
+# ===========================================
+# WebApp Settings (iOS)
+# ===========================================
+
+
+# ===========================================
+# Version
+# ===========================================
+version: 3.0
+
+#theme_author: Co1MugX
