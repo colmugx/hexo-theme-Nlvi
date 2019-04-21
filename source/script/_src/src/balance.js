@@ -19,13 +19,16 @@ export default class Balance extends Base {
     if (!this.theme.toc) false
     const utils = this.utils
     const $header = utils('cls', '#header')
+    const $toc = utils('cls', '.post-toc')
     $('#switch-toc').on('click', e => {
       e.stopPropagation()
       $header.opreate('show_toc')
+      $toc.opreate('hide', 'remove')
     })
     $('#header').on('click', () => {
       if ($header.exist('show_toc')) {
         $header.opreate('show_toc', 'remove')
+        $toc.opreate('hide')
       }
     })
   }
