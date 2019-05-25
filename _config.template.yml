@@ -19,6 +19,9 @@ favicon:
 
 ## Common
 
+# Navigator Language
+local-nav: false
+
 # Mobile-Header
 # light | dark
 mobile-header: light
