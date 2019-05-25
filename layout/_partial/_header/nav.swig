@@ -16,7 +16,13 @@
   {% endif %}
     <li class="menu-item">
       <a href="{{ link }}" id="{{ name }}">
-        <span class="base-name">{{ name | upper }}</span>
+        <span class="base-name">
+          {% if theme['local-nav'] %}
+            {{ __('nav.' + name) }}
+          {% else %}
+            {{ name | upper }}
+          {% endif %}
+        </span>
       </a>
     </li>
   {% endfor %}
