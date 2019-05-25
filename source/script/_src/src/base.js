@@ -135,10 +135,11 @@ class Base {
   }
 
   showReward() {
+    if (!this.theme.reward) return
     const utils = Base.utils
     const $btn = utils('ani', '#reward-btn')
     $('#reward-btn').click(() => {
-      if (utils('iss', '#reward-btn')) {
+      if (utils('iss', '#reward-wrapper').display()) {
         $('#reward-wrapper').css('display', 'flex')
         $btn.end('clarity')
       } else {
@@ -268,6 +269,7 @@ class Base {
     this.pushHeader()
     this.tagcloud()
     this.search()
+    this.showReward()
     this.pjax()
   }
 

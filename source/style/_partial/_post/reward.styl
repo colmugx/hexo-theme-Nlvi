@@ -1,32 +1,32 @@
 .post-reward
-    width 100%
-    text-align center
-    margin-top (yard*6)
+    width: 100%
+    text-align: center
+    margin: (yard*4) 0 (yard*2)
     .reward-btn
-      position relative
-      display inline
-      margin yard auto
-      padding yard (yard*2)
-      text-align center
-      background-color $theme-color-selection-highlight
-      color #fff
-      font-size 14px
-      font-weight 600
-      border-radius yard
-      cursor pointer
+      position: relative
+      display: inline
+      margin: yard auto
+      padding: yard (yard*2)
+      text-align: center
+      background-color: $theme-color-link
+      color: #fff
+      font-size: 14px
+      font-weight: 600
+      border-radius: yard
+      cursor: pointer
       box-shadow: 0 1px 1px transparent
-      transition box-shadow .2s ease-in, background-color .2s ease-in
+      transition: box-shadow .2s ease-in, background-color .2s ease-in
       &:hover
-        background-color $theme-color-main
-        box-shadow 0 1px 1px #d5d5d5;
+        background-color: $theme-color-main
+        box-shadow: 0 1px 1px #d5d5d5;
 
     .reward-wrapper
-      margin (yard*3) 0
-      flex-direction row
-      justify-content center
-      align-items center
+      margin: (yard*3) 0
+      flex-direction: row
+      justify-content: center
+      align-items: center
       .reward-item
-        margin 0 2%
+        margin: 0 2%
       img
-        width 150px
-        height @width
+        width: 150px
+        height: @width
