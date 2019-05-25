@@ -199,7 +199,7 @@ class Base {
     zip(click$, tags$).pipe(
       map(([_, dom]) => dom),
       switchMap(v => postlist$.pipe(
-        filter(dom => dom.firstElementChild.innerHTML === v.innerHTML)
+        filter(dom => dom.firstElementChild.innerHTML.trim() === v.innerHTML.trim())
       ))
     ).subscribe(v => v.classList.add('active'))
   }
