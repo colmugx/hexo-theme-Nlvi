@@ -22,11 +22,12 @@
 
     .reward-wrapper
       margin: (yard*3) 0
-      flex-direction: row
+      flex-flow: row nowrap
       justify-content: center
       align-items: center
+      overflow-y: auto
       .reward-item
-        margin: 0 2%
+        flex: 1
       img
-        width: 150px
-        height: @width
+        max-width: 90%
+        max-height: 100%
