@@ -10,10 +10,14 @@
   .toc-inner
     padding: 0 (yard*2)
     opacity: 0
+    height: 90%
     transform-origin: right center
     transform: rotateY(70deg)
     transition-sign()
     transition-delay: 100ms
+    overflow: auto
+    &::-webkit-scrollbar
+      width 1px
     &.show
       opacity: 1
       transform: rotateY(0deg)
