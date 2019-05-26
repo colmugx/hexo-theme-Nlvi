@@ -57,8 +57,14 @@ reward:
   # message:
   qrcode:
     # alipay:
+    #   url:
+    #   message:
     # wechat:
+    #   url:
+    #   message:
     # paypal:
+    #   url:
+    #   message:
 
 # ===========================================
 # Social Contact

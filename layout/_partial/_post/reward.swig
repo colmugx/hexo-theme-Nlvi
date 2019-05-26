@@ -5,11 +5,11 @@
       {% for name, value in theme.reward.qrcode %}
       <div class="reward-item {{ 'reward-' + name }}">
         {% if theme.lightbox %}
-          <a href="{{ url_for(value) }}" data-title="{{ name }} qrcode" data-lightbox="group">
-            <img src="{{ url_for(value) }}">
+          <a href="{{ url_for(value.url) }}" data-title="{{ value.message }}" data-lightbox="{{ name }}">
+            <img src="{{ url_for(value.url) }}">
           </a>
         {% else %}
-          <img src="{{ url_for(value) }}">
+          <img src="{{ url_for(value.url) }}">
         {% endif %}
       </div>
       {% endfor %}
