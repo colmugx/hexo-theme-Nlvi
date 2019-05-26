@@ -14,7 +14,7 @@ class Base {
     const utils = Base.utils
     const fns = {
       smoothScroll() {
-        $('.toc-link').on('click', function() {
+        $('.toc-link').on('click', function () {
           $('html, body').animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 200
           })
@@ -23,8 +23,8 @@ class Base {
       picPos() {
         const _this = this
 
-        $('.post-content').each(function() {
-          $(this).find('img').each(function() {
+        $('.post-content').each(function () {
+          $(this).find('img').each(function () {
             $(this).parent('p').css('text-align', 'center')
             let imgHead = `<img src="${this.src}"`
             if (_this.theme.lazy) {
@@ -48,7 +48,7 @@ class Base {
           } else {
             $(this).addClass('syuanpi').css('transform', '')
             utils('cls', '#post-comments').opreate('fadeInDown', 'remove')
-            utils('ani', '#post-comments').end('fadeOutUp', function() {
+            utils('ani', '#post-comments').end('fadeOutUp', function () {
               $(this).css('display', 'none')
             })
           }
@@ -60,7 +60,7 @@ class Base {
   }
 
   back2top() {
-    $('.toTop').on('click', function() {
+    $('.toTop').on('click', function () {
       $('html, body').animate({
         scrollTop: 0
       })
@@ -91,11 +91,11 @@ class Base {
     const utils = Base.utils
     const $toclink = $('.toc-link')
     const $headerlink = $('.headerlink')
-    this.scrollArr.push(function(sct) {
-      const headerlinkTop = $.map($headerlink, function(link) {
+    this.scrollArr.push(function (sct) {
+      const headerlinkTop = $.map($headerlink, function (link) {
         return $(link).offset().top
       })
-      $('.title-link a').each(function() {
+      $('.title-link a').each(function () {
         const ele = utils('cls', this)
         sct >= 0 && sct < 230
           ? ele.opreate('active')
@@ -119,7 +119,7 @@ class Base {
   titleStatus() {
     const title = document.title
     var tme
-    document.addEventListener('visibilitychange', function() {
+    document.addEventListener('visibilitychange', function () {
       const sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
       if ($(document).height() - $(window).height() === 0) sct = 100
       if (document.hidden) {
@@ -127,7 +127,7 @@ class Base {
         document.title = 'Read ' + sct + '% · ' + title
       } else {
         document.title = 'Welcome Back · ' + title
-        tme = setTimeout(function() {
+        tme = setTimeout(function () {
           document.title = title
         }, 3000)
       }
@@ -172,6 +172,12 @@ class Base {
     const $tagcloudAni = utils('ani', '#tagcloud')
     const $search = utils('cls', '#search')
     const $searchAni = utils('ani', '#search')
+    const closeFrame = () => {
+      $tagcloud.opreate('shuttleIn', 'remove')
+      $tagcloudAni.end('zoomOut', () => {
+        $tagcloud.opreate('syuanpi show', 'remove')
+      })
+    }
     $tag.on('click', () => {
       if ($search.exist('show')) {
         $tagcloud.opreate('syuanpi shuttleIn show')
@@ -181,14 +187,13 @@ class Base {
         })
         return
       }
-      this.depth(() => {
-        $tagcloud.opreate('syuanpi shuttleIn show')
-      }, () => {
-        $tagcloud.opreate('shuttleIn', 'remove')
-        $tagcloudAni.end('zoomOut', () => {
-          $tagcloud.opreate('syuanpi show', 'remove')
-        })
-      })
+      this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+    })
+    $('#tagcloud').on('click', e => {
+      e.stopPropagation()
+      if (e.target.tagName === 'DIV') {
+        this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+      }
     })
     const tags$ = fromEvent(document.querySelectorAll('.tagcloud-tag button'), 'click').pipe(
       map(({ target }) => target)
@@ -214,6 +219,12 @@ class Base {
     const $searchAni = utils('ani', '#search')
     const $tagcloud = utils('cls', '#tagcloud')
     const $tagcloudAni = utils('ani', '#tagcloud')
+    const closeFrame = () => {
+      $search.opreate('shuttleIn', 'remove')
+      $searchAni.end('zoomOut', () => {
+        $search.opreate('syuanpi show', 'remove')
+      })
+    }
     $searchbtn.on('click', () => {
       if ($tagcloud.exist('show')) {
         $search.opreate('syuanpi shuttleIn show')
@@ -223,14 +234,13 @@ class Base {
         })
         return
       }
-      this.depth(() => {
-        $search.opreate('syuanpi shuttleIn show')
-      }, () => {
-        $search.opreate('shuttleIn', 'remove')
-        $searchAni.end('zoomOut', () => {
-          $search.opreate('syuanpi show', 'remove')
-        })
-      })
+      this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+    })
+    $('#search').on('click', e => {
+      e.stopPropagation()
+      if(e.target.tagName === 'DIV') {
+        this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+      }
     })
     genSearch(`${this.config.baseUrl}search.xml`, 'search-input')
       .subscribe(vals => {
@@ -302,7 +312,7 @@ class Base {
       end(ani, fn) {
         $(ele)
           .addClass(ani)
-          .one('webkitAnimationEnd AnimationEnd', function() {
+          .one('webkitAnimationEnd AnimationEnd', function () {
             $(ele).removeClass(ani)
             fn && fn.call(null, ele)
           })

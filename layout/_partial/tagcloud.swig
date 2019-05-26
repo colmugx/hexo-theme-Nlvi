@@ -11,7 +11,7 @@
       <h2>{{ tag.name }}</h2>
       {% for post in tag.posts %}
         <div class="tagcloud-post">
-          <a href="{{ post.path }}">
+          <a href="{{ url_for('/') + post.path }}">
             <time class="tagcloud-posttime">{{ full_date(post.date, 'YYYY / MM / DD') }}</time>
             <span>{{ post.title }}</span>
           </a>
