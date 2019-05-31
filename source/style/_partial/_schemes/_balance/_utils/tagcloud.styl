@@ -27,15 +27,19 @@
   &.show
     display: block
   +mobile()
-    display: none
+    left: 0
   .tagcloud-taglist
     width: 100%
     margin-top: 6em
     padding: 0 (yard*5)
     +flex-wrapper(row)
       flex-wrap: wrap
+    +mobile()
+      padding: 0 (yard*2)
     .tagcloud-tag
       margin: yard (yard*2)
+      +mobile()
+        font-size: 14px
 
   .tagcloud-postlist
     display: none
@@ -55,6 +59,8 @@
         text-decoration: none
       &:hover
         color: $theme-color-hover
+      +mobile()
+        margin-left: 0
     .tagcloud-posttime
       color: $theme-text-color-desc
       &:after

@@ -256,6 +256,28 @@ class Base {
       })
   }
 
+  headerMenu() {
+    const utils = this.utils
+    const $mobileMenu = utils('cls', '.mobile-header-body')
+    const $haderline = utils('cls', '.header-menu-line')
+    const $mtag = $('#mobile-tags')
+    const $tagcloud = utils('cls', '#tagcloud')
+    $mtag.on('click', () => {
+      $mobileMenu.opreate('show', 'remove')
+      $haderline.opreate('show', 'remove')
+      $tagcloud.opreate('syuanpi shuttleIn show')
+    })
+    $('#mobile-left').on('click', () => {
+      this.depth(() => {
+        $mobileMenu.opreate('show')
+        $haderline.opreate('show')
+      }, () => {
+        $mobileMenu.opreate('show', 'remove')
+        $haderline.opreate('show', 'remove')
+      })
+    })
+  }
+
   pjax() {
     if (!this.theme.pjax) return
     const utils = this.utils
@@ -280,6 +302,7 @@ class Base {
     this.tagcloud()
     this.search()
     this.showReward()
+    this.headerMenu()
     this.pjax()
   }
 
