@@ -150,6 +150,12 @@ class Base {
     })
   }
 
+  listenExit(elm, fn) {
+    fromEvent(elm, 'keydown').pipe(
+      filter(e => e.keyCode === 27)
+    ).subscribe(() => fn())
+  }
+
   depth(open, close) {
     const utils = this.utils
     const $container = utils('cls', 'body')
@@ -178,6 +184,11 @@ class Base {
         $tagcloud.opreate('syuanpi show', 'remove')
       })
     }
+    const switchShow = () => {
+      this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+    }
+    this.listenExit($tag, switchShow)
+    this.listenExit(document.getElementsByClassName('tagcloud-taglist'), switchShow)
     $tag.on('click', () => {
       if ($search.exist('show')) {
         $tagcloud.opreate('syuanpi shuttleIn show')
@@ -187,7 +198,7 @@ class Base {
         })
         return
       }
-      this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+      switchShow()
     })
     $('#tagcloud').on('click', e => {
       e.stopPropagation()
@@ -225,6 +236,10 @@ class Base {
         $search.opreate('syuanpi show', 'remove')
       })
     }
+    const switchShow = () => {
+      this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+    }
+    this.listenExit(document.getElementById('search'), switchShow)
     $searchbtn.on('click', () => {
       if ($tagcloud.exist('show')) {
         $search.opreate('syuanpi shuttleIn show')
@@ -234,7 +249,7 @@ class Base {
         })
         return
       }
-      this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+      switchShow()
     })
     $('#search').on('click', e => {
       e.stopPropagation()
