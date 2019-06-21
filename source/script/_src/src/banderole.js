@@ -1,4 +1,6 @@
 import Base from './base'
+import { fromEvent } from 'rxjs'
+import { throttleTime, map } from 'rxjs/operators'
 
 export default class Banderole extends Base {
   constructor (config) {
@@ -10,6 +12,10 @@ export default class Banderole extends Base {
     super.pushHeader()
     if (!this.utils('iss').banderole()) return
     const $header = this.utils('cls', '#header')
+    fromEvent(window, 'wheel').pipe(
+      throttleTime(500),
+      map(({ deltaY }) => deltaY > 0)
+    ).subscribe(v => $header.opreate('header-hide', v ? 'add' : 'remove'))
     this.scrollArr.push(sct => {
       if (sct > 50) {
         $header.opreate('header-scroll', 'add')
