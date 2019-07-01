@@ -1,74 +1,69 @@
 .header
-  position fixed
-  top 0
-  bottom 0
-  left 0
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
   z-index: 9
-  height 100%
-  width 300px
+  height: 100%
+  width: 300px
   headerStyle()
   transition-sign()
   +mobile()
-    display none
+    display: none
   .header-wrapper
-    width 100%
-    padding (yard*2) 0
-    text-align center
+    width: 100%
+    height: 100%
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
   .logo
-    display flex
-    align-items center
-    -webkit-user-select none
-    -moz-user-select none
-    user-select none
-    font-size 42px
-    font-family $header-fonts
-    margin-top 20%
+    flex: 0 0 30%
+    display: flex
+    align-items: center
+    user-select: none
+    font-size: 42px
+    font-family: $header-fonts
     a
-      color inherit
-      text-decoration none
+      color: inherit
+      text-decoration: none
       font-weight: 100
     span
-      display block
-      text-align span
+      display: block
+      text-align: span
   #subtitle
-    opacity 1
-    position absolute
-    margin-top (yard/2)
-    font-size 12px
-    text-align center
-    width 100%
-    margin-top (yard*2)
-    font-family $normal-fonts
+    opacity: 1
+    position: absolute
+    margin-top: (yard/2)
+    font-size: 12px
+    text-align: center
+    width: 100%
+    margin-top: (yard*2)
+    font-family: $normal-fonts
   .logo-inner
-    position relative
-    width 100%
-    max-width 100%
+    position: relative
+    width: 100%
+    max-width: 100%
     span:hover+#subtitle
-      opacity 1
+      opacity: 1
   .main-nav
-    margin-top 50%
-    padding 0 (yard*2)
-    display flex
-    flex-direction column
-    align-items center
-    text-align left
+    flex: .7
+    padding: 0 (yard*2)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
 
   .main-nav-list
-    list-style none
-    padding 0
+    list-style: none
+    padding: 0
     .menu-item
-      margin (yard*2) 0
-      .menu-item-label
-        display none
+      margin: (yard*2) 0
+      text-align: center
       a
-        text-decoration none
-        color $theme-text-color-main
-        font-size inherit
-        display flex
-        flex-direction column
-        text-align center
+        color: $theme-text-color-main
+        font-size: inherit
         &:hover
-          color $theme-color-link
+          color: $theme-color-link
   &.melt
     opacity: 0
     transition-sign(opacity)
