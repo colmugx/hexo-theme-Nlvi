@@ -5,9 +5,9 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  <div class="container" style="display:none;">
+  <div class="container">
     {% include "_partial/header.swig" %}
-    <div class="container-inner">
+    <div class="container-inner" style="display:none;">
       <main class="main" id="main">
         <div class="main-wrapper">
           {% block main %} {% endblock %}
