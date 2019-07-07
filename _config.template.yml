@@ -81,11 +81,12 @@ comments:
   #   appid:
   #   appkey:
 
-  # gitment:
+  # gitalk:
   #   owner:
   #   repo:
   #   client_id:
   #   client_secret:
+  #   admin:
 
 # sub //Please just fill out ID.
 sub:
