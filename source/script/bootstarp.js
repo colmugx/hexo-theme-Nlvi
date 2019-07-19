@@ -5,4 +5,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 $(document).ready(function() {
   $('.container-inner').show();
+  $('.logo-inner').show();
 });

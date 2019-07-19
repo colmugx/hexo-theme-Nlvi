@@ -1,16 +1,17 @@
-{{ js('script/lib/jquery/jquery-3.2.1.min') }}
+{{ js('https://unpkg.com/jquery@3.4.1/dist/jquery.js') }}
 
 {% if theme.lightbox %}
-  {{ js('script/lib/lightbox/js/lightbox.min') }}
+  <script></script>
+  <script src="{{ url_for('/') }}script/lib/lightbox/js/lightbox.min.js" async></script>
 {% endif %}
 
 {% if theme.mathjax %}
-  <script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://unpkg.com/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
 {% endif %}
 
 {% if theme.lazyload %}
-  {{ js('script/lib/layzr/layzr') }}
+  <script src="{{ url_for('/') }}script/lib/layzr/layzr.js" async></script>
 {% endif %}
 
 {% if theme.pjax %}

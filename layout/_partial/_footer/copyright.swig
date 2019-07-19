@@ -8,7 +8,7 @@
     <div class="theme">
         <span>
             {{ __('come') }}
-            <a href="http://hexo.io/" target="_blank">Hexo </a>
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
         </span>
         <span>
             {{ __('theme') }}
