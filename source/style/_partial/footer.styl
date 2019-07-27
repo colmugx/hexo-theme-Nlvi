@@ -5,7 +5,8 @@ $social-list = {
   linkedin: #5290bc,
   facebook: #4e69a2,
   instagram: #d10869,
-  douban: #0cb527
+  douban: #0cb527,
+  zhihu: #0767c8,
 }
 
 .footer
@@ -47,10 +48,12 @@ $social-list = {
         font-size 26px
 
     for $k, $c in $social-list
-      .icon-social-{$k}:hover
-        color $c
-    .icon-zhihu:hover
-      color #0767c8
+      .icon-{$k}
+        transform: scale(1)
+        transition-sign()
+        &:hover
+          transform: scale(1.2)
+          color: $c
 
   .right
     flex 2
