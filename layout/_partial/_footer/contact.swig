@@ -7,7 +7,9 @@
     facebook: 'https://www.facebook.com/',
     linkedin: 'https://www.linkedin.com/in/',
     instagram: 'https://www.instagram.com/',
-    douban: 'https://www.douban.com/people/'
+    douban: 'https://www.douban.com/people/',
+    yuque: 'https://www.yuque.com/',
+    medium: 'https://medium.com/'
   } %}
   {% for name, path in theme.sub %}
     <a href="{{ urls[name] + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>
