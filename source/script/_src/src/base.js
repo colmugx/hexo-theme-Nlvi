@@ -22,23 +22,16 @@ class Base {
       },
       picPos() {
         const _this = this
-
         $('.post-content').each(function () {
           $(this).find('img').each(function () {
             $(this).parent('p').css('text-align', 'center')
             let imgHead = `<img src="${this.src}"`
             if (_this.theme.lazy) {
-              imgHead = `<img data-normal="${this.src}"`
+              imgHead = `<img data-src="${this.src}" class="lazyload"`
             }
             $(this).replaceWith(`<a href="${this.src}" data-title="${this.alt}" data-lightbox="group">${imgHead} alt="${this.alt}"></a>`)
           })
         })
-        if (this.theme.lazy) {
-          const instance = Layzr()
-          instance
-            .update()
-            .handlers(true)
-        }
       },
       showComments() {
         $('#com-switch').on('click', () => {

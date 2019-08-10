@@ -11,7 +11,7 @@
 {% endif %}
 
 {% if theme.lazyload %}
-  <script src="{{ url_for('/') }}script/lib/layzr/layzr.js" async></script>
+  <script src="https://unpkg.com/lazysizes@5.1.1/lazysizes.min.js" async></script>
 {% endif %}
 
 {% if theme.pjax %}
