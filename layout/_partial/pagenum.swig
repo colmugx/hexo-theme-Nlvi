@@ -2,7 +2,8 @@
   <nav class="pagination">
       {{ paginator({
           prev_text: '<i class="iconfont icon-doubleleft"></i>' + __("page.prev"),
-          next_text: __("page.next") + '<i class="iconfont icon-doubleright"></i>'
+          next_text: __("page.next") + '<i class="iconfont icon-doubleright"></i>',
+          escape: false
       }) }}
   </nav>
 {% else %}
