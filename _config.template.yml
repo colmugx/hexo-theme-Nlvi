@@ -124,6 +124,7 @@ pjax: false
 
 # mathjax
 mathjax: false
+mathjax3: false
 
 # lightbox
 lightbox: true
