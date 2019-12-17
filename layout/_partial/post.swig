@@ -1,8 +1,4 @@
 {% macro render(post) %}
-  {% if page.mathjax %}
-    <script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
-  {% endif %}
   <article class="
   post
   {% if is_post() %} is_post {% endif %}
