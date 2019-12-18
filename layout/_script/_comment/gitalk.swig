@@ -1,9 +1,9 @@
 {% if theme.comments.gitalk %}
 <!-- Gitalk Comments -->
 <div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="https://unpkg.com/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.12.0/js/md5.min.js"></script>
 <script>
 var gitalk = new Gitalk({
   clientID: '{{theme.comments.gitalk.client_id}}',

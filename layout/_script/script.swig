@@ -1,4 +1,4 @@
-{{ js('https://unpkg.com/jquery@3.4.1/dist/jquery.js') }}
+{{ js('https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js') }}
 
 {% if theme.lightbox %}
   <script></script>
@@ -6,7 +6,7 @@
 {% endif %}
 
 {% if theme.mathjax %}
-  <script src="https://unpkg.com/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
 {% endif %}
 
@@ -23,7 +23,7 @@
 {% endif %}
 
 {% if theme.lazyload %}
-  <script src="https://unpkg.com/lazysizes@5.1.1/lazysizes.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
 {% endif %}
 
 {% if theme.pjax %}
