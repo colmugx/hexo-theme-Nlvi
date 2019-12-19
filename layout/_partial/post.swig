@@ -1,5 +1,5 @@
 {% macro render(post) %}
-  {% if page.mathjax %}
+  {% if !config.mathjax && !config.mathjax3 && page.mathjax %}
     <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
   {% endif %}
