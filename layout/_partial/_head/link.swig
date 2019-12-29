@@ -18,6 +18,11 @@
     <link rel="icon" href="{{ theme.favicon }}">
 {% endif %}
 
+{# rss #}
+{% if theme.menu.rss %}
+    <link rel="alternate" type="application/rss+xml" href="{{ url_for(theme.menu.rss) }}" />
+{% endif %}
+
 {# any analytics #}
 {% include "../../_script/_analytics/google.swig" %}
 {% include "../../_script/_analytics/baidu.swig" %}
