@@ -21,13 +21,13 @@
           {% endif %}
         </div>
       </div>
-      <h2 class="post-title syuanpi fadeInRightShort back-2">
+      <h1 class="post-title syuanpi fadeInRightShort back-2">
         {% if is_post() %}
           {{ post.title }}
         {% else %}
           <a href="{{ url_for(post.path) }}">{{ post.title }}</a>
         {% endif %}
-      </h2>
+      </h1>
     </header>
     <div class="post-content syuanpi fadeInRightShort back-3">
       {% if is_post() %}
