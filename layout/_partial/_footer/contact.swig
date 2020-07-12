@@ -9,7 +9,8 @@
     instagram: 'https://www.instagram.com/',
     douban: 'https://www.douban.com/people/',
     yuque: 'https://www.yuque.com/',
-    medium: 'https://medium.com/'
+    medium: 'https://medium.com/',
+    mail: 'mailto:'
   } %}
   {% for name, path in theme.sub %}
     <a href="{{ urls[name] + path }}" class="iconfont icon-{{ name }}" title="{{ name }}"></a>

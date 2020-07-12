@@ -88,7 +88,7 @@ comments:
   #   client_secret:
   #   admin:
 
-# sub //Please just fill out ID.
+# sub //Please just fill out ID or email.
 sub:
   facebook:
   twitter:
@@ -100,6 +100,7 @@ sub:
   douban:
   medium:
   yuque:
+  mail:
 
 #Friend link
 # friendLink:
