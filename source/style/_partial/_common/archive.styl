@@ -14,13 +14,20 @@
     color: $theme-color-main
   .archive-post
     max-width 100%
-    max-height: 320px
+    height: 260px
+    max-height: 260px
     overflow: hidden
     padding: (yard*2)
     position: relative
-    border-bottom: 1px solid $theme-line-color
+    border: 1px solid #f0f0f0;
+    box-shadow: 0px 2px 12px 0 mix($theme-color-main, #fff, 12%);
+    margin-bottom: 16px;
+    :last-child
+      margin-bottom: 0
+
     .archive-post-content
       @extend .post .post-content
+      filter: blur(3px)
     .archive-post-info
       position: absolute
       top: 0
@@ -41,7 +48,7 @@
         bottom: 0
         left: 0
         z-index -1
-        background: linear-gradient(transparent 12%, #fff 76%)
+        background: linear-gradient(transparent 8%, #fff 84%)
       a
         text-decoration: none
       .archive-post-time
