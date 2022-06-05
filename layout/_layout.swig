@@ -4,14 +4,12 @@
   {% include "_partial/head.swig" %}
   <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body data-barba="wrapper">
   <div class="container">
     {% include "_partial/header.swig" %}
-    <div class="container-inner" style="display:none;">
-      <main class="main" id="main">
-        <div class="main-wrapper">
-          {% block main %} {% endblock %}
-        </div>
+    <div class="container-inner">
+      <main class="main">
+        {% block main %} {% endblock %}
       </main>
       {% include "./_partial/footer.swig" %}
     </div>

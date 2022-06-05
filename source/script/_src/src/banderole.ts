@@ -1,6 +1,5 @@
 import Base from './base'
-import { fromEvent } from 'rxjs'
-import { throttleTime, map } from 'rxjs/operators'
+import { fromEvent, map, throttleTime } from 'rxjs'
 
 export default class Banderole extends Base {
   constructor (config) {

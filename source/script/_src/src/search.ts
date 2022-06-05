@@ -1,13 +1,10 @@
-import { fromEvent, zip, from } from 'rxjs'
-import { ajax } from 'rxjs/ajax'
-import { map, debounceTime, withLatestFrom } from 'rxjs/operators'
+import { fromEvent, zip, map, debounceTime, withLatestFrom, switchMap } from 'rxjs'
+import { fromFetch } from 'rxjs/fetch'
 
 export default function(path, inputId) {
-  const result$ = ajax({
-    url: path,
-    responseType: 'xml'
-  }).pipe(
-    map(({ response }) => response),
+  const result$ = fromFetch(path).pipe(
+    switchMap(resopnse => resopnse.text()),
+    map(str => new window.DOMParser().parseFromString(str, "text/xml")),
     map(res => res.querySelectorAll('entry')),
     map(res => [...res].map(v => ({
       title: v.getElementsByTagName('title')[0].textContent,

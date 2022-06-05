@@ -9,7 +9,9 @@
 
 
 {% block main %}
+<div class="main-inner" data-barba="container" data-barba-namespace="home">
   {% include "_partial/main.swig" %}
   {% include "_partial/pagenum.swig" %}
+</div>
 {% endblock %}
 

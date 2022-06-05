@@ -4,25 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "dev": "",
+    "build": "npm run build:banderole && npm run build:balance",
+    "build:banderole": "vite build --config vite-banderole.config.ts",
+    "build:balance": "vite build --config vite-balance.config.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-external-helpers": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "rollup": "^1.1.0",
-    "rollup-plugin-babel": "^4.3.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-replace": "^2.1.0",
-    "rollup-plugin-uglify": "^6.0.0",
-    "uglify-es": "^3.3.9"
-  },
   "dependencies": {
-    "rxjs": "^6.3.3"
+    "@barba/core": "^2.9.7",
+    "rxjs": "^7.5.5"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
   }
 }

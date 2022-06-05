@@ -1,6 +1,6 @@
-import { fromEvent, from, zip } from 'rxjs'
-import { map, switchMap, filter } from 'rxjs/operators'
+import { fromEvent, from, zip, map, switchMap, filter } from 'rxjs'
 import genSearch from './search'
+import './barba'
 
 class Base {
 
@@ -113,7 +113,7 @@ class Base {
     const title = document.title
     var tme
     document.addEventListener('visibilitychange', function () {
-      const sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
+      let sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
       if ($(document).height() - $(window).height() === 0) sct = 100
       if (document.hidden) {
         clearTimeout(tme)
@@ -311,7 +311,7 @@ class Base {
     this.search()
     this.showReward()
     this.headerMenu()
-    this.pjax()
+    // this.pjax()
   }
 
   static utils(g, e) {

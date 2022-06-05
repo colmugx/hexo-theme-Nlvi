@@ -23,6 +23,8 @@
     <link rel="alternate" type="application/rss+xml" href="{{ url_for(theme.menu.rss) }}" />
 {% endif %}
 
+{% include "../../_script/preload.swig" %}
+
 {# any analytics #}
 {% include "../../_script/_analytics/google.swig" %}
 {% include "../../_script/_analytics/baidu.swig" %}

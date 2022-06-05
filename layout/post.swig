@@ -4,5 +4,7 @@
 {% block title %} {{ page.title }} · {{ config.title }} {% endblock %}
 
 {% block main %}
-    {{ postPage.render(page) }}
+<div class="main-inner" data-barba="container" data-barba-namespace="post">
+  {{ postPage.render(page) }}
+</div>
 {% endblock %}
