@@ -10,5 +10,7 @@
 {% endblock %}
 
 {% block main %}
-    {{ archivet.render() }}
+<div class="main-inner" data-barba="container" data-barba-namespace="archive">
+  {{ archivet.render() }}
+</div>
 {% endblock %}

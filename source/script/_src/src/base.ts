@@ -1,61 +1,96 @@
 import { fromEvent, from, zip, map, switchMap, filter } from 'rxjs'
 import genSearch from './search'
+import { Util } from './util'
 import './barba'
 
-class Base {
+interface Theme {
+  scheme: 'banderole' | 'balance'
+  lightbox: boolean
+  animate: boolean
+  search: boolean | false
+  friends: boolean
+  reward: boolean
+  pjax: boolean
+  lazy: boolean
+  toc: boolean
+}
 
-  constructor(config) {
-    this.config = config
+export interface Config {
+  title: string
+  author: string
+  baseUrl: string
+  theme: Theme
+}
+
+abstract class Base {
+  private theme: Theme
+  private scrollArr: any[]
+  private util: Util
+
+  constructor(private readonly config: Config) {
     this.theme = config.theme
     this.scrollArr = []
+    this.util = Util.getInstance(config)
   }
 
   init() {
-    const utils = Base.utils
-    const fns = {
-      smoothScroll() {
-        $('.toc-link').on('click', function () {
-          $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 200
-          })
-        })
-      },
-      picPos() {
-        const _this = this
-        $('.post-content').each(function () {
-          $(this).find('img').each(function () {
-            $(this).parent('p').css('text-align', 'center')
-            let imgHead = `<img src="${this.src}"`
-            if (_this.theme.lazy) {
-              imgHead = `<img data-src="${this.src}" class="lazyload"`
-            }
-            $(this).replaceWith(`<a href="${this.src}" data-title="${this.alt}" data-lightbox="group">${imgHead} alt="${this.alt}"></a>`)
-          })
-        })
-      },
-      showComments() {
-        $('#com-switch').on('click', () => {
-          if (utils('iss', '#post-comments').display()) {
-            $('#post-comments').css('display', 'block').addClass('syuanpi fadeInDown')
-            $(this).removeClass('syuanpi').css('transform', 'rotate(180deg)')
-          } else {
-            $(this).addClass('syuanpi').css('transform', '')
-            utils('cls', '#post-comments').opreate('fadeInDown', 'remove')
-            utils('ani', '#post-comments').end('fadeOutUp', function () {
-              $(this).css('display', 'none')
-            })
-          }
+    const fns: [keyof Base] = ['showComments']
+    Base.opScroll(this.scrollArr)
+    return fns.forEach(fn => (<any>this[fn]).call(this))
+  }
+
+  showComments() {
+    const comSwitch = document.getElementById('com-switch')
+    comSwitch?.addEventListener('click', () => {
+      console.log('click')
+      const postComment = document.getElementById('post-comments')
+
+      if (this.util.isDisplay(postComment)) {
+        postComment.style.display = 'block'
+        postComment.classList.add('syuanpi', 'fadeInDown')
+        comSwitch!.classList.remove('syuanpi')
+        comSwitch!.style.transform = 'rotate(180deg)'
+      } else {
+        comSwitch!.style.transform = ''
+        comSwitch!.classList.add('syuanpi')
+        postComment.classList.remove('fadeInDown')
+        this.util.animationEnd(postComment, 'fadeOutUp', () => {
+          postComment.style.display = 'none'
         })
       }
-    }
-    Base.opScroll(this.scrollArr)
-    return Object.values(fns).forEach(fn => fn.call(this))
+    })
+  }
+
+  picPos() {
+    const _this = this
+    $('.post-content').each(function () {
+      $(this)
+        .find('img')
+        .each(function () {
+          $(this).parent('p').css('text-align', 'center')
+          let imgHead = `<img src="${this.src}"`
+          if (_this.theme.lazy) {
+            imgHead = `<img data-src="${this.src}" class="lazyload"`
+          }
+          $(this).replaceWith(
+            `<a href="${this.src}" data-title="${this.alt}" data-lightbox="group">${imgHead} alt="${this.alt}"></a>`
+          )
+        })
+    })
+  }
+
+  smoothScroll() {
+    $('.toc-link').on('click', function () {
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 200,
+      })
+    })
   }
 
   back2top() {
     $('.toTop').on('click', function () {
       $('html, body').animate({
-        scrollTop: 0
+        scrollTop: 0,
       })
     })
   }
@@ -73,9 +108,7 @@ class Base {
 
   updateRound(sct) {
     const scrollPercentRounded = Math.floor(
-      sct
-      / ($(document).height() - $(window).height())
-      * 100
+      (sct / ($(document).height() - $(window).height())) * 100
     )
     $('#scrollpercent').html(scrollPercentRounded)
   }
@@ -95,12 +128,9 @@ class Base {
           : ele.opreate('active', 'remove')
       })
       for (let i = 0; i < $toclink.length; i++) {
-        const
-          isLastOne = i + 1 === $toclink.length,
+        const isLastOne = i + 1 === $toclink.length,
           currentTop = headerlinkTop[i],
-          nextTop = isLastOne
-            ? Infinity
-            : headerlinkTop[i + 1],
+          nextTop = isLastOne ? Infinity : headerlinkTop[i + 1],
           $tl = utils('cls', $toclink[i])
         currentTop < sct + 210 && sct + 210 <= nextTop
           ? $tl.opreate('active')
@@ -113,7 +143,10 @@ class Base {
     const title = document.title
     var tme
     document.addEventListener('visibilitychange', function () {
-      let sct = Math.floor($(window).scrollTop() / ($(document).height() - $(window).height()) * 100)
+      let sct = Math.floor(
+        ($(window).scrollTop() / ($(document).height() - $(window).height())) *
+          100
+      )
       if ($(document).height() - $(window).height() === 0) sct = 100
       if (document.hidden) {
         clearTimeout(tme)
@@ -144,9 +177,9 @@ class Base {
   }
 
   listenExit(elm, fn) {
-    fromEvent(elm, 'keydown').pipe(
-      filter(e => e.keyCode === 27)
-    ).subscribe(() => fn())
+    fromEvent(elm, 'keydown')
+      .pipe(filter(e => e.keyCode === 27))
+      .subscribe(() => fn())
   }
 
   depth(open, close) {
@@ -181,7 +214,10 @@ class Base {
       this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
     }
     this.listenExit($tag, switchShow)
-    this.listenExit(document.getElementsByClassName('tagcloud-taglist'), switchShow)
+    this.listenExit(
+      document.getElementsByClassName('tagcloud-taglist'),
+      switchShow
+    )
     $tag.on('click', () => {
       if ($search.exist('show')) {
         $tagcloud.opreate('syuanpi shuttleIn show')
@@ -196,26 +232,41 @@ class Base {
     $('#tagcloud').on('click', e => {
       e.stopPropagation()
       if (e.target.tagName === 'DIV') {
-        this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+        this.depth(
+          () => $tagcloud.opreate('syuanpi shuttleIn show'),
+          closeFrame
+        )
       }
     })
-    const tags$ = fromEvent(document.querySelectorAll('.tagcloud-tag button'), 'click').pipe(
-      map(({ target }) => target)
-    )
+    const tags$ = fromEvent(
+      document.querySelectorAll('.tagcloud-tag button'),
+      'click'
+    ).pipe(map(({ target }) => target))
     const postlist$ = from(document.querySelectorAll('.tagcloud-postlist'))
-    const cleanlist$ = postlist$.pipe(map(dom => dom.classList.remove('active')))
+    const cleanlist$ = postlist$.pipe(
+      map(dom => dom.classList.remove('active'))
+    )
     const click$ = tags$.pipe(switchMap(() => cleanlist$))
-    zip(click$, tags$).pipe(
-      map(([_, dom]) => dom),
-      switchMap(v => postlist$.pipe(
-        filter(dom => dom.firstElementChild.innerHTML.trim() === v.innerHTML.trim())
-      ))
-    ).subscribe(v => v.classList.add('active'))
+    zip(click$, tags$)
+      .pipe(
+        map(([_, dom]) => dom),
+        switchMap(v =>
+          postlist$.pipe(
+            filter(
+              dom =>
+                dom.firstElementChild.innerHTML.trim() === v.innerHTML.trim()
+            )
+          )
+        )
+      )
+      .subscribe(v => v.classList.add('active'))
   }
 
   search() {
     if (!this.theme.search) return
-    $('body').append(`<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`)
+    $('body').append(
+      `<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
+    )
     const utils = this.utils
     const $searchbtn = $('#search-btn')
     const $result = $('#search-result')
@@ -246,13 +297,14 @@ class Base {
     })
     $('#search').on('click', e => {
       e.stopPropagation()
-      if(e.target.tagName === 'DIV') {
+      if (e.target.tagName === 'DIV') {
         this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
       }
     })
-    genSearch(`${this.config.baseUrl}search.xml`, 'search-input')
-      .subscribe(vals => {
-        const list = body => `<ul class="search-result-list syuanpi fadeInUpShort">${body}</ul>`
+    genSearch(`${this.config.baseUrl}search.xml`, 'search-input').subscribe(
+      vals => {
+        const list = body =>
+          `<ul class="search-result-list syuanpi fadeInUpShort">${body}</ul>`
         const item = ({ url, title, content }) => `
           <li class="search-result-item">
             <a href="${url}"><h2>${title}</h2></a>
@@ -261,7 +313,8 @@ class Base {
         `
         const output = vals.map(item)
         $result.html(list(output.join('')))
-      })
+      }
+    )
   }
 
   headerMenu() {
@@ -276,13 +329,16 @@ class Base {
       $tagcloud.opreate('syuanpi shuttleIn show')
     })
     $('#mobile-left').on('click', () => {
-      this.depth(() => {
-        $mobileMenu.opreate('show')
-        $haderline.opreate('show')
-      }, () => {
-        $mobileMenu.opreate('show', 'remove')
-        $haderline.opreate('show', 'remove')
-      })
+      this.depth(
+        () => {
+          $mobileMenu.opreate('show')
+          $haderline.opreate('show')
+        },
+        () => {
+          $mobileMenu.opreate('show', 'remove')
+          $haderline.opreate('show', 'remove')
+        }
+      )
     })
   }
 
@@ -292,7 +348,9 @@ class Base {
     const $container = utils('cls', '.container-inner')
     const $header = utils('cls', '.header')
     const $headerWrapper = utils('cls', '.header-wrapper')
-    $(document).pjax('.container-inner a', '.container-inner', { fragment: 'container-inner' })
+    $(document).pjax('.container-inner a', '.container-inner', {
+      fragment: 'container-inner',
+    })
     $(document).on('pjax:send', function () {
       $container.opreate('syuanpi fadeOutLeftShort')
       $headerWrapper.opreate('syuanpi fadeOutLeftShort')
@@ -317,13 +375,11 @@ class Base {
   static utils(g, e) {
     const cls = ele => ({
       opreate(cls, opt) {
-        return opt === 'remove'
-          ? $(ele).removeClass(cls)
-          : $(ele).addClass(cls)
+        return opt === 'remove' ? $(ele).removeClass(cls) : $(ele).addClass(cls)
       },
       exist(cls) {
         return $(ele).hasClass(cls)
-      }
+      },
     })
     const iss = ele => ({
       banderole: () => {
@@ -334,7 +390,7 @@ class Base {
       },
       display() {
         return $(ele).css('display') === 'none'
-      }
+      },
     })
     const ani = ele => ({
       close() {
@@ -347,19 +403,17 @@ class Base {
             $(ele).removeClass(ani)
             fn && fn.call(null, ele)
           })
-      }
+      },
     })
     return { cls, iss, ani }[g](e)
   }
 
   static opScroll(fns) {
-    const scroll$ = fromEvent(window, 'scroll')
-      .pipe(
-        map(v => v.target.scrollingElement.scrollTop)
-      )
+    const scroll$ = fromEvent(window, 'scroll').pipe(
+      map(v => v.target.scrollingElement.scrollTop)
+    )
     fns.length && scroll$.subscribe(next => fns.forEach(fn => fn(next)))
   }
 }
-
 
 export default Base

@@ -7,6 +7,7 @@
   {% endblock %}
 
   {% block main %}
+  <div class="main-inner" data-barba="container" data-barba-namespace="other">
     {% if page.type === 'about' %}
       <div class="about syuanpi fadeInRightShort">
         <h2 class="title"> {{ __('nav.about') }} </h2>
@@ -23,4 +24,5 @@
     {% else %}
       {{ page.content }}
     {% endif %}
+  </div>
   {% endblock %}

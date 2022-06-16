@@ -2,14 +2,18 @@ lockfileVersion: 5.4
 
 specifiers:
   '@barba/core': ^2.9.7
+  '@types/animejs': ^3.1.4
+  animejs: ^3.2.1
   rxjs: ^7.5.5
   vite: ^2.9.9
 
 dependencies:
   '@barba/core': 2.9.7
+  animejs: 3.2.1
   rxjs: 7.5.5
 
 devDependencies:
+  '@types/animejs': 3.1.4
   vite: 2.9.9
 
 packages:
@@ -19,6 +23,14 @@ packages:
     dependencies:
       is-promise: 2.2.2
       path-to-regexp: 3.2.0
+    dev: false
+
+  /@types/animejs/3.1.4:
+    resolution: {integrity: sha512-WUjeFT2SXd6intfE6cg6eL1jk/JL88JqM2gC4WqO4iHLmbCvHUq6aoLK13lGpDWs4FtS2PHoYraJZ0dEx99Dyg==}
+    dev: true
+
+  /animejs/3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
     dev: false
 
   /esbuild-android-64/0.14.42:

@@ -26,12 +26,12 @@
 {% endif %}
 
 {% if theme.scheme == 'banderole' %}
-  <script src="script/lib/nlvi/banderole.js" defer></script>
+  <script src="{{ url_for('/') }}script/lib/nlvi/banderole.js" defer></script>
 {% else %}
-  <script src="script/lib/nlvi/balance.js" defer></script>
+  <script src="{{ url_for('/') }}script/lib/nlvi/balance.js" defer></script>
 {% endif %}
 
-<script src="script/bootstrap.js" defer></script>
+<script src="{{ url_for('/') }}script/bootstrap.js" defer></script>
 
 {% if is_post() %}
 <script>
