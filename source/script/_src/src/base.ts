@@ -44,7 +44,6 @@ abstract class Base {
     comSwitch.addEventListener('click', () => {
       const postComment = document.getElementById('post-comments')!
 
-      console.log(this.util.isDisplay(postComment))
       if (!this.util.isDisplay(postComment)) {
         postComment.style.display = 'block'
         postComment.classList.add('syuanpi', 'fadeInDown')
@@ -76,14 +75,6 @@ abstract class Base {
     })
 
     window.GLightbox()
-  }
-
-  smoothScroll() {
-    $('.toc-link').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top - 200,
-      })
-    })
   }
 
   back2top() {

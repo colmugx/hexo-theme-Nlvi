@@ -1,36 +1,49 @@
-import { fromEvent, zip, map, debounceTime, withLatestFrom, switchMap } from 'rxjs'
+import {
+  fromEvent,
+  zip,
+  map,
+  debounceTime,
+  withLatestFrom,
+  switchMap,
+} from 'rxjs'
 import { fromFetch } from 'rxjs/fetch'
 
-export default function(path, inputId) {
+export default function (path: string, inputId: string) {
   const result$ = fromFetch(path).pipe(
     switchMap(resopnse => resopnse.text()),
-    map(str => new window.DOMParser().parseFromString(str, "text/xml")),
+    map(str => new window.DOMParser().parseFromString(str, 'text/xml')),
     map(res => res.querySelectorAll('entry')),
-    map(res => [...res].map(v => ({
-      title: v.getElementsByTagName('title')[0].textContent,
-      url: v.getElementsByTagName('url')[0].textContent,
-      content: v.getElementsByTagName('content')[0].textContent,
-    })))
+    map(res =>
+      [...res].map(v => ({
+        title: v.getElementsByTagName('title')[0].textContent,
+        url: v.getElementsByTagName('url')[0].textContent,
+        content: v.getElementsByTagName('content')[0].textContent,
+      }))
+    )
   )
 
-  const input$ = fromEvent(document.getElementById(inputId), 'input').pipe(
+  const input$ = fromEvent(document.getElementById(inputId)!, 'input').pipe(
     debounceTime(500),
-    map(({ target }) => target.value.trim())
+    map(({ target }) => (<HTMLInputElement>target)!.value.trim())
   )
 
-  const novalue$ = input$.pipe(
-    map(v => !!v)
-  )
+  const novalue$ = input$.pipe(map(v => !!v))
 
-  const output$ =  input$.pipe(
+  const output$ = input$.pipe(
     withLatestFrom(result$),
-    map(
-      ([keyword, results]) => results
-        .filter(({ title, content }) => title.indexOf(keyword) >= 0 || content.indexOf(keyword) >= 0)
+    map(([keyword, results]) =>
+      results
+        .filter(
+          ({ title, content }) =>
+            title!.indexOf(keyword) >= 0 || content!.indexOf(keyword) >= 0
+        )
         .map(obj => {
           const reg = new RegExp(`(${keyword})`, 'gi')
-          const title = obj.title.replace(reg, '<strong class="search-keyword">$1</strong>')
-          let content = obj.content.replace(/<[^>]+>/g, "")
+          const title = obj.title!.replace(
+            reg,
+            '<strong class="search-keyword">$1</strong>'
+          )
+          let content = obj.content!.replace(/<[^>]+>/g, '')
           const index = content.indexOf(keyword)
 
           content = content
@@ -38,10 +51,10 @@ export default function(path, inputId) {
             .replace(reg, '<strong class="search-keyword">$1</strong>')
           return { ...obj, title, content }
         })
-    ),
+    )
   )
 
   return zip(novalue$, output$).pipe(
-    map(([exist, values]) => exist ? values : [])
+    map(([exist, values]) => (exist ? values : []))
   )
 }
