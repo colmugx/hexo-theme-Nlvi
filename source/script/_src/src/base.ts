@@ -78,9 +78,10 @@ abstract class Base {
   }
 
   back2top() {
-    $('.toTop').on('click', function () {
-      $('html, body').animate({
-        scrollTop: 0,
+    document.querySelector('.to-top')?.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
       })
     })
   }
