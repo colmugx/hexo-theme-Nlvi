@@ -1,7 +1,8 @@
 <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>
 
 {% if theme.lightbox %}
-  <script src="{{ url_for('/') }}script/lib/lightbox/js/lightbox.min.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js" defer></script>
 {% endif %}
 
 {% if theme.mathjax %}

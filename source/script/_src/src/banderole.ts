@@ -40,13 +40,16 @@ export default class Banderole extends Base {
   }
 
   switchToc() {
-    if (!this.theme.toc) false
+    if (!this.theme.toc) {
+      return
+    }
     const utils = this.utils
     const $inner = utils('cls', '.toc-inner')
     const $title = utils('cls', '.post-toc .title')
     const $container = utils('cls', '.container-inner')
 
     $('.post-toc .title').on('click', () => {
+      console.log('???')
       if ($title.exist('show')) {
         $title.opreate('show', 'remove')
         $inner.opreate('show', 'remove')

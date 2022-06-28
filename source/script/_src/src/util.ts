@@ -28,7 +28,7 @@ export class Util {
   animationEnd(ele: Element, cls: string, callback?: Function) {
     ele.classList.add(...cls.split(' '))
     ele.addEventListener(
-      'webkitAnimationEnd AnimationEnd',
+      'animationend',
       e => callback?.(e),
       { once: true }
     )

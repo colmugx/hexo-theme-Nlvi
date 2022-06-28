@@ -34,49 +34,48 @@ abstract class Base {
   }
 
   init() {
-    const fns: [keyof Base] = ['showComments']
+    const fns: [keyof Base] = ['showComments', 'picPos']
     Base.opScroll(this.scrollArr)
     return fns.forEach(fn => (<any>this[fn]).call(this))
   }
 
   showComments() {
-    const comSwitch = document.getElementById('com-switch')
-    comSwitch?.addEventListener('click', () => {
-      console.log('click')
-      const postComment = document.getElementById('post-comments')
+    const comSwitch = document.getElementById('com-switch')!
+    comSwitch.addEventListener('click', () => {
+      const postComment = document.getElementById('post-comments')!
 
-      if (this.util.isDisplay(postComment)) {
+      console.log(this.util.isDisplay(postComment))
+      if (!this.util.isDisplay(postComment)) {
         postComment.style.display = 'block'
         postComment.classList.add('syuanpi', 'fadeInDown')
-        comSwitch!.classList.remove('syuanpi')
-        comSwitch!.style.transform = 'rotate(180deg)'
+        comSwitch.classList.remove('syuanpi')
+        comSwitch.style.transform = 'rotate(180deg)'
       } else {
-        comSwitch!.style.transform = ''
-        comSwitch!.classList.add('syuanpi')
+        comSwitch.style.transform = ''
+        comSwitch.classList.add('syuanpi')
         postComment.classList.remove('fadeInDown')
-        this.util.animationEnd(postComment, 'fadeOutUp', () => {
+        this.util.animationEnd(postComment, 'syuanpi fadeOutUp', () => {
           postComment.style.display = 'none'
+          postComment.classList.remove('syuanpi', 'fadeOutUp')
         })
       }
     })
   }
 
   picPos() {
-    const _this = this
-    $('.post-content').each(function () {
-      $(this)
-        .find('img')
-        .each(function () {
-          $(this).parent('p').css('text-align', 'center')
-          let imgHead = `<img src="${this.src}"`
-          if (_this.theme.lazy) {
-            imgHead = `<img data-src="${this.src}" class="lazyload"`
-          }
-          $(this).replaceWith(
-            `<a href="${this.src}" data-title="${this.alt}" data-lightbox="group">${imgHead} alt="${this.alt}"></a>`
-          )
-        })
+    // it will flash, todo
+    document.querySelectorAll<HTMLElement>('.post-content').forEach(ele => {
+      ele.querySelectorAll('img').forEach(img => {
+        img.parentElement!.style.textAlign = 'center'
+        let imgHead = `<img src="${img.src}"`
+        if (this.theme.lazy) {
+          imgHead = `<img data-src="${img.src}" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII="`
+        }
+        img.outerHTML = `<a href="${img.src}" class="glightbox" data-title="${img.alt}" data-gallery="post">${imgHead} alt="${img.alt}"></a>`
+      })
     })
+
+    window.GLightbox()
   }
 
   smoothScroll() {

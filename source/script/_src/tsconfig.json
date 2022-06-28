@@ -8,6 +8,9 @@
     "esModuleInterop": true,
     "types": ["vite/client"],
     "noEmit": true,
-    "isolatedModules": true
-  }
+    "isolatedModules": true,
+    "typeRoots": [
+      "./types"
+    ]
+  },
 }

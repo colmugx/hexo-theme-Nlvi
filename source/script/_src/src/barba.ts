@@ -2,9 +2,11 @@ import anime from 'animejs'
 import barba from '@barba/core'
 
 barba.init({
+  preventRunning: true,
+  prevent: ({el}) => el.classList.contains('glightbox'),
   transitions: [
     {
-      name: 'default-transition',
+      name: 'default',
       async leave({ current }) {
         return await anime({
           targets: current.container,
@@ -28,4 +30,8 @@ barba.init({
       },
     }
   ],
+})
+
+barba.hooks.afterEnter(() => {
+  console.log('enter')
 })
