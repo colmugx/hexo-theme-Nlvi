@@ -7,8 +7,8 @@ export default class Banderole extends Base {
     this.utils = Base.utils
   }
 
-  pushHeader() {
-    super.pushHeader()
+  hideMobileHeader() {
+    super.hideMobileHeader()
     if (!this.utils('iss').banderole()) return
     const $header = this.utils('cls', '#header')
     fromEvent(window, 'wheel').pipe(
@@ -60,5 +60,10 @@ export default class Banderole extends Base {
         $container.opreate('has_toc')
       }
     })
+  }
+
+  bootstarp(): void {
+      super.bootstarp()
+      this.switchToc()
   }
 }

@@ -34,14 +34,15 @@ abstract class Base {
   }
 
   init() {
-    const fns: [keyof Base] = ['showComments', 'picPos']
-    Base.opScroll(this.scrollArr)
-    return fns.forEach(fn => (<any>this[fn]).call(this))
+    const fns: (keyof Base)[] = ['showComments', 'picPos']
+    fns.forEach(fn => (<any>this[fn]).call(this))
+
+    this.util.handleScroll(this.scrollArr)
   }
 
   showComments() {
-    const comSwitch = document.getElementById('com-switch')!
-    comSwitch.addEventListener('click', () => {
+    const comSwitch = document.getElementById('com-switch')
+    comSwitch?.addEventListener('click', () => {
       const postComment = document.getElementById('post-comments')!
 
       if (!this.util.isDisplay(postComment)) {
@@ -86,22 +87,25 @@ abstract class Base {
     })
   }
 
-  pushHeader() {
-    const $header = this.utils('cls', '#mobile-header')
-    this.scrollArr.push(sct => {
+  hideMobileHeader() {
+    const header = document.getElementById('mobile-header')!
+    this.scrollArr.push((sct: number) => {
       if (sct > 5) {
-        $header.opreate('header-scroll', 'add')
+        header.classList.add('header-scroll')
       } else {
-        $header.opreate('header-scroll', 'remove')
+        header.classList.remove('header-scroll')
       }
     })
   }
 
-  updateRound(sct) {
+  updateRound(sct: number) {
+    const documentHeight = document.body.clientHeight
+    const windowHeight = window.innerHeight
     const scrollPercentRounded = Math.floor(
-      (sct / ($(document).height() - $(window).height())) * 100
+      (sct / (documentHeight - windowHeight)) * 100
     )
-    $('#scrollpercent').html(scrollPercentRounded)
+
+    document.getElementById('scrollpercent')!.innerHTML = ''+scrollPercentRounded
   }
 
   showToc() {
@@ -352,10 +356,9 @@ abstract class Base {
   bootstarp() {
     this.showToc()
     this.back2top()
-    this.switchToc()
     this.titleStatus()
     this.init()
-    this.pushHeader()
+    this.hideMobileHeader()
     this.tagcloud()
     this.search()
     this.showReward()

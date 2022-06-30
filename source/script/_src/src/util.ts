@@ -1,4 +1,4 @@
-import { fromEvent, map, Subject, takeUntil } from 'rxjs'
+import { fromEvent, map } from 'rxjs'
 import { Config } from './base'
 
 export class Util {
@@ -15,8 +15,12 @@ export class Util {
 
   handleScroll(fnStore: Function[]) {
     const scroll$ = fromEvent(window, 'scroll').pipe(
-      takeUntil(new Subject().asObservable()),
-      map(event => (<Element>event.target).scrollTop)
+      map(
+        event =>
+          (<Document>event.target).scrollingElement ||
+          (<Document>event.target).documentElement
+      ),
+      map(ele => ele.scrollTop)
     )
     fnStore.length && scroll$.subscribe(next => fnStore.forEach(fn => fn(next)))
   }
@@ -27,11 +31,7 @@ export class Util {
 
   animationEnd(ele: Element, cls: string, callback?: Function) {
     ele.classList.add(...cls.split(' '))
-    ele.addEventListener(
-      'animationend',
-      e => callback?.(e),
-      { once: true }
-    )
+    ele.addEventListener('animationend', e => callback?.(e), { once: true })
   }
 
   get isBanderole() {
