@@ -35,7 +35,7 @@ abstract class Base {
 
   init() {
     const fns: (keyof Base)[] = ['showComments', 'picPos']
-    fns.forEach(fn => (<any>this[fn]).call(this))
+    fns.forEach(fn => (<any>this[fn]).apply(null))
 
     this.util.handleScroll(this.scrollArr)
   }
@@ -99,56 +99,52 @@ abstract class Base {
   }
 
   updateRound(sct: number) {
-    const documentHeight = document.body.clientHeight
-    const windowHeight = window.innerHeight
-    const scrollPercentRounded = Math.floor(
-      (sct / (documentHeight - windowHeight)) * 100
-    )
+    const scrollPercentRounded = this.getPageProgress(sct)
 
-    document.getElementById('scrollpercent')!.innerHTML = ''+scrollPercentRounded
+    document.getElementById('scrollpercent')!.innerHTML =
+      '' + Math.min(scrollPercentRounded, 100)
   }
 
   showToc() {
-    const utils = Base.utils
-    const $toclink = $('.toc-link')
-    const $headerlink = $('.headerlink')
-    this.scrollArr.push(function (sct) {
-      const headerlinkTop = $.map($headerlink, function (link) {
-        return $(link).offset().top
+    const tocLinks = document.querySelectorAll('.toc-link')
+    const headerLinks = document.querySelectorAll('.headerlink')
+
+    this.scrollArr.push((sct: number) => {
+      const scrollTops = [...headerLinks].map(link => link.scrollTop)
+
+      document.querySelectorAll('.title-link a').forEach(ele => {
+        ele.classList[sct >= 0 && sct < 230 ? 'add' : 'remove']('active')
       })
-      $('.title-link a').each(function () {
-        const ele = utils('cls', this)
-        sct >= 0 && sct < 230
-          ? ele.opreate('active')
-          : ele.opreate('active', 'remove')
+
+      tocLinks.forEach((link, index) => {
+        const isLast = index === tocLinks.length
+        const currentTop = scrollTops[index]
+        const nextTop = isLast ? Infinity : scrollTops[index + 1]
+
+        link.classList[
+          currentTop < sct + 210 && sct + 210 <= nextTop ? 'add' : 'remove'
+        ]('active')
       })
-      for (let i = 0; i < $toclink.length; i++) {
-        const isLastOne = i + 1 === $toclink.length,
-          currentTop = headerlinkTop[i],
-          nextTop = isLastOne ? Infinity : headerlinkTop[i + 1],
-          $tl = utils('cls', $toclink[i])
-        currentTop < sct + 210 && sct + 210 <= nextTop
-          ? $tl.opreate('active')
-          : $tl.opreate('active', 'remove')
-      }
     })
   }
 
   titleStatus() {
     const title = document.title
-    var tme
-    document.addEventListener('visibilitychange', function () {
-      let sct = Math.floor(
-        ($(window).scrollTop() / ($(document).height() - $(window).height())) *
-          100
+    let timer: number
+    document.addEventListener('visibilitychange', () => {
+      const sct = Math.min(
+        this.getPageProgress(
+          (document.scrollingElement || document.documentElement).scrollTop
+        ),
+        100
       )
-      if ($(document).height() - $(window).height() === 0) sct = 100
+
       if (document.hidden) {
-        clearTimeout(tme)
+        clearTimeout(timer)
         document.title = 'Read ' + sct + '% · ' + title
       } else {
         document.title = 'Welcome Back · ' + title
-        tme = setTimeout(function () {
+        timer = setTimeout(function () {
           document.title = title
         }, 3000)
       }
@@ -157,38 +153,43 @@ abstract class Base {
 
   showReward() {
     if (!this.theme.reward) return
-    const utils = Base.utils
-    const $btn = utils('ani', '#reward-btn')
-    $('#reward-btn').click(() => {
-      if (utils('iss', '#reward-wrapper').display()) {
-        $('#reward-wrapper').css('display', 'flex')
-        $btn.end('clarity')
+
+    const button = document.getElementById('reward-btn')
+    const wrapper = document.getElementById('reward-wrapper')
+
+    button?.addEventListener('click', () => {
+      if (this.util.isDisplay(wrapper!)) {
+        this.util.animationEnd(wrapper!, 'melt', () => {
+          wrapper?.classList.remove('melt')
+          wrapper!.style.display = 'none'
+        })
       } else {
-        $btn.end('melt', () => {
-          $('#reward-wrapper').hide()
+        wrapper!.style.display = 'flex'
+        this.util.animationEnd(wrapper!, 'clarity', () => {
+          wrapper?.classList.remove('clarity')
         })
       }
     })
   }
 
-  listenExit(elm, fn) {
-    fromEvent(elm, 'keydown')
-      .pipe(filter(e => e.keyCode === 27))
-      .subscribe(() => fn())
+  listenExit(ele?: Element, fn?: () => void) {
+    fromEvent<KeyboardEvent>(ele!, 'keyup')
+      .pipe(filter(event => event.code === 'Escape'))
+      .subscribe(() => fn?.())
   }
 
-  depth(open, close) {
-    const utils = this.utils
-    const $container = utils('cls', 'body')
-    const $containerInner = utils('cls', '.container-inner')
-    if ($container.exist('under')) {
-      $container.opreate('under', 'remove')
-      $containerInner.opreate('under', 'remove')
-      close.call(this)
+  depth(open: () => void, close: () => void) {
+    const container = document.body
+    const containerInner = document.querySelector('.container-inner')
+
+    if (container.classList.contains('under')) {
+      container.classList.remove('under')
+      containerInner?.classList.remove('under')
+      close.apply(null)
     } else {
-      $container.opreate('under', 'add')
-      $containerInner.opreate('under', 'add')
-      open.call(this)
+      container.classList.add('under')
+      containerInner?.classList.add('under')
+      open.apply(null)
     }
   }
 
@@ -210,7 +211,7 @@ abstract class Base {
     }
     this.listenExit($tag, switchShow)
     this.listenExit(
-      document.getElementsByClassName('tagcloud-taglist'),
+      document.querySelector('.tagcloud-taglist')!,
       switchShow
     )
     $tag.on('click', () => {
@@ -259,9 +260,7 @@ abstract class Base {
 
   search() {
     if (!this.theme.search) return
-    $('body').append(
-      `<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>`
-    )
+
     const utils = this.utils
     const $searchbtn = $('#search-btn')
     const $result = $('#search-result')
@@ -278,7 +277,7 @@ abstract class Base {
     const switchShow = () => {
       this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
     }
-    this.listenExit(document.getElementById('search'), switchShow)
+    this.listenExit(document.getElementById('search')!, switchShow)
     $searchbtn.on('click', () => {
       if ($tagcloud.exist('show')) {
         $search.opreate('syuanpi shuttleIn show')
@@ -366,6 +365,12 @@ abstract class Base {
     // this.pjax()
   }
 
+  private getPageProgress(scrollTop: number): number {
+    const documentHeight = document.body.clientHeight
+    const windowHeight = window.innerHeight
+    return Math.floor((scrollTop / (documentHeight - windowHeight)) * 100)
+  }
+
   static utils(g, e) {
     const cls = ele => ({
       opreate(cls, opt) {
@@ -395,7 +400,7 @@ abstract class Base {
           .addClass(ani)
           .one('webkitAnimationEnd AnimationEnd', function () {
             $(ele).removeClass(ani)
-            fn && fn.call(null, ele)
+            fn && fn.apply(null, [ele])
           })
       },
     })

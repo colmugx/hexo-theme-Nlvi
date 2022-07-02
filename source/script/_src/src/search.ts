@@ -38,7 +38,7 @@ export default function (path: string, inputId: string) {
             title!.indexOf(keyword) >= 0 || content!.indexOf(keyword) >= 0
         )
         .map(obj => {
-          const reg = new RegExp(`(${keyword})`, 'gi')
+          const reg = new RegExp(`(${encodeURIComponent(keyword)})`, 'gi')
           const title = obj.title!.replace(
             reg,
             '<strong class="search-keyword">$1</strong>'

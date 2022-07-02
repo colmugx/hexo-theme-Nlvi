@@ -40,11 +40,11 @@
 if (nlviconfig.theme.toc) {
   setTimeout(function() {
     if (nlviconfig.theme.scheme === 'balance') {
-      document.getElementById('header').classList.add('show_toc')
+      document.getElementById('header') && document.getElementById('header').classList.add('show_toc')
     } else if (nlviconfig.theme.scheme === 'banderole') {
-      document.getElementById('container-inner').classList.add('has_toc')
-      document.querySelector('.post-toc .title').classList.add('show')
-      document.querySelector('.toc-inner').classList.add('show')
+      document.getElementById('container-inner') && document.getElementById('container-inner').classList.add('has_toc')
+      document.querySelector('.post-toc .title') && document.querySelector('.post-toc .title').classList.add('show')
+      document.querySelector('.toc-inner') && document.querySelector('.toc-inner').classList.add('show')
     }
   }, 1000);
 }
