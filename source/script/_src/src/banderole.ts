@@ -45,13 +45,18 @@ export default class Banderole extends Base {
       return
     }
 
+    // check
+    const isPost = document.querySelector('article.is_post')
+    console.log(isPost)
+
+    const switchToc = document.getElementById('switch-toc')
     const tocInner = document.querySelector('.toc-inner')
-    const title = document.querySelector('.post-toc .title')
     const container = document.querySelector('.container-inner')
 
-    title?.addEventListener('click', () => {
-      const isShow = title.classList.contains('show')
-      title.classList[isShow ? 'remove' : 'add']('show')
+    switchToc!.style.display = isPost ? 'flex' : 'none'
+
+    switchToc?.addEventListener('click', () => {
+      const isShow = tocInner?.classList.contains('show')
       tocInner?.classList[isShow ? 'remove' : 'add']('show')
       container?.classList[isShow ? 'remove' : 'add']('has_toc')
     })

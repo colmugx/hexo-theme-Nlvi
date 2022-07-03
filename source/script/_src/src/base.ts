@@ -390,7 +390,7 @@ abstract class Base {
   }
 
   private getPageProgress(scrollTop: number): number {
-    const documentHeight = document.body.clientHeight
+    const documentHeight = document.body.scrollHeight
     const windowHeight = window.innerHeight
     return Math.floor((scrollTop / (documentHeight - windowHeight)) * 100)
   }

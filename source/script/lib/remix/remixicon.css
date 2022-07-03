@@ -8,12 +8,12 @@
 
 @font-face {
     font-family: "remixicon";
-    src: url('remixicon.eot?t=1656857815308'); /* IE9*/
-    src: url('remixicon.eot?t=1656857815308#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url("remixicon.woff2?t=1656857815308") format("woff2"),
-    url("remixicon.woff?t=1656857815308") format("woff"),
-    url('remixicon.ttf?t=1656857815308') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('remixicon.svg?t=1656857815308#remixicon') format('svg'); /* iOS 4.1- */
+    src: url('remixicon.eot?t=1656859763915'); /* IE9*/
+    src: url('remixicon.eot?t=1656859763915#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url("remixicon.woff2?t=1656859763915") format("woff2"),
+    url("remixicon.woff?t=1656859763915") format("woff"),
+    url('remixicon.ttf?t=1656859763915') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('remixicon.svg?t=1656859763915#remixicon') format('svg'); /* iOS 4.1- */
     font-display: swap;
 }
 
@@ -63,3 +63,4 @@
 .ri-twitter-fill:before { content: "\f23a"; }
 .ri-weibo-fill:before { content: "\f2b9"; }
 .ri-github-fill:before { content: "\edca"; }
+.ri-list-check:before { content: "\eeba"; }

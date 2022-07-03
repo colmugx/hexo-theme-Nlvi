@@ -3,6 +3,7 @@ import barba from '@barba/core'
 
 export function init() {
   barba.init({
+    cacheIgnore: true,
     preventRunning: true,
     prevent: ({ el }) => el.classList.contains('glightbox'),
     transitions: [
