@@ -6,5 +6,8 @@
 {% block main %}
 <div class="main-inner" data-barba="container" data-barba-namespace="post">
   {{ postPage.render(page) }}
+  {% if theme.prism %}
+    <script src="{{ url_for('/') }}script/lib/prism/prism.js" async></script>
+  {% endif %}
 </div>
 {% endblock %}

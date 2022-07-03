@@ -3,6 +3,7 @@
 <style>
 @font-face {
   font-family: "Allura";
+  font-display: fallback;
   src: url('{{ url_for('/') }}font/allura/allura.ttf');
 }
 </style>

@@ -47,7 +47,6 @@ export default class Banderole extends Base {
 
     // check
     const isPost = document.querySelector('article.is_post')
-    console.log(isPost)
 
     const switchToc = document.getElementById('switch-toc')
     const tocInner = document.querySelector('.toc-inner')

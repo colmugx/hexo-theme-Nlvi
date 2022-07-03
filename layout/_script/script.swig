@@ -30,10 +30,6 @@
 
 <script src="{{ url_for('/') }}script/bootstrap.js" defer></script>
 
-{% if theme.prism %}
-  <script src="{{ url_for('/') }}script/lib/prism/prism.js" async></script>
-{% endif %}
-
 {% if theme.lazyload %}
   <script src="//cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
 {% endif %}
