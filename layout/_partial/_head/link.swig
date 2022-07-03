@@ -3,11 +3,6 @@
 {{ css('style/style') }}
 {% include "../../_script/config.swig" %}
 
-{# lightbox #}
-{% if theme.lightbox %}
-    {{ css('script/lib/lightbox/css/lightbox.min') }}
-{% endif %}
-
 {# animation #}
 {% if theme.animate %}
     {{ css('syuanpi/syuanpi.min') }}
