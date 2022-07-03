@@ -385,7 +385,9 @@ abstract class Base {
     this.pjax()
   }
 
-  reload() {}
+  reload() {
+    this.showComments()
+  }
 
   private getPageProgress(scrollTop: number): number {
     const documentHeight = document.body.clientHeight

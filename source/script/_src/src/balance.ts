@@ -44,6 +44,7 @@ export default class Balance extends Base {
   }
 
   reload() {
+    super.reload()
     this.switchToc()
   }
 }

@@ -63,6 +63,7 @@ export default class Banderole extends Base {
   }
 
   reload() {
+    super.reload()
     this.switchToc()
   }
 }
