@@ -1,7 +1,7 @@
 import Base, { Config } from './base'
 
 export default class Balance extends Base {
-  constructor (config: Config) {
+  constructor(config: Config) {
     super(config)
   }
 
@@ -38,8 +38,12 @@ export default class Balance extends Base {
     })
   }
 
-  bootstarp(): void {
+  bootstarp() {
     super.bootstarp()
+    this.switchToc()
+  }
+
+  reload() {
     this.switchToc()
   }
 }

@@ -21,6 +21,9 @@ export function init() {
             top: 0,
           })
         },
+        afterEnter() {
+          window.app.reload()
+        }
       },
       {
         name: 'back',
@@ -38,7 +41,5 @@ export function init() {
     ],
   })
 
-  barba.hooks.afterEnter(() => {
-    console.log('enter')
-  })
+  // barba.hooks.afterEnter(() => {})
 }

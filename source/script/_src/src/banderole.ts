@@ -57,8 +57,12 @@ export default class Banderole extends Base {
     })
   }
 
-  bootstarp(): void {
+  bootstarp() {
     super.bootstarp()
+    this.switchToc()
+  }
+
+  reload() {
     this.switchToc()
   }
 }
