@@ -1,35 +1,45 @@
-import Base from './base'
+import Base, { Config } from './base'
 
 export default class Balance extends Base {
-  constructor (config) {
+  constructor (config: Config) {
     super(config)
-    this.utils = Base.utils
   }
 
   back2top() {
-    const backtop = this.utils('cls', '#backtop')
-    backtop.opreate('melt', 'remove')
-    this.scrollArr.push((sct) => {
+    super.back2top()
+    const backTop = document.getElementById('backtop')
+    backTop?.classList.remove('melt')
+
+    this.scrollArr.push((sct: number) => {
       this.updateRound(sct)
     })
-    super.back2top()
   }
 
   switchToc() {
-    if (!this.theme.toc) false
-    const utils = this.utils
-    const $header = utils('cls', '#header')
-    const $toc = utils('cls', '.post-toc')
-    $('#switch-toc').on('click', e => {
-      e.stopPropagation()
-      $header.opreate('show_toc')
-      $toc.opreate('hide', 'remove')
+    if (!this.theme.toc) return
+
+    const header = document.getElementById('header')
+    const toc = document.querySelector('.post-toc')
+
+    document.getElementById('switch-toc')?.addEventListener('click', event => {
+      event.stopPropagation()
+
+      header?.classList.add('show_toc')
+      toc?.classList.remove('hide')
     })
-    $('#header').on('click', () => {
-      if ($header.exist('show_toc')) {
-        $header.opreate('show_toc', 'remove')
-        $toc.opreate('hide')
+
+    header?.addEventListener('click', event => {
+      event.stopPropagation()
+
+      if (header.classList.contains('show_toc')) {
+        header.classList.remove('show_toc')
+        toc?.classList.add('hide')
       }
     })
+  }
+
+  bootstarp(): void {
+    super.bootstarp()
+    this.switchToc()
   }
 }

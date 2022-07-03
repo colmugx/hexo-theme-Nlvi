@@ -1,7 +1,7 @@
 import { fromEvent, from, zip, map, switchMap, filter } from 'rxjs'
 import genSearch from './search'
 import { Util } from './util'
-import './barba'
+import { init as barbaInit } from './barba'
 
 interface Theme {
   scheme: 'banderole' | 'balance'
@@ -23,11 +23,11 @@ export interface Config {
 }
 
 abstract class Base {
-  private theme: Theme
-  private scrollArr: any[]
-  private util: Util
+  protected theme: Theme
+  protected scrollArr: any[]
+  protected util: Util
 
-  constructor(private readonly config: Config) {
+  constructor(protected readonly config: Config) {
     this.theme = config.theme
     this.scrollArr = []
     this.util = Util.getInstance(config)
@@ -35,7 +35,7 @@ abstract class Base {
 
   init() {
     const fns: (keyof Base)[] = ['showComments', 'picPos']
-    fns.forEach(fn => (<any>this[fn]).apply(null))
+    fns.forEach(fn => (<any>this[fn]).apply(this))
 
     this.util.handleScroll(this.scrollArr)
   }
@@ -63,7 +63,7 @@ abstract class Base {
   }
 
   picPos() {
-    // it will flash, todo
+    // it flash, todo
     document.querySelectorAll<HTMLElement>('.post-content').forEach(ele => {
       ele.querySelectorAll('img').forEach(img => {
         img.parentElement!.style.textAlign = 'center'
@@ -172,7 +172,7 @@ abstract class Base {
     })
   }
 
-  listenExit(ele?: Element, fn?: () => void) {
+  listenExit(ele: Element | null, fn?: () => void) {
     fromEvent<KeyboardEvent>(ele!, 'keyup')
       .pipe(filter(event => event.code === 'Escape'))
       .subscribe(() => fn?.())
@@ -194,63 +194,69 @@ abstract class Base {
   }
 
   tagcloud() {
-    const utils = this.utils
-    const $tag = $('#tags')
-    const $tagcloud = utils('cls', '#tagcloud')
-    const $tagcloudAni = utils('ani', '#tagcloud')
-    const $search = utils('cls', '#search')
-    const $searchAni = utils('ani', '#search')
+    const tag = document.getElementById('tags')
+    const tagcloud = document.getElementById('tagcloud')
+    const search = document.getElementById('search')
+
     const closeFrame = () => {
-      $tagcloud.opreate('shuttleIn', 'remove')
-      $tagcloudAni.end('zoomOut', () => {
-        $tagcloud.opreate('syuanpi show', 'remove')
+      tagcloud?.classList.remove('shuttleIn')
+      this.util.animationEnd(tagcloud, 'zoomOut', () => {
+        tagcloud?.classList.remove('zoomOut', 'syuanpi', 'show')
       })
     }
+
     const switchShow = () => {
-      this.depth(() => $tagcloud.opreate('syuanpi shuttleIn show'), closeFrame)
+      this.depth(() => {
+        tagcloud?.classList.add('syuanpi', 'shuttleIn', 'show')
+      }, closeFrame)
     }
-    this.listenExit($tag, switchShow)
-    this.listenExit(
-      document.querySelector('.tagcloud-taglist')!,
-      switchShow
-    )
-    $tag.on('click', () => {
-      if ($search.exist('show')) {
-        $tagcloud.opreate('syuanpi shuttleIn show')
-        $search.opreate('shuttleIn', 'remove')
-        $searchAni.end('zoomOut', () => {
-          $search.opreate('syuanpi show', 'remove')
+
+    this.listenExit(tag, switchShow)
+    this.listenExit(document.querySelector('.tagcloud-taglist'), switchShow)
+
+    tag?.addEventListener('click', () => {
+      if (search?.classList.contains('show')) {
+        tagcloud?.classList.add('syuanpi', 'shuttleIn', 'show')
+        search.classList.remove('shuttleIn')
+        this.util.animationEnd(search, 'zoomOut', () => {
+          search.classList.remove('zoomOut', 'syuanpi', 'show')
         })
+
         return
       }
+
       switchShow()
     })
-    $('#tagcloud').on('click', e => {
-      e.stopPropagation()
-      if (e.target.tagName === 'DIV') {
-        this.depth(
-          () => $tagcloud.opreate('syuanpi shuttleIn show'),
-          closeFrame
-        )
+
+    tagcloud?.addEventListener('click', event => {
+      event.stopPropagation()
+
+      if ((<Element>event.target).tagName === 'DIV') {
+        this.depth(() => {
+          tagcloud.classList.add('syuanpi', 'shuttleIn', 'show')
+        }, closeFrame)
       }
     })
+
     const tags$ = fromEvent(
       document.querySelectorAll('.tagcloud-tag button'),
       'click'
     ).pipe(map(({ target }) => target))
-    const postlist$ = from(document.querySelectorAll('.tagcloud-postlist'))
-    const cleanlist$ = postlist$.pipe(
+    const postList$ = from(document.querySelectorAll('.tagcloud-postlist'))
+    const cleanList$ = postList$.pipe(
       map(dom => dom.classList.remove('active'))
     )
-    const click$ = tags$.pipe(switchMap(() => cleanlist$))
+    const click$ = tags$.pipe(switchMap(() => cleanList$))
+
     zip(click$, tags$)
       .pipe(
         map(([_, dom]) => dom),
-        switchMap(v =>
-          postlist$.pipe(
+        switchMap(target =>
+          postList$.pipe(
             filter(
               dom =>
-                dom.firstElementChild.innerHTML.trim() === v.innerHTML.trim()
+                dom.firstElementChild?.innerHTML.trim() ===
+                (<Element>target).innerHTML.trim()
             )
           )
         )
@@ -261,76 +267,100 @@ abstract class Base {
   search() {
     if (!this.theme.search) return
 
-    const utils = this.utils
-    const $searchbtn = $('#search-btn')
-    const $result = $('#search-result')
-    const $search = utils('cls', '#search')
-    const $searchAni = utils('ani', '#search')
-    const $tagcloud = utils('cls', '#tagcloud')
-    const $tagcloudAni = utils('ani', '#tagcloud')
+    const search = document.getElementById('search')
+    const searchBtn = document.getElementById('search-btn')
+    const searchInput = document.getElementById(
+      'search-input'
+    ) as HTMLInputElement
+    const searchResult = document.getElementById('search-result')
+    const tagcloud = document.getElementById('tagcloud')
+
     const closeFrame = () => {
-      $search.opreate('shuttleIn', 'remove')
-      $searchAni.end('zoomOut', () => {
-        $search.opreate('syuanpi show', 'remove')
+      search?.classList.remove('shuttleIn')
+      this.util.animationEnd(search, 'zoomOut', () => {
+        search?.classList.remove('zoomOut', 'syuanpi', 'show')
+        searchInput.value = ''
       })
     }
+
     const switchShow = () => {
-      this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+      this.depth(() => {
+        search?.classList.add('syuanpi', 'shuttleIn', 'show')
+        searchInput.focus()
+      }, closeFrame)
     }
-    this.listenExit(document.getElementById('search')!, switchShow)
-    $searchbtn.on('click', () => {
-      if ($tagcloud.exist('show')) {
-        $search.opreate('syuanpi shuttleIn show')
-        $tagcloud.opreate('shuttleIn', 'remove')
-        $tagcloudAni.end('zoomOut', () => {
-          $tagcloud.opreate('syuanpi show', 'remove')
+
+    this.listenExit(search, switchShow)
+
+    searchBtn?.addEventListener('click', () => {
+      if (tagcloud?.classList.contains('show')) {
+        search?.classList.add('syuanpi', 'shuttleIn', 'show')
+        tagcloud.classList.remove('shuttleIn')
+        this.util.animationEnd(tagcloud, 'zoomOut', () => {
+          tagcloud.classList.remove('zoomOut', 'syuanpi', 'show')
         })
+
         return
       }
+
       switchShow()
     })
-    $('#search').on('click', e => {
-      e.stopPropagation()
-      if (e.target.tagName === 'DIV') {
-        this.depth(() => $search.opreate('syuanpi shuttleIn show'), closeFrame)
+
+    search?.addEventListener('click', event => {
+      event.stopPropagation()
+
+      if ((<Element>event.target).tagName === 'DIV') {
+        this.depth(() => {
+          search.classList.add('syuanpi', 'shuttleIn', 'show')
+        }, closeFrame)
       }
     })
+
     genSearch(`${this.config.baseUrl}search.xml`, 'search-input').subscribe(
       vals => {
-        const list = body =>
+        const list = (body: string) =>
           `<ul class="search-result-list syuanpi fadeInUpShort">${body}</ul>`
-        const item = ({ url, title, content }) => `
+
+        const item = ({
+          url,
+          title,
+          content,
+        }: {
+          [key: string]: string | null
+        }) => `
           <li class="search-result-item">
             <a href="${url}"><h2>${title}</h2></a>
             <p>${content}</p>
           </li>
         `
+
         const output = vals.map(item)
-        $result.html(list(output.join('')))
+        searchResult!.innerHTML = list(output.join(''))
       }
     )
   }
 
-  headerMenu() {
-    const utils = this.utils
-    const $mobileMenu = utils('cls', '.mobile-header-body')
-    const $haderline = utils('cls', '.header-menu-line')
-    const $mtag = $('#mobile-tags')
-    const $tagcloud = utils('cls', '#tagcloud')
-    $mtag.on('click', () => {
-      $mobileMenu.opreate('show', 'remove')
-      $haderline.opreate('show', 'remove')
-      $tagcloud.opreate('syuanpi shuttleIn show')
+  mobileHeader() {
+    const menu = document.querySelector('.mobile-header-body')
+    const headerline = document.querySelector('.header-menu-line')
+    const tag = document.getElementById('mobile-tags')
+    const tagcloud = document.getElementById('tagcloud')
+
+    tag?.addEventListener('click', () => {
+      menu?.classList.remove('show')
+      headerline?.classList.remove('show')
+      tagcloud?.classList.add('syuanpi', 'shuttleIn', 'show')
     })
-    $('#mobile-left').on('click', () => {
+
+    document.getElementById('mobile-left')?.addEventListener('click', () => {
       this.depth(
         () => {
-          $mobileMenu.opreate('show')
-          $haderline.opreate('show')
+          menu?.classList.add('show')
+          headerline?.classList.add('show')
         },
         () => {
-          $mobileMenu.opreate('show', 'remove')
-          $haderline.opreate('show', 'remove')
+          menu?.classList.remove('show')
+          headerline?.classList.remove('show')
         }
       )
     })
@@ -338,18 +368,8 @@ abstract class Base {
 
   pjax() {
     if (!this.theme.pjax) return
-    const utils = this.utils
-    const $container = utils('cls', '.container-inner')
-    const $header = utils('cls', '.header')
-    const $headerWrapper = utils('cls', '.header-wrapper')
-    $(document).pjax('.container-inner a', '.container-inner', {
-      fragment: 'container-inner',
-    })
-    $(document).on('pjax:send', function () {
-      $container.opreate('syuanpi fadeOutLeftShort')
-      $headerWrapper.opreate('syuanpi fadeOutLeftShort')
-      $header.opreate('melt')
-    })
+
+    barbaInit()
   }
 
   bootstarp() {
@@ -361,57 +381,14 @@ abstract class Base {
     this.tagcloud()
     this.search()
     this.showReward()
-    this.headerMenu()
-    // this.pjax()
+    this.mobileHeader()
+    this.pjax()
   }
 
   private getPageProgress(scrollTop: number): number {
     const documentHeight = document.body.clientHeight
     const windowHeight = window.innerHeight
     return Math.floor((scrollTop / (documentHeight - windowHeight)) * 100)
-  }
-
-  static utils(g, e) {
-    const cls = ele => ({
-      opreate(cls, opt) {
-        return opt === 'remove' ? $(ele).removeClass(cls) : $(ele).addClass(cls)
-      },
-      exist(cls) {
-        return $(ele).hasClass(cls)
-      },
-    })
-    const iss = ele => ({
-      banderole: () => {
-        return this.theme.scheme === 'banderole'
-      },
-      balance: () => {
-        return this.theme.scheme === 'balance'
-      },
-      display() {
-        return $(ele).css('display') === 'none'
-      },
-    })
-    const ani = ele => ({
-      close() {
-        return cls.opreate('.syuanpi', 'syuanpi', 'remove')
-      },
-      end(ani, fn) {
-        $(ele)
-          .addClass(ani)
-          .one('webkitAnimationEnd AnimationEnd', function () {
-            $(ele).removeClass(ani)
-            fn && fn.apply(null, [ele])
-          })
-      },
-    })
-    return { cls, iss, ani }[g](e)
-  }
-
-  static opScroll(fns) {
-    const scroll$ = fromEvent(window, 'scroll').pipe(
-      map(v => v.target.scrollingElement.scrollTop)
-    )
-    fns.length && scroll$.subscribe(next => fns.forEach(fn => fn(next)))
   }
 }
 

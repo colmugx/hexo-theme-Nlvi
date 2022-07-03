@@ -29,9 +29,9 @@ export class Util {
     return ele.offsetParent !== null
   }
 
-  animationEnd(ele: Element, cls: string, callback?: Function) {
-    ele.classList.add(...cls.split(' '))
-    ele.addEventListener('animationend', e => callback?.(e), { once: true })
+  animationEnd(ele: Element | null, cls: string, callback?: Function) {
+    ele!.classList.add(...cls!.split(' '))
+    ele!.addEventListener('animationend', e => callback?.(e), { once: true })
   }
 
   get isBanderole() {

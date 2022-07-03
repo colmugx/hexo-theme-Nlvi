@@ -1,69 +1,64 @@
-import Base from './base'
+import Base, { Config } from './base'
 import { fromEvent, map, throttleTime } from 'rxjs'
 
 export default class Banderole extends Base {
-  constructor (config) {
+  constructor(config: Config) {
     super(config)
-    this.utils = Base.utils
   }
 
   hideMobileHeader() {
     super.hideMobileHeader()
-    if (!this.utils('iss').banderole()) return
-    const $header = this.utils('cls', '#header')
-    fromEvent(window, 'wheel').pipe(
-      throttleTime(500),
-      map(({ deltaY }) => deltaY > 0)
-    ).subscribe(v => $header.opreate('header-hide', v ? 'add' : 'remove'))
-    this.scrollArr.push(sct => {
-      if (sct > 50) {
-        $header.opreate('header-scroll', 'add')
-      } else {
-        $header.opreate('header-scroll', 'remove')
-      }
+    if (this.util.isBanderole) return
+
+    const header = document.getElementById('header')
+    fromEvent<WheelEvent>(window, 'wheel')
+      .pipe(
+        throttleTime(500),
+        map(({ deltaY }) => deltaY > 0)
+      )
+      .subscribe(value =>
+        header?.classList[value ? 'add' : 'remove']('header-hide')
+      )
+
+    this.scrollArr.push((sct: number) => {
+      header?.classList[sct > 50 ? 'add' : 'remove']('header-scroll')
     })
   }
 
   back2top() {
-    const backtop = this.utils('cls', '#backtop')
-    this.scrollArr.push((sct) => {
+    super.back2top()
+
+    const backTop = document.getElementById('backtop')
+    this.scrollArr.push((sct: number) => {
       if (sct > 110) {
-        backtop.opreate('clarity', 'add')
-        backtop.opreate('melt', 'remove')
+        backTop?.classList.replace('melt', 'clarity')
       } else {
-        backtop.opreate('melt')
-        backtop.opreate('clarity', 'remove')
+        backTop?.classList.replace('clarity', 'melt')
       }
+
       this.updateRound(sct)
     })
-    super.back2top()
   }
 
   switchToc() {
     if (!this.theme.toc) {
       return
     }
-    const utils = this.utils
-    const $inner = utils('cls', '.toc-inner')
-    const $title = utils('cls', '.post-toc .title')
-    const $container = utils('cls', '.container-inner')
 
-    $('.post-toc .title').on('click', () => {
-      console.log('???')
-      if ($title.exist('show')) {
-        $title.opreate('show', 'remove')
-        $inner.opreate('show', 'remove')
-        $container.opreate('has_toc', 'remove')
-      } else {
-        $title.opreate('show')
-        $inner.opreate('show')
-        $container.opreate('has_toc')
-      }
+    const tocInner = document.querySelector('.toc-inner')
+    const title = document.querySelector('.post-toc .title')
+    const container = document.querySelector('.container-inner')
+
+    title?.addEventListener('click', () => {
+      const isShow = title.classList.contains('show')
+      title.classList[isShow ? 'remove' : 'add']('show')
+      tocInner?.classList[isShow ? 'remove' : 'add']('show')
+      container?.classList[isShow ? 'remove' : 'add']('has_toc')
     })
   }
 
   bootstarp(): void {
-      super.bootstarp()
-      this.switchToc()
+    super.bootstarp()
+    this.switchToc()
   }
 }

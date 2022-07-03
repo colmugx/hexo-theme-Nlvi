@@ -1,5 +1,4 @@
-<script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js" async></script>
 
 {% if theme.lightbox %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
