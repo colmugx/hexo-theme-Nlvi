@@ -4,7 +4,7 @@
   {% if theme.search.enable %}
     <li class="menu-item">
       <a href="javascript:;" id="search-btn" aria-label="Search">
-        <i class="iconfont icon-search"></i>
+        <i class="ri-search-2-line"></i>
       </a>
     </li>
   {% endif %}

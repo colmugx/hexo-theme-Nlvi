@@ -6,6 +6,7 @@
 {% include "../../_script/config.swig" %}
 
 {{ css('script/lib/prism/prism') }}
+{{ css('script/lib/remix/remixicon') }}
 
 {# animation #}
 {% if theme.animate %}

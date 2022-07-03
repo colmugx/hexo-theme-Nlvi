@@ -11,7 +11,7 @@
       <div class="post-time syuanpi fadeInRightShort back-1">
         <div class="post-time-wrapper">
           {% if not is_post() and post.top %}
-            <i class="iconfont icon-pin post-pin"></i>
+            <i class="ri-pushpin-fill post-pin"></i>
           {% endif %}
           <time>{{ full_date(post.date, 'YYYY-MM-DD') }}</time>
           {% if post.categories and post.categories.length %}

@@ -17,9 +17,9 @@
     </div>
     {% if theme.visit_count %}
     <div class="visit_count">
-        <i class="iconfont icon-eye"></i>
+        <i class="ri-group-fill"></i>
         <span id="busuanzi_value_site_uv"></span>
-        <i class="iconfont icon-team"></i>
+        <i class="ri-eye-fill"></i>
         <span id="busuanzi_value_site_pv"></span>
     </div>
     {% endif %}
