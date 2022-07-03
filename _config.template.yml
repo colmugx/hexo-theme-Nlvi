@@ -46,6 +46,9 @@ theme-style: sakura
 # Navigator in post
 toc: true
 
+# enable prism
+prism: true
+
 # Use copyright infomation
 copyright:
   enable: true
@@ -173,6 +176,6 @@ code-style: default
 # ===========================================
 # Version
 # ===========================================
-version: 3.0
+version: 3.5.x
 
 #theme_author: Co1MugX

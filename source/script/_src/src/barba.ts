@@ -4,7 +4,7 @@ import barba from '@barba/core'
 export function init() {
   barba.init({
     preventRunning: true,
-    prevent: ({el}) => el.classList.contains('glightbox'),
+    prevent: ({ el }) => el.classList.contains('glightbox'),
     transitions: [
       {
         name: 'default',
@@ -15,6 +15,11 @@ export function init() {
             opacity: 0,
             duration: 375,
           }).finished
+        },
+        afterLeave() {
+          window.scrollTo({
+            top: 0,
+          })
         },
       },
       {
@@ -29,7 +34,7 @@ export function init() {
             duration: 375,
           }).finished
         },
-      }
+      },
     ],
   })
 

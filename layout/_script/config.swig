@@ -12,7 +12,8 @@
       reward: {{ theme.reward.enable or false }},
       pjax: {{ theme.pjax or false }},
       lazy: {{ theme.lazyload or false }},
-      toc: {{ theme.toc or false }}
+      toc: {{ theme.toc or false }},
+      prism: {{ theme.prism or false}}
     }
   }
 </script>

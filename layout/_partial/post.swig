@@ -30,15 +30,15 @@
       </h1>
     </header>
     <div class="post-content syuanpi fadeInRightShort back-3">
-      {% if is_post() %}
-        {{ post.content }}
+    {% if is_post() %}
+      {{ post.content }}
+    {% else %}
+      {% if post.excerpt %}
+        {{ post.excerpt }}
       {% else %}
-        {% if post.excerpt %}
-          {{ post.excerpt }}
-        {% else %}
-          {{ post.content }}
-        {% endif %}
+        {{ post.content }}
       {% endif %}
+    {% endif %}
     {% if post.excerpt and is_home() %}
       <p class="content-link">
         <a href="{{ url_for(post.path) }}#more">
