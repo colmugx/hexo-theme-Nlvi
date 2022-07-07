@@ -52,7 +52,7 @@ export default class Banderole extends Base {
     const tocInner = document.querySelector('.toc-inner')
     const container = document.querySelector('.container-inner')
 
-    switchToc!.style.display = isPost ? 'flex' : 'none'
+    switchToc?.style.setProperty('display', isPost ? 'flex' : 'none')
 
     switchToc?.addEventListener('click', () => {
       const isShow = tocInner?.classList.contains('show')

@@ -46,16 +46,16 @@ abstract class Base {
       const postComment = document.getElementById('post-comments')!
 
       if (!this.util.isDisplay(postComment)) {
-        postComment.style.display = 'block'
+        postComment.style.setProperty('display', 'block')
         postComment.classList.add('syuanpi', 'fadeInDown')
         comSwitch.classList.remove('syuanpi')
-        comSwitch.style.transform = 'rotate(180deg)'
+        comSwitch.style.setProperty('transform', 'rotate(180deg)')
       } else {
-        comSwitch.style.transform = ''
+        comSwitch.style.setProperty('transform', 'rotate(180deg)')
         comSwitch.classList.add('syuanpi')
         postComment.classList.remove('fadeInDown')
         this.util.animationEnd(postComment, 'syuanpi fadeOutUp', () => {
-          postComment.style.display = 'none'
+          postComment.style.setProperty('display', 'nnone')
           postComment.classList.remove('syuanpi', 'fadeOutUp')
         })
       }
@@ -66,7 +66,7 @@ abstract class Base {
     // it flash, todo
     document.querySelectorAll<HTMLElement>('.post-content').forEach(ele => {
       ele.querySelectorAll('img').forEach(img => {
-        img.parentElement!.style.textAlign = 'center'
+        img.parentElement?.style.setProperty('textAlign', 'center')
         let imgHead = `<img src="${img.src}"`
         if (this.theme.lazy) {
           imgHead = `<img data-src="${img.src}" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII="`
@@ -161,10 +161,10 @@ abstract class Base {
       if (this.util.isDisplay(wrapper!)) {
         this.util.animationEnd(wrapper!, 'melt', () => {
           wrapper?.classList.remove('melt')
-          wrapper!.style.display = 'none'
+          wrapper?.style.setProperty('display', 'none')
         })
       } else {
-        wrapper!.style.display = 'flex'
+        wrapper?.style.setProperty('display', 'flex')
         this.util.animationEnd(wrapper!, 'clarity', () => {
           wrapper?.classList.remove('clarity')
         })
