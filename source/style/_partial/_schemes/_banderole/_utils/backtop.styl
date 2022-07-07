@@ -3,8 +3,7 @@
   flex-direction: column
   justify-content: center
   align-items: center
-  background: $theme-color-hover
-  color: #fff
+  color: $theme-color-main
   width: (yard*4)
   height: @width
   user-select: none
@@ -13,6 +12,9 @@
   font-size: 12px
   border-radius: (yard/2)
   &:hover
-    background: $theme-color-main
+    background-color: $theme-color-hover
+    color: #fff
+  &:active
+    background-color: $theme-color-main
   +mobile()
     display: none
