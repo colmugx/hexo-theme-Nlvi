@@ -41,14 +41,20 @@
 
 ## 安装 Install
 
-放到你的hexo的theme里面，修改你hexo的_config.yml里面的theme
-
-```yaml
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: Nlvi
-```
+1. 在 Hexo 所在目录中执行以下命令。
+  
+  ```bash
+  npm i hexo-renderer-swig --save
+  ```
+  
+2. 放到你的hexo的theme里面，修改你hexo的_config.yml里面的theme
+  
+  ```yaml
+  # Extensions
+  ## Plugins: https://hexo.io/plugins/
+  ## Themes: https://hexo.io/themes/
+  theme: Nlvi
+  ```
 
 ## 配置 Setting
 
