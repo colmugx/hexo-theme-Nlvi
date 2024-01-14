@@ -2,10 +2,9 @@
 
 > A simple theme named Nlvi for hexo.
 
-[在线预览 · Banderole](https://colmugx.github.io/banderole/)
-[ · Balance](https://colmugx.github.io/balance/)
+在线预览 · [Banderole][1] · [Balance][2]
 
-[主题文档|Theme Wiki](https://github.com/ColMugX/hexo-theme-Nlvi/wiki)
+[主题文档|Theme Wiki][3]
 
 ![Nlvi](screenshots/nlvi.png)
 
@@ -15,8 +14,8 @@
 
 ## 特点 Special
 
-- 使用了动画库 [syuanpi.css](https://github.com/colmugx/syuanpi.css)
-- 使用了lightbox
+- 使用了动画库 [Syuanpi.css][4]
+- 使用了 Lightbox
 - 自定义样式
 - 文章打赏（二维码）
 - 版权说明
@@ -26,7 +25,7 @@
 
 - 简体中文
 - 正體中文（你可以告知我哪裡出問題，多謝。）
-- English ( Please tell me all errors if you mind. Thank you very much. )
+- English (Please tell me all errors if you mind. Thank you very much.)
 - 日本語 「テーマはすべてのエラーを教えてください、ありがとうございました。」
 
 ## 下载 Download
@@ -47,7 +46,7 @@
   npm i hexo-renderer-swig --save
   ```
   
-2. 放到你的hexo的theme里面，修改你hexo的_config.yml里面的theme
+2. 放到你的 Hexo 项目的`themes`文件夹里面，修改你的 Hexo 项目的 `_config.yml` 里面的`theme`如下。
   
   ```yaml
   # Extensions
@@ -58,9 +57,13 @@
 
 ## 配置 Setting
 
-要把_source文件夹里面的about拷贝到项目中的source中，**这点很重要！**
+须将`_source`文件夹里面的`about`目录拷贝到项目中的`source`目录中，**这点很重要！**
 
 ### 支持 Support
 
 {Issue, Email, Zhihu?}
 
+[1]: https://colmugx.github.io/banderole/
+[2]: https://colmugx.github.io/balance/
+[3]: https://github.com/ColMugX/hexo-theme-Nlvi/wiki
+[4]: https://github.com/colmugx/syuanpi.css
