@@ -88,6 +88,17 @@ comments:
   #   client_secret:
   #   admin:
 
+  # waline:
+  #   serverURL:
+  #   path: window.location.pathname
+  #   meta: []
+  #   lang: en
+  #   requiredMeta: ['nick', 'mail']
+  #   emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  #   dark: html[data-user-color-scheme="dark"]
+  #   wordLimit: 0
+  #   pageSize: 10
+
 # sub //Please just fill out ID.
 sub:
   facebook:
