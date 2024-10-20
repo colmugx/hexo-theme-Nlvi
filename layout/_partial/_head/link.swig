@@ -1,6 +1,7 @@
 <link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
 <link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
 {{ css('style/style') }}
+{{ css('script/css/friends') }}
 {% include "../../_script/config.swig" %}
 
 {# lightbox #}

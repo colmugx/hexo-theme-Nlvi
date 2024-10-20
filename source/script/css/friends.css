@@ -1,0 +1,45 @@
+.friend-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.friend {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  width: auto;
+  max-width: 200px;
+  min-height: 50px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: transform 0.2s;
+}
+
+.friend:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.friend-content {
+  display: flex;
+  align-items: center;
+}
+
+.friend img {
+  max-width: 33px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.friend-info {
+  flex: 1;
+}
+
+.link-title {
+  font-weight: bold;
+  color: rgb(253, 153, 153);
+  margin: 0;
+}

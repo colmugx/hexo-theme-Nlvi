@@ -112,8 +112,14 @@ sub:
   medium:
   yuque:
 
-#Friend link
-# friendLink:
+#请确保在Source/img/内创建对应资源
+#friendLink:
+#  - name: "Example"
+#    link: "https://example.github.io/"
+#    avatar: "/img/example.webp"
+#    intro: "This is intro"
+
+#onerror_avatar: "/images/default-avatar.png"
 
 # ===========================================
 # Analytics
