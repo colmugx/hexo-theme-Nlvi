@@ -14,7 +14,7 @@
       <a href="{{ config.url }}">{{ config.url }}</a>
     </div>
     <div class="copy-license">
-      {% set license = theme.copyright.license || "著作权归作者所有，转载请联系作者获得授权。" %}
+      {% set license = page.license || theme.copyright.license || __('copyright.default') %}
       {{ license }}
     </div>
   </div>
