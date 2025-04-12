@@ -1,21 +1,9 @@
 {{ js('https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js') }}
 
-{% if theme.cdn %}
-
-  {% set cdn_script_mathjax = theme.cdn.mathjax || "https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %}
-  {% set cdn_script_polyfill = theme.cdn.polyfill || "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" %}
-  {% set cdn_script_mathjax3 = theme.cdn.mathjax3 || "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" %}
-  {% set cdn_script_lazyload = theme.cdn.lazyload || "https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" %}
-
-{% else %}
-
-  {% set cdn_script_mathjax = "https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %}
-  {% set cdn_script_polyfill = "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" %}
-  {% set cdn_script_mathjax3 = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" %}
-  {% set cdn_script_lazyload = "https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" %}
-
-
-{% endif %}
+{% set cdn_script_mathjax = theme.cdn.mathjax || "https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %}
+{% set cdn_script_polyfill = theme.cdn.polyfill || "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" %}
+{% set cdn_script_mathjax3 = theme.cdn.mathjax3 || "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" %}
+{% set cdn_script_lazyload = theme.cdn.lazyload || "https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" %}
 
 {% if theme.lightbox %}
   <script></script>
